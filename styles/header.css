@@ -1,85 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    background-color: #d9cfcf;
-    height: 1000px;
+    height: 900px;
 }
-
 header {
-    display: block;
-    justify-content: space-between;
-    align-items: center;
-    height: 20%;
-    background-color: #888888;
-    padding: 0 20px;
-}
-
-header .Logo {
     text-align: center;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-
-header .Logo img {
+    width: 100%;
+    background-color: #888888;
+    min-height: 100px;
     height: 100px;
-    width: 100px;
-    transition: 0.4s;
+    position: relative;
+    background-attachment: fixed;
 }
 
-header .Logo img:hover {
+
+header .Imagen {
+    max-width: 100%;
+    max-height: 50%;
+    height: auto;
+    display: block;
+    padding-top: 10px;
+    margin: 0 auto;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+header .Imagen:hover {
     transform: scale(1.1);
 }
 
-header .Barra_Navegacion .lista {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-between;
-
+header nav {
+    width: 100%;
+    position: fixed;
+    text-align: center;
 }
-.barra-busqueda{
+
+header ul{
     display: flex;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
     justify-content: center;
-    align-items: center;
-    margin: 20px;
+    width: 100%;
 }
 
-.input-busqueda{
+header li {
+    max-width: 100%;
+    margin-right: 5%;
+    margin-left: 5%;
+    transition: 0.3s;
+}
+
+header li:hover {
+    transform: scale(1.1);
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
     padding: 10px;
-    font-size: 16px;
-    border: 2px solid #ccc;
-    border-radius: 20px 0 0 20px;
-    width: 80%;
-    outline: none;
-}
-
-.input-busqueda:hover{
-    background-color: #ccc;
-}
-
-.input-busqueda:focus{
-    outline: none;
-}
-
-.btn-buscar{
-    padding: 8.5px 15px;
-    font-size: 16px;
-    border: 2px solid #ccc;
-    border-radius: 0 20px 20px 0;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.btn-buscar:hover{
-    background-color: #ccc;
-}
-
-.btn-buscar:focus{
-    outline: none;
-}
-.Peliculas img{
-    width: 150px;
-    height: auto;
-    margin: 0 auto;
-    justify-content: space-evenly;
 }
