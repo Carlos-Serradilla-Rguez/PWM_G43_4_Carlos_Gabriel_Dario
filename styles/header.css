@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700;&display=swap');
+
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Lato', sans-serif;
 }
 
 body {
@@ -14,11 +17,12 @@ header {
     height: 100px;
     position: relative;
     background-attachment: fixed;
+    align-items: center;
 }
 
 
 header .Imagen {
-    max-width: 100%;
+    max-width: 50%;
     max-height: 50%;
     height: auto;
     display: block;
@@ -27,6 +31,7 @@ header .Imagen {
     border-radius: 20px;
     transition: 0.3s;
 }
+
 
 header .Imagen:hover {
     transform: scale(1.1);
@@ -43,15 +48,16 @@ header ul{
     list-style: none;
     padding: 10px 0;
     margin: 0;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
 }
 
 header li {
+    justify-content: space-between;
     max-width: 100%;
-    margin-right: 5%;
-    margin-left: 5%;
     transition: 0.3s;
+    margin: 0 4%;
 }
 
 header li:hover {
