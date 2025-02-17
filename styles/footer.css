@@ -4,14 +4,14 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-footer {
+.footer {
     background-color: #888888;
     color: white;
     text-align: center;
     padding: 20px 0;
 }
 
- .links  a{
+ .footer .links  a{
     color: white;
     text-decoration: none;
     margin: 0 15px;
@@ -19,7 +19,7 @@ footer {
 }
 
 
-.copyright {
+.footer .copyright {
     margin-top: 10px;
     font-size: 14px;
     opacity: 0.8;
