@@ -23,7 +23,7 @@ header {
 }
 
 
-header .Imagen {
+.Imagen {
     max-width: 50%;
     max-height: 50%;
     height: auto;
@@ -35,8 +35,17 @@ header .Imagen {
 }
 
 
-header .Imagen:hover {
+.Imagen:hover {
     transform: scale(1.1);
+}
+
+.link-imagen {
+    pointer-events: none;
+}
+
+.link-imagen .Imagen {
+    pointer-events: auto;
+    cursor: pointer;
 }
 
 header nav {
