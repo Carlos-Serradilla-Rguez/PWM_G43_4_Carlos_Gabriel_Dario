@@ -5,32 +5,31 @@
 }
 
 .gallery-container{
-    position: relative;
     width: 80%;
     margin: auto;
-    overflow: hidden;
-    border: 3px solid #333;
-    border-radius: 10px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    display: flex;
+    justify-content: center;
 }
 
 .gallery{
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    white-space: nowrap;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
     list-style: none;
-    padding: 0;
+    padding: 10px;
+    width: 775px;
 }
 
 .gallery li{
-    display: inline-block;
+    flex: 0 0 25%;
+    scroll-snap-align: start;
 }
 
 .gallery img{
-    width: 100%;
-    max-width: 300px;
+    width: 150px;
     height: 200px;
-    margin: 5px;
     border-radius: 8px;
 }
 
