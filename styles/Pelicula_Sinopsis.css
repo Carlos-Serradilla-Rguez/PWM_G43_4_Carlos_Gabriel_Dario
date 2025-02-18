@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #222;
+    margin: 0;
+}
+
+.movie-container {
+    position: relative;
+    width: 300px;
+    height: 450px;
+}
+
+.movie-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+.movie-container:hover .overlay {
+    opacity: 1;
+}
+
+.synopsis {
+    padding: 20px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.5em; /* Controla la separación entre líneas */
+    display: -webkit-box; /* Habilita el uso de line-clamp */
+    -webkit-box-orient: vertical; /* Orientación vertical del texto */
+    -webkit-line-clamp: 3; /* Limita el texto a 3 líneas */
+    overflow: hidden; /* Oculta el texto desbordado */
+    text-overflow: ellipsis; /* Agrega "..." si hay más texto del que cabe */
+    max-height: calc(1.5em * 3); /* Limita la altura a 3 líneas */
+}
+
+
