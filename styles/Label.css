@@ -1,53 +1,65 @@
-/* Estilos generales
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Lato', sans-serif;
+    padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #000000;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin: 50px;
+
 }
 
-Estilo del contenedor desplegable
+/* Estilo del contenedor desplegable */
 .dropdown {
     width: 200px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: white;
+    background: white;
     padding: 10px;
-    text-align: center;
+    border: 2px solid black;
+    border-radius: 8px;
+    cursor: pointer;
     list-style: none;
     position: relative;
+    width: 200px;
+    text-align: center;
 }
 
-/* Estilo del título del desplegable
+/* Estilo del título del desplegable */
 .dropdown summary {
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
 }
 
-Ocultar el desplegable por defecto
+/* Ocultar el desplegable por defecto */
 .dropdown-menu {
     display: none;
     position: absolute;
     width: 100%;
-    left: 0;
+    right: 0;
     top: 100%;
     background: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 8px;
     list-style: none;
-    padding: 5px 0;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Mostrar opciones cuando se abre */
+.dropdown[open] .dropdown-menu {
+    display: block;
+}
+
+/* Estilo de cada opción */
+.dropdown-menu li {
+    padding: 8px 15px;
+    cursor: pointer;
+}
 
 .dropdown-menu li:hover {
     background-color: #ddd;
 }
 
- Estilo de los checkboxes
+/* Estilo de los checkboxes */
 input[type="checkbox"] {
     margin-right: 5px;
-}*/
+}
