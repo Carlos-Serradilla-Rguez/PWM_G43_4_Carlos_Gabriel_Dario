@@ -23,7 +23,7 @@
 }
 
 .gallery li{
-    flex: 0 0 25%;
+    flex: 0 0 50%;
     scroll-snap-align: start;
 }
 
