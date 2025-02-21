@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+body {
+    font-family: 'Lato', sans-serif;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin: 50px;
+
+}
+
+/* Estilo del contenedor desplegable */
+.dropdown {
+    width: 200px;
+    background: white;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 8px;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    width: 200px;
+    text-align: center;
+}
+
+/* Estilo del título del desplegable */
+.dropdown summary {
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Ocultar el desplegable por defecto */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    width: 100%;
+    right: 0;
+    top: 100%;
+    background: white;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 8px;
+    list-style: none;
+}
+
+/* Mostrar opciones cuando se abre */
+.dropdown[open] .dropdown-menu {
+    display: block;
+}
+
+/* Estilo de cada opción */
+.dropdown-menu li {
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+    background-color: #ddd;
+}
+
+/* Estilo de los checkboxes */
+input[type="checkbox"] {
+    margin-right: 5px;
+}
