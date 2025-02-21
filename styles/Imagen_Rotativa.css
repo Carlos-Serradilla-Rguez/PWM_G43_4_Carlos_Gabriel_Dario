@@ -1,0 +1,38 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.gallery-container{
+    width: 80%;
+    margin: auto;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    display: flex;
+    justify-content: center;
+}
+
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
+    list-style: none;
+    padding: 10px;
+    width: 775px;
+}
+
+.gallery li{
+    flex: 0 0 25%;
+    scroll-snap-align: start;
+}
+
+.gallery img{
+    width: 150px;
+    height: 200px;
+    border-radius: 8px;
+}
+
+.gallery ::-webkit-scrollbar{
+    display: none;
+}
