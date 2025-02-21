@@ -1,0 +1,19 @@
+.rectangulo {
+    display: flex;
+    flex-direction: column;  /* Coloca los elementos en columna */
+    border: 2px solid black; /* Borde para crear el rectángulo */
+    border-radius: 8px;
+    padding: 10px;
+    width: 250px; /* Ancho del rectángulo */
+}
+
+.btn-exterior {
+    margin-bottom: 10px; /* Espacio entre el botón y el desplegable */
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; /* Hace que el botón ocupe todo el ancho */
+}
