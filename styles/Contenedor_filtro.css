@@ -4,15 +4,17 @@
     border: 2px solid black; /* Borde para crear el rectángulo */
     border-radius: 8px;
     padding: 10px;
+    height: 200px;
     width: 250px; /* Ancho del rectángulo */
+
 }
 
 .btn-exterior {
-    margin-bottom: 10px; /* Espacio entre el botón y el desplegable */
+    margin-top: auto;
     padding: 8px 15px;
-    background-color: #007bff;
-    color: white;
-    border: none;
+    background-color: #ffffff;
+    color: black;
+    border: black solid 1px;
     border-radius: 5px;
     cursor: pointer;
     width: 100%; /* Hace que el botón ocupe todo el ancho */
