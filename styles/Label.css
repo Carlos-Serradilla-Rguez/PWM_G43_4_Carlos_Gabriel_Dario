@@ -1,0 +1,53 @@
+/* Estilos generales
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000000;
+}
+
+Estilo del contenedor desplegable
+.dropdown {
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    list-style: none;
+    position: relative;
+}
+
+/* Estilo del título del desplegable
+.dropdown summary {
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+Ocultar el desplegable por defecto
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 100%;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    list-style: none;
+    padding: 5px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.dropdown-menu li:hover {
+    background-color: #ddd;
+}
+
+ Estilo de los checkboxes
+input[type="checkbox"] {
+    margin-right: 5px;
+}*/
