@@ -1,3 +1,6 @@
+@import "Font.css";
+
+
 .rectangulo {
     display: flex;
     flex-direction: column;  /* Coloca los elementos en columna */
