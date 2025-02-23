@@ -16,7 +16,7 @@ header {
     background-color: #888888;
     min-height: 100px;
     height: 100px;
-    position: relative;
+    position: fixed;
     background-attachment: fixed;
     align-items: center;
 }
@@ -47,7 +47,6 @@ header {
 
 header nav {
     width: 100%;
-    position: fixed;
     text-align: center;
 }
 
