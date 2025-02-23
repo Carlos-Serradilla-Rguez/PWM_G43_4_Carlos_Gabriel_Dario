@@ -31,4 +31,5 @@ document.addEventListener("DOMContentLoaded", () => {
     loadTemplate('footer.html', 'footer-container', '../styles/footer.css');
     loadTemplate('blog.html', 'blog-container', '../styles/blog.css');
     loadTemplate('Contenedor_filtro.html', 'filter-container', '../styles/Contenedor_filtro.css');
+    loadTemplate('Imagen_Rotativa.html', 'rotativa-container', '../styles/Imagen_Rotativa.css');
 });
