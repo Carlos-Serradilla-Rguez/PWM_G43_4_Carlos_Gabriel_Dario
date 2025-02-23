@@ -33,7 +33,7 @@ header {
 }
 
 .header-logo:hover {
-    transform: scale(1.1);
+    transform: scale(1.4);
 }
 
 .link-imagen {
@@ -73,7 +73,7 @@ header li {
 }
 
 header li:hover {
-    transform: scale(1.1);
+    transform: scale(1.4);
 }
 
 nav ul li a {

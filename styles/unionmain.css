@@ -1,6 +1,9 @@
+@import url('Font.css');
+
 * {
     padding: 0;
     margin: 0;
+    font-family: 'Leto', sans-serif;
 }
 
 body {
@@ -13,11 +16,11 @@ body {
 }
 
 #blog-container {
-    width: 70%;
+    width: 80%;
 }
 
 #filter-container {
-    width: 30%;
+    width: 20%;
 }
 
 #rotativa-container {
