@@ -1,0 +1,9 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#blog-container {
+    padding: 5em;
+    max-width: 70%;
+}

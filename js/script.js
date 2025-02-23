@@ -1,26 +1,33 @@
-async function loadHeader() {
+async function loadTemplate(templateUrl, containerId, stylesheetUrl) {
     try {
-        // 1. Cargar el archivo HTML (header.html)
-        const response = await fetch('header.html'); // Ajusta la ruta si es necesario
-        if (!response.ok) throw new Error("No se pudo cargar el header: " + response.statusText);
+        // 1. Cargar el archivo del template
+        const response = await fetch(templateUrl); // Ruta al template
+        if (!response.ok) throw new Error("No se pudo cargar el template: " + response.statusText);
 
-        // 2. Obtener el contenido del header
+        // 2. Obtener el contenido del template
         const content = await response.text();
 
         // 3. Insertar el contenido en el contenedor
-        document.getElementById("header-container").innerHTML = content;
+        document.getElementById(containerId).innerHTML = content;
 
-        // 4. Cargar el archivo CSS específico para el header
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = '../styles/header.css'; // Ruta al archivo de estilos del header
-        document.head.appendChild(link); // Agregar el <link> al <head>
+        // 4. Cargar el archivo CSS específico para el template
+        if (stylesheetUrl) {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = stylesheetUrl; // Ruta al archivo de estilos del template
+            document.head.appendChild(link); // Agregar el <link> al <head>
+        }
 
-        console.log("Header cargado correctamente.");
+        console.log(`${templateUrl} cargado correctamente.`);
     } catch (error) {
-        console.error('Hubo un problema al cargar el header:', error);
+        console.error(`Hubo un problema al cargar el template ${templateUrl}:`, error);
     }
 }
 
 // Ejecutar cuando se cargue el DOM
-document.addEventListener("DOMContentLoaded", loadHeader);
+document.addEventListener("DOMContentLoaded", () => {
+    // Cargar múltiples templates
+    loadTemplate('header.html', 'header-container', '../styles/header.css');
+    loadTemplate('footer.html', 'footer-container', '../styles/footer.css');
+    loadTemplate('blog.html', 'blog-container', '../styles/blog.css');
+});
