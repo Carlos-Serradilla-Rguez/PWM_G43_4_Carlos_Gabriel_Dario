@@ -30,4 +30,5 @@ document.addEventListener("DOMContentLoaded", () => {
     loadTemplate('header.html', 'header-container', '../styles/header.css');
     loadTemplate('footer.html', 'footer-container', '../styles/footer.css');
     loadTemplate('blog.html', 'blog-container', '../styles/blog.css');
+    loadTemplate('Contenedor_filtro.html', 'filter-container', '../styles/Contenedor_filtro.css');
 });
