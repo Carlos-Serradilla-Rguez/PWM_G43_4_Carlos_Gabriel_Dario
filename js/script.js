@@ -1,35 +1,87 @@
-async function loadTemplate(templateUrl, containerId, stylesheetUrl) {
-    try {
-        // 1. Cargar el archivo del template
-        const response = await fetch(templateUrl); // Ruta al template
-        if (!response.ok) throw new Error("No se pudo cargar el template: " + response.statusText);
+// https://stackoverflow.com/questions/40162907/w3includehtml-sometimes-includes-twice
+/*
+function xLuIncludeFile() {
+    let z, i, a, file, xhttp;
 
-        // 2. Obtener el contenido del template
-        const content = await response.text();
+    z = document.getElementsByTagName("*");
 
-        // 3. Insertar el contenido en el contenedor
-        document.getElementById(containerId).innerHTML = content;
+    for (i = 0; i < z.length; i++) {
+        if (z[i].getAttribute("xlu-include-file")) {
+            a = z[i].cloneNode(false);
+            file = z[i].getAttribute("xlu-include-file");
+            xhttp = new XMLHttpRequest();
 
-        // 4. Cargar el archivo CSS específico para el template
-        if (stylesheetUrl) {
-            const link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.href = stylesheetUrl; // Ruta al archivo de estilos del template
-            document.head.appendChild(link); // Agregar el <link> al <head>
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState === 4 && xhttp.status === 200) {
+                    a.removeAttribute("xlu-include-file");
+                    a.innerHTML = xhttp.responseText;
+                    z[i].parentNode.replaceChild(a, z[i]);
+                    xLuIncludeFile();
+                }
+            }
+
+            // false makes the send operation synchronous, which solves a problem
+            // when using this function in short pages with Chrome. But it is
+            // deprecated on the main thread due to its impact on responsiveness.
+            // This call may end up throwing an exception someday.
+
+            xhttp.open("GET", file, false);
+            xhttp.send();
+
+            return;
         }
+    }
+}
+*/
 
-        console.log(`${templateUrl} cargado correctamente.`);
-    } catch (error) {
-        console.error(`Hubo un problema al cargar el template ${templateUrl}:`, error);
+async function xLuIncludeFile() {
+    let z = document.getElementsByTagName("*");
+
+    for (let i = 0; i < z.length; i++) {
+        if (z[i].getAttribute("xlu-include-file")) {
+            let a = z[i].cloneNode(false);
+            let file = z[i].getAttribute("xlu-include-file");
+
+            try {
+                let response = await fetch(file);
+                if (response.ok) {
+
+                    let content = await response.text();
+
+                    // Si el archivo es una plantilla, reemplazamos los placeholders
+                    if (file === "article-template.html") {
+                        let articleData = {
+                            title: z[i].getAttribute("data-title"),
+                            subtitle: z[i].getAttribute("data-subtitle"),
+                            date: z[i].getAttribute("data-date"),
+                            displayDate: z[i].getAttribute("data-display-date"),
+                            content: z[i].getAttribute("data-content"),
+                            image: z[i].getAttribute("data-image"),
+                            imageCaption: z[i].getAttribute("data-image-caption")
+                        };
+
+                        content = content.replace(/{{title}}/g, articleData.title)
+                            .replace(/{{subtitle}}/g, articleData.subtitle)
+                            .replace(/{{date}}/g, articleData.date)
+                            .replace(/{{displayDate}}/g, articleData.displayDate)
+                            .replace(/{{content}}/g, articleData.content)
+                            .replace(/{{image}}/g, articleData.image || '')
+                            .replace(/{{imageCaption}}/g, articleData.imageCaption || '');
+                    }
+
+
+                    a.removeAttribute("xlu-include-file");
+                    //a.innerHTML = await response.text();
+                    a.innerHTML = content;
+                    z[i].parentNode.replaceChild(a, z[i]);
+                    xLuIncludeFile();
+                }
+            } catch (error) {
+                console.error("Error fetching file:", error);
+            }
+
+            return;
+        }
     }
 }
 
-// Ejecutar cuando se cargue el DOM
-document.addEventListener("DOMContentLoaded", () => {
-    // Cargar múltiples templates
-    loadTemplate('header.html', 'header-container', '../styles/header.css');
-    loadTemplate('footer.html', 'footer-container', '../styles/footer.css');
-    loadTemplate('blog.html', 'blog-container', '../styles/blog.css');
-    loadTemplate('Contenedor_filtro.html', 'filter-container', '../styles/Contenedor_filtro.css');
-    loadTemplate('Imagen_Rotativa.html', 'rotativa-container', '../styles/Imagen_Rotativa.css');
-});
