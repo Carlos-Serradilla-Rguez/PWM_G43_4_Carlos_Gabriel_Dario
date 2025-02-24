@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+.lorem {
+    background: #f8f8f8;
+    padding: 20px;
+    text-align: center;
+}
+
+
+.login-bar {
+    background: #ffffff;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-bar form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-bar input {
+    margin: 5px 0;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+}
+
+.login-bar button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #ffffff;
+    cursor: pointer;
+    width: 220px;
+}
