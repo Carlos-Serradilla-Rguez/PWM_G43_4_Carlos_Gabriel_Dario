@@ -1,0 +1,28 @@
+@import url('Font.css');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Leto', sans-serif;
+}
+
+body {
+    text-align: justify-all;
+}
+
+.Bloque-Blog {
+    margin: 5em;
+    display: flex;
+}
+
+#blog-container {
+    width: 80%;
+}
+
+#filter-container {
+    width: 20%;
+}
+
+#rotativa-container {
+    width: 100%;
+}

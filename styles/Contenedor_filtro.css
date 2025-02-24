@@ -7,8 +7,9 @@
     border: 2px solid black; /* Borde para crear el rectángulo */
     border-radius: 8px;
     padding: 10px;
-    height: 200px;
-    width: 250px; /* Ancho del rectángulo */
+    min-height: 100em;
+    height: 100%;
+    width: 100%;
 
 }
 
