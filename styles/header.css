@@ -16,7 +16,6 @@ header {
     background-color: #888888;
     min-height: 100px;
     height: 100px;
-    position: fixed;
     background-attachment: fixed;
     align-items: center;
 }
