@@ -1,0 +1,42 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    text-align: center;
+}
+
+#buscador-contenedor {
+    margin: 20px;
+}
+
+
+/*
+Apartado recomendaciones
+ */
+.recomendaciones-contenedor {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 0 5em 0;
+}
+
+.elemento-recomendacion {
+    width: 25%;
+    text-align: center;
+    border: 1px solid black;
+    box-sizing: border-box; /* Evita que padding y borde aumenten el tamaño */
+}
+
+.centrado {
+    height: 24%;
+}
+
+#boton-recomendaciones {
+    border: 1px solid black;
+    padding: 1%;
+    border-radius: 15px;
+    width:50%;
+    cursor: pointer;
+}
