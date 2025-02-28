@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Aseguramos que los elementos se organicen en columna */
+    margin-top: 5em; /* Añadir margen superior */
+    margin-bottom: 5em; /* Añadir margen inferior */
+    width: 100%; /* Aseguramos que el contenedor ocupe todo el ancho */
+}
+
+.card {
+    width: 100%;
+    max-width: 400px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    max-height: 300px;
+}
+
+.name {
+    margin-top: 10px;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #333;
+}
+
+.age {
+    font-size: 1.2em;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.bio {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+}
+
+button {
+    background-color: #fff;
+    border: 2px solid #e0e0e0;
+    border-radius: 50%;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+.like {
+    border-color: #34b7f1;
+}
+
+.dislike {
+    border-color: #ff6b6b;
+}
+
+footer {
+    font-size: 0.9em;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
