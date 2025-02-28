@@ -1,0 +1,45 @@
+@import url("/PWM_G43_4_Carlos_Gabriel_Dario/styles/Font.css");
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Leto", sans-serif;
+}
+
+main {
+    text-align: center;
+    object-position: center;
+}
+
+#Usuario-Descripcion {
+    display: flex;
+    width: 100%;
+    height: 20em;
+    gap: 5em;
+    margin: 2em auto;
+    border: 1px solid black;
+}
+
+
+#CarteleraPerfil {
+    height: auto;
+    width: auto;
+    border: 1px solid black;
+    margin: 2em auto 2em 15%;
+}
+
+#Informacion-Usuario {
+    height: auto;
+    text-align: left;
+    width: 80%;
+    margin: 2em 15% 2em auto;
+}
+
+.ruleta {
+    margin: 4em;
+}
+
+#Nombre-Usuario {
+    font-size: 3em;
+    padding-bottom: 1em;
+}
