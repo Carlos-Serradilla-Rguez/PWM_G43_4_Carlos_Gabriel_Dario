@@ -27,4 +27,14 @@ main {
 
 }
 
+#template-label{
+    display: flex;
+    flex-direction: row;
+    width: 17%;
+    position: absolute;
+    top: 17%;
+    left: 3%;
+
+
+}
 
