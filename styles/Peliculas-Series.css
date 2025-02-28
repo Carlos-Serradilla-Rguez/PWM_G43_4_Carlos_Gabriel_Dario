@@ -1,4 +1,4 @@
-@import url("/styles/Font.css");
+@import "Font.css";
 
 * {
     padding: 0;
@@ -7,98 +7,24 @@
 }
 
 main {
-    text-align: center;
-}
-
-#buscador-contenedor {
-    margin: 20px;
-}
-
-
-/*
-Apartado recomendaciones
- */
-
-.titulos {
-    font-size: 5em;
     display: flex;
-    padding: 20px;
-    font-weight: bold;
-    text-transform: uppercase;
-    background: linear-gradient(45deg, #040000, #f4f4f4);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    flex-direction: column;
+    align-items: flex-start; /* Alinea todo a la izquierda */
+    padding-left: 20px; /* Espacio desde el borde izquierdo */
 }
 
-.recomendaciones-contenedor {
+.Ajustes_label, .Ajustes {
     display: flex;
-    width: 100%;
-    height: 35em;
-    box-sizing: border-box;
-    padding: 0 0 5em 0;
+    flex-direction: row; /* Elementos en línea */
+    align-items: center; /* Asegura que tengan la misma altura */
+    gap: 10px; /* Espacio entre los elementos */
 }
 
-.elemento-recomendacion {
-    width: 25%;
-    text-align: center;
-    border: 1px solid black;
-    box-sizing: border-box; /* Evita que padding y borde aumenten el tamaño */
-}
+#template-label, #template-ajustes {
+    width: auto; /* Ajusta automáticamente según su contenido */
+    max-width: 300px; /* Evita que sea muy ancho */
+    height: auto; /* Ajusta según contenido */
 
-.centrado {
-    height: 24%;
-}
-
-#boton-recomendaciones {
-    border: 1px solid black;
-    padding: 1%;
-    border-radius: 15px;
-    width:50%;
-    cursor: pointer;
-}
-
-/*
-   Apartado más vistos
- */
-
-#texto-masvistos {
-    font-size: 4em;
-    padding-top: 5%;
-}
-
-.masvistos-contenedor {
-    display: flex;
-    width: 90%;
-    margin: 0 auto;
-    text-align: center;
-    justify-content: space-between;
-}
-
-.elemento-masvisto {
-    margin: 5%;
-    border: 1px solid black;
-    height: 15em;
 }
 
 
-/*
-    Apartado Main Blog
- */
-
-#texto-mainblog {
-    font-size: 4em;
-    padding-top: 5%;
-}
-
-.mainblog-contenedor {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width:100%;
-    margin: auto;
-    padding-bottom: 5em;
-}
-
-#blog-contenedor {
-    width: 80%;
-}
