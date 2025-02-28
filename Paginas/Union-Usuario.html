@@ -1,10 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Red Social dedicada a los amantes del cine.">
+
+    <title>CineMatch</title>
+    <link rel="shortcut icon" href="../img/Logo_ChatGPT.png" type="/image/x-icon">
+
+    <link rel="stylesheet" href="../styles/styles.css">
+    <script src="../js/script.js"></script>
 </head>
 <body>
+<header>
+    <div id="header-contenedor" xlu-include-file="../templates/header.html"></div>
+</header>
 
+<main>
+    <div id="buscador-contenedor" xlu-include-file="../templates/buscador.html"></div>
+
+    <h1 class="titulos">RECOMENDACIONES</h1>
+    <div class="recomendaciones-contenedor">
+        <div class="elemento-recomendacion" id="imagen1-contenedor" xlu-include-file="../templates/Pelicula_Sinopsis.html"></div>
+        <div class="elemento-recomendacion" id="imagen2-contenedor" xlu-include-file="../templates/Pelicula_Sinopsis.html"></div>
+        <div class="elemento-recomendacion" id="imagen3-contenedor" xlu-include-file="../templates/Pelicula_Sinopsis.html"></div>
+        <div class="elemento-recomendacion">
+            <div class="centrado"></div>
+            <div class="centrado"></div>
+            <div class="centrado">
+                <button id="boton-recomendaciones">¡VER MAS!</button>
+            </div>
+            <div class="centrado"></div>
+        </div>
+    </div>
+
+    <h1 class="titulos" id="texto-masvistos">Más Vistos</h1>
+    <div class="masvistos-contenedor">
+        <div class="elemento-masvisto" id="imagen4-contenedor" xlu-include-file="../templates/Pelicula_Sinopsis.html"></div>
+        <div class="elemento-masvisto" id="imagen5-contenedor" xlu-include-file="../templates/Pelicula_Sinopsis.html"></div>
+        <div class="elemento-masvisto" id="imagen6-contenedor" xlu-include-file="../templates/Pelicula_Sinopsis.html"></div>
+        <div class="elemento-masvisto" id="imagen7-contenedor" xlu-include-file="../templates/Pelicula_Sinopsis.html"></div>
+        <div class="elemento-masvisto" id="imagen8-contenedor" xlu-include-file="../templates/Pelicula_Sinopsis.html"></div>
+    </div>
+
+
+    <h1 class="titulos" id="texto-mainblog">¡Sigue el hilo!</h1>
+    <div class="mainblog-contenedor">
+        <div id="blog-contenedor" xlu-include-file="../templates/blog.html"></div>
+    </div>
+</main>
+
+<footer>
+    <div id="footer-contendor" xlu-include-file="../templates/footer.html"></div>
+</footer>
 </body>
+
+<script>
+    xLuIncludeFile();
+</script>
 </html>
