@@ -1,0 +1,32 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Leto", sans-serif;
+}
+
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    text-align: center;
+    object-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#Contenedor-Login {
+    width: 30%;
+    height: auto;
+    border: 1px solid black;
+    margin: 5em auto;
+}
+
+footer {
+    color: white;
+    text-align: center;
+}
