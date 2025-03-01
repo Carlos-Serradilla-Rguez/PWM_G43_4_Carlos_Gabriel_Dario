@@ -18,21 +18,39 @@
 </header>
 
 <main>
+
   <h1 class="titulo">Reseñas de películas y series.</h1>
+
+  <div id="buscador-contenedor" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/buscador.html"></div>
+
   <div class="principal">
-    <div class="hilos">
-      <div class="elemento-Hilo" id="Hilo1-contenedor" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/blog.html"></div>
-      <div class="elemento-Hilo" id="Hilo2-contenedor" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/blog.html"></div>
-      <div class="elemento-Hilo" id="Hilo3-contenedor" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/blog.html"></div>
-      <div class="elemento-Hilo">
-        <div class="centrado"></div>
-        <div class="centrado"></div>
-        <div class="centrado"></div>
+    <div class="bloque">
+      <div class="hilos">
+        <div class="elemento-Hilo" id="Hilo1-contenedor" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/blog.html"></div>
+        <div class="elemento-Hilo" id="Hilo2-contenedor" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/blog.html"></div>
+        <div class="elemento-Hilo" id="Hilo3-contenedor" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/blog.html"></div>
+        <div class="elemento-Hilo">
+          <div class="centrado"></div>
+          <div class="centrado"></div>
+          <div class="centrado"></div>
+        </div>
       </div>
+
+      <div id="boton-pagina">
+        <a href="#" class="boton">&laquo; Anterior</a>
+        <a href="#" class="boton">1</a>
+        <a href="#" class="boton">2</a>
+        <a href="#" class="boton">3</a>
+        <a href="#" class="boton">Siguiente &raquo;</a>
+      </div>
+
     </div>
+
 
     <div class="Caja" id="caja" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Contenedor_filtro.html"></div>
   </div>
+
+
 
 
 </main>
