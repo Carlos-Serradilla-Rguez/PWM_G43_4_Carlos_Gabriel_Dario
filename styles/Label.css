@@ -2,7 +2,6 @@
 body {
     font-family: 'Lato', sans-serif;
     padding: 0;
-    display: flex;
     justify-content: flex-end;
     align-items: flex-start;
     margin: 50px;
