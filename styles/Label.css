@@ -2,15 +2,13 @@
 body {
     font-family: 'Lato', sans-serif;
     padding: 0;
-    justify-content: flex-end;
-    align-items: flex-start;
     margin: 50px;
-
 }
+
 
 /* Estilo del contenedor desplegable */
 .dropdown {
-    width: auto;
+    width: 200px;
     background: white;
     padding: 10px;
     border: 2px solid black;
@@ -18,8 +16,8 @@ body {
     cursor: pointer;
     list-style: none;
     position: relative;
+    width: 200px;
     text-align: center;
-    margin: 2em;
 }
 
 /* Estilo del título del desplegable */

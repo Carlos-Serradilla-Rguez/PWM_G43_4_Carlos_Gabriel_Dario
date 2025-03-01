@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Red Social dedicada a los amantes del cine.">
+
+    <title>CineMatch</title>
+    <link rel="shortcut icon" href="/img/Logo_ChatGPT.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="/styles/Peliculas-Series.css">
+    <script src="/js/script.js"></script>
+</head>
+<body>
+<header>
+    <div id="header-contenedor" xlu-include-file="/templates/header.html"></div>
+</header>
+
+<main>
+    <h1 id="Titulo-Series/Peliculas-Series">Catalogo de Peliculas/Series</h1>
+
+    <div class="Ajustes">
+        <div class="Ajustes-1">
+               <div id="template-ajustes" xlu-include-file="/templates/Contenedor_filtro.html"></div>
+        </div>
+        <div class="Ajustes_label">
+            <div id="template-label" xlu-include-file="../templates/Label.html"></div>
+        </div>
+        <div class="imagen-ajustes-container">
+            <div class="imagen-ajustes" id="imagen4-contenedor" xlu-include-file="/templates/Pelicula_Sinopsis.html"></div>
+            <div class="imagen-ajustes" id="imagen4-contenedor_1" xlu-include-file="/templates/Pelicula_Sinopsis.html"></div>
+            <div class="imagen-ajustes" id="imagen4-contenedor_2" xlu-include-file="/templates/Pelicula_Sinopsis.html"></div>
+            <div class="imagen-ajustes" id="imagen4-contenedor_3" xlu-include-file="/templates/Pelicula_Sinopsis.html"></div>
+
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div id="footer-contendor" xlu-include-file="/templates/footer.html"></div>
+</footer>
+</body>
+
+<script>
+    xLuIncludeFile();
+</script>
+</html>
