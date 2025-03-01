@@ -23,6 +23,7 @@ body {
 
 .principal {
     display: flex;
+    height: auto;
 }
 
 .hilos {
@@ -39,12 +40,20 @@ body {
     border-bottom: 1px solid #ccc;
 }
 
-.Ajustes{
+.Caja{
     width: 20%;
-    height: 100%;
+    height: auto;
+    margin: 2em;
 }
 
-
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #ccc;
+    text-align: center;
+    padding: 10px;
+}
 
 
 
