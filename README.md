@@ -16,7 +16,7 @@ Red social de cine. Incluye un foro con opiniones de los usuarios sobre películ
 - Creación de Listas: El usuario será capaz de crear dos tipos de listas, una donde aparezcan aquellos títulos que ha visto para que a la hora de descubrir un nuevo título no se le recomiende, y otra donde se almacenarán aquellos títulos que se le han recomendado y aún están por ver.
 
 ## Página de inicio de la aplicación web
-- Index.html
+- Index.html (Se recomienda abrirlo con Microsoft Edge)
 
 ## Nombre y ubicación de Mockups y StoryBoard
 - Mockups: ubicación en el directorio Mockups. En este directorio se encuentran los Mockups de las distintas páginas de la aplicación web y un pdf que contiene todos los mockups unidos.
