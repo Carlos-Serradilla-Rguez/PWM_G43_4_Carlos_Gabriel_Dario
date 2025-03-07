@@ -43,3 +43,10 @@ main {
     font-size: 3em;
     padding-bottom: 1em;
 }
+
+#CerrarSesion {
+    margin-bottom: 3em;
+    height: 3em;
+    width: 10em;
+    font-size: 1em;
+}
