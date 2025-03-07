@@ -27,3 +27,7 @@ body {
     border-right: #000000 solid 2px;
     margin-right: 2em;
 }
+
+a {
+    text-decoration: none;
+}
