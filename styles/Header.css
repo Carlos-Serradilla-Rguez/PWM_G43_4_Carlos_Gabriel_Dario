@@ -81,3 +81,10 @@ nav ul li a {
     font-size: 20px;
     padding: 10px;
 }
+
+@media (max-width: 700px) {
+    .nav-list a {
+        font-size: 10px;
+        transition: 1s;
+    }
+}

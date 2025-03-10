@@ -102,3 +102,9 @@ Apartado recomendaciones
 #blog-contenedor {
     width: 80%;
 }
+
+@media (max-width: 500px) {
+    .titulos {
+        font-size: 10px;
+    }
+}
