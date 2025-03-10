@@ -69,6 +69,7 @@ header li {
     max-width: 100%;
     transition: 0.3s;
     margin: 0 4%;
+    line-height: 0.5;
 }
 
 header li:hover {
