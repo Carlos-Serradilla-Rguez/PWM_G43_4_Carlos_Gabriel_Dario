@@ -4,26 +4,31 @@
     padding: 0;
 }
 
+body {
+    margin: 0; /* Asegura que no haya margen en el body */
+}
+
 .gallery-container {
-    width: 100%;
-    overflow-x: scroll; /* 🔹 Activa el desplazamiento */
+    overflow-x: auto;
     scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
     display: flex;
-    border: 2px solid black; /* Solo para visualizar */
-    white-space: nowrap; /* 🔹 Evita que las imágenes se rompan en varias filas */
+    white-space: nowrap; /* Evita saltos de línea */
+    margin-left: 0; /* Asegura que no haya margen a la izquierda */
+    padding-left: 0; /* Asegura que no haya padding a la izquierda */
+    justify-content: flex-start; /* Alinea el contenido a la izquierda */
 }
 
 .gallery {
-    display: flex;
+    display: flex; /* Asegura que las imágenes estén en una sola fila */
     gap: 20px;
     list-style: none;
-    width: max-content; /* 🔹 Asegura que la galería sea más ancha que el contenedor */
+    padding: 10px 10px 10px 0; /* Elimina padding izquierdo */
+    width: max-content; /* El contenido ocupa solo el espacio necesario */
 }
 
 .gallery li {
-    scroll-snap-align: center;
-    flex: 0 0 auto;
+    flex: 0 0 auto; /* Mantiene el tamaño de los elementos */
+    scroll-snap-align: start;
 }
 
 .gallery img {
@@ -33,15 +38,10 @@
 }
 
 .gallery-container::-webkit-scrollbar {
-    display: none; /* 🔹 Oculta la barra de desplazamiento */
+    height: 8px; /* Hace que la barra sea visible */
 }
 
-.bloque {
-    display: flex;
-    height: 200px;
-}
-
-.botones {
-    height: 200px;
-    width: 2%;
+.gallery-container::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
 }
