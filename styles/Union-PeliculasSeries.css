@@ -9,10 +9,9 @@ main {
     text-align: center;
 }
 
-
-#Titulo-Series-Peliculas-Series{
-    font-size: 20px;
-    margin: 3em auto 1.5em 2em;
+#Titulo-Series-Peliculas-Series {
+    font-size: clamp(5vw, 5vw, 15px); /* Usa unidades relativas como vw (ancho de la pantalla) */
+    margin: 1em auto 1.5em 2em;
     font-weight: bold;
     text-transform: uppercase;
     text-align: left;
@@ -27,8 +26,9 @@ main {
 
 .Ajustes {
     display: flex;
-    height: auto;
-    width: auto;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten automáticamente en pantallas pequeñas */
+    justify-content: space-between; /* Distribuye los elementos igualmente */
+    gap: 1em; /* Espacio entre los elementos */
     margin: 2em;
 }
 
@@ -36,22 +36,24 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    flex: 1 1 auto; /* Permite que el bloque se expanda según el espacio disponible */
     margin-left: 2em;
 }
 
 #template-ajustes {
     display: flex;
-    width: 20%;
+    flex: 1 1 20%; /* Hace que el bloque ocupe el 20% del espacio disponible */
     height: auto;
-    margin: 2em 2em;
+    margin: 2em;
+    justify-content: center;
 }
 
 .imagen-ajustes-container {
-    width: 100%;
-    margin: 2em 2em 2em 0;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap; /* Permite que las imágenes se acomoden en una fila */
+    gap: 1em; /* Espacio entre las imágenes */
+    margin: 2em 0;
 }
 
 #boton-pagina {
@@ -73,7 +75,3 @@ main {
 .boton:hover {
     background-color: #595555;
 }
-
-
-
-
