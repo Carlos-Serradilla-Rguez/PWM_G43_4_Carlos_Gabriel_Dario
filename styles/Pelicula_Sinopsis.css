@@ -33,7 +33,7 @@
 .synopsis {
     padding: 20px;
     text-align: center;
-    font-size: 16px;
+    font-size: 1em;
     line-height: 1.5em; /* Controla la separación entre líneas */
     display: -webkit-box; /* Habilita el uso de line-clamp */
     -webkit-box-orient: vertical; /* Orientación vertical del texto */

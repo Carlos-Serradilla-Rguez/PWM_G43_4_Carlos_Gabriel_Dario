@@ -15,12 +15,12 @@ body {
     color: white;
     text-decoration: none;
     margin: 0 15px;
-    font-size: 16px;
+    font-size: clamp(5px, 2vw, 16px);
 }
 
 
 .footer .copyright {
     margin-top: 10px;
-    font-size: 14px;
+    font-size: clamp(5px, 2vw, 16px);
     opacity: 0.8;
 }

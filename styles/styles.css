@@ -17,10 +17,10 @@ main {
 
 /*
 Apartado recomendaciones
- */
+*/
 
 .titulos {
-    font-size: 5em;
+    font-size: 5vw;
     display: flex;
     padding: 20px;
     font-weight: bold;
@@ -36,6 +36,8 @@ Apartado recomendaciones
     height: 35em;
     box-sizing: border-box;
     padding: 0 0 5em 0;
+    flex-wrap: wrap; /* Asegura que los elementos se acomoden en filas si no hay suficiente espacio */
+    justify-content: space-between; /* Espacio entre los elementos */
 }
 
 .elemento-recomendacion {
@@ -53,16 +55,17 @@ Apartado recomendaciones
     border: 1px solid black;
     padding: 1%;
     border-radius: 15px;
-    width:50%;
+    width: 50%;
     cursor: pointer;
 }
 
+
 /*
-   Apartado más vistos
- */
+Apartado más vistos
+*/
 
 #texto-masvistos {
-    font-size: 4em;
+    font-size: 5vw;
     padding-top: 5%;
 }
 
@@ -82,11 +85,11 @@ Apartado recomendaciones
 
 
 /*
-    Apartado Main Blog
- */
+Apartado Main Blog
+*/
 
 #texto-mainblog {
-    font-size: 4em;
+    font-size: 5vw;
     padding-top: 5%;
 }
 
@@ -94,11 +97,50 @@ Apartado recomendaciones
     display: flex;
     align-items: center;
     justify-content: center;
-    width:100%;
+    width: 100%;
     margin: auto;
     padding-bottom: 5em;
 }
 
 #blog-contenedor {
     width: 80%;
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 600px) {
+    .titulos, #texto-mainblog, #texto-masvistos {
+        align-items: center;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .recomendaciones-contenedor {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+        grid-template-rows: repeat(2, 1fr); /* 2 filas */
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .elemento-recomendacion {
+        width: 100%; /* Asegura que cada elemento ocupe el 100% de su celda */
+        box-sizing: border-box; /* Evita que padding y borde aumenten el tamaño */
+        border: 1px solid #ddd; /* Color de borde más suave */
+        padding: 10px; /* Añadido para un poco de espacio interior */
+        text-align: center; /* Centrado del contenido */
+    }
+
+    .elemento-recomendacion img {
+        width: 100%;
+        height: auto;
+        object-fit: cover; /* Asegura que las imágenes cubran el área sin distorsión */
+        border-radius: 8px; /* Bordes redondeados en las imágenes */
+    }
+
+    #boton-recomendaciones {
+        width: 80%;
+        padding: 12px;
+        font-size: 1.2em;
+    }
 }
