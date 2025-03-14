@@ -1,9 +1,10 @@
-@import url("/PWM_G43_4_Carlos_Gabriel_Dario/styles/Font.css");
+@import url("../styles/Font.css");
 
 * {
     padding: 0;
     margin: 0;
     font-family: "Leto", sans-serif;
+    box-sizing: border-box;
 }
 
 main {
@@ -13,30 +14,31 @@ main {
 
 #Usuario-Descripcion {
     display: flex;
+    flex-wrap: nowrap; /* Evita que los elementos se apilen en pantallas pequeñas */
     width: 100%;
-    height: 20em;
-    gap: 5em;
+    height: auto;
+    gap: 2em;
     margin: 2em auto;
     border: 1px solid black;
+    align-items: center;
+    justify-content: center;
 }
 
-
-#CarteleraPerfil {
+#FotoPerfil {
     height: auto;
     width: auto;
     border: 1px solid black;
     margin: 2em auto 2em 15%;
+    transition: height 1s ease-out;
+    flex-shrink: 0; /* Evita que la imagen se reduzca demasiado */
 }
 
 #Informacion-Usuario {
-    height: auto;
+    flex: 1;
+    min-width: 300px;
+    max-width: 60%;
     text-align: left;
-    width: 80%;
-    margin: 2em 15% 2em auto;
-}
-
-.ruleta {
-    margin: 4em;
+    margin: 2em;
 }
 
 #Nombre-Usuario {
@@ -44,9 +46,37 @@ main {
     padding-bottom: 1em;
 }
 
+#Descripcion {
+    overflow: hidden;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    white-space: normal;
+}
+
+.ruleta {
+    margin: 4em;
+}
+
 #CerrarSesion {
     margin-bottom: 3em;
     height: 3em;
     width: 10em;
     font-size: 1em;
+}
+
+@media (max-width: 1000px) {
+    #FotoPerfil {
+        height: 20vw;
+    }
+
+    #Nombre-Usuario {
+        font-size: 5vw;
+        margin: auto;
+        display: inline;
+    }
+
+    #Descripcion {
+        margin-right: 2em;
+    }
 }
