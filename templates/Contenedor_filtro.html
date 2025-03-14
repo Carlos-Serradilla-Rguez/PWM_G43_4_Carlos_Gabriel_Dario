@@ -6,7 +6,12 @@
         <button class="btn-exterior">Lorem ipsum</button>
     </div>
 </div>
-
 <script>
-    xLuIncludeFile();
+    document.addEventListener("DOMContentLoaded", function () {
+        if (typeof xLuIncludeFile === "function") {
+            xLuIncludeFile();
+        } else {
+            console.error("Error: La función xLuIncludeFile no está definida.");
+        }
+    });
 </script>
