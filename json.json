@@ -1,0 +1,82 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Juan Pérez",
+      "email": "juanperez@example.com",
+      "password_hash": "hashed_password",
+      "lista_vistas": [101, 202],
+      "lista_pendientes": [303, 404]
+    },
+    {
+      "id": 2,
+      "nombre": "María López",
+      "email": "marialopez@example.com",
+      "password_hash": "hashed_password",
+      "lista_vistas": [202, 303],
+      "lista_pendientes": [101, 505]
+    }
+  ],
+  "peliculas": [
+    {
+      "id": 101,
+      "titulo": "Inception",
+      "año": 2010,
+      "genero": ["Ciencia Ficción", "Thriller"],
+      "sinopsis": "Un ladrón con la habilidad de entrar en los sueños de las personas recibe la misión de implantar una idea en la mente de un ejecutivo."
+    },
+    {
+      "id": 202,
+      "titulo": "The Matrix",
+      "año": 1999,
+      "genero": ["Ciencia Ficción", "Acción"],
+      "sinopsis": "Un hacker descubre la verdad sobre su realidad y lucha contra un sistema que controla la humanidad."
+
+    }
+  ],
+  "series": [
+    {
+      "id": 303,
+      "titulo": "Breaking Bad",
+      "año": 2008,
+      "genero": ["Drama", "Crimen"],
+      "sinopsis": "Un profesor de química con cáncer terminal comienza a fabricar metanfetaminas para asegurar el futuro de su familia."
+
+    },
+    {
+      "id": 404,
+      "titulo": "Stranger Things",
+      "año": 2016,
+      "genero": ["Ciencia Ficción", "Misterio"],
+      "sinopsis": "Un grupo de niños investiga la desaparición de su amigo y descubre un mundo sobrenatural oculto en su ciudad."
+
+    }
+  ],
+  "foro": [
+    {
+      "id": 1,
+      "usuario_id": 1,
+      "titulo": "¿Cuál es la mejor película de ciencia ficción?",
+      "contenido": "Estoy buscando recomendaciones de películas de ciencia ficción, ¿alguna sugerencia?"
+
+    },
+    {
+      "id": 2,
+      "usuario_id": 2,
+      "titulo": "Opinión sobre Breaking Bad",
+      "contenido": "¿Creen que es la mejor serie de la historia? Me parece que tiene uno de los mejores desarrollos de personajes."
+    }
+  ],
+  "descubrimiento": [
+    {
+      "id": 1,
+      "usuario_id": 1,
+      "sugerencias": [202, 303, 505]
+    },
+    {
+      "id": 2,
+      "usuario_id": 2,
+      "sugerencias": [101, 404, 606]
+    }
+  ]
+}
