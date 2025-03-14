@@ -12,7 +12,7 @@ main {
     object-position: center;
 }
 
-#Usuario-Descripcion {
+#Pelicula-Descripcion {
     display: flex;
     flex-wrap: nowrap; /* Evita que los elementos se apilen en pantallas pequeñas */
     width: 100%;
@@ -31,14 +31,6 @@ main {
     margin: 2em auto 2em 15%;
     transition: height 0.1s ease-out;
     flex-shrink: 0; /* Evita que la imagen se reduzca demasiado */
-}
-
-#Informacion-Usuario {
-    flex: 1;
-    min-width: 300px;
-    max-width: 60%;
-    text-align: left;
-    margin: 2em;
 }
 
 #Nombre-Pelicula {

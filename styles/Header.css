@@ -10,6 +10,27 @@ body {
     height: 900px;
 }
 
+/* Ocultar menú tradicional en móviles */
+@media (max-width: 765px) {
+    .nav-list {
+        display: none;
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        margin: auto;
+    }
+}
+
+/* Ocultar botón bocadillo en pantallas grandes */
+@media (min-width: 765px) {
+    .menu-container {
+        display: none;
+    }
+}
+
 header {
     text-align: center;
     width: 100%;
@@ -22,7 +43,6 @@ header {
 
 .header-logo {
     max-width: 50%;
-    max-height: 50%;
     height: 50px;
     display: block;
     padding-top: 10px;
@@ -79,13 +99,61 @@ header li:hover {
 nav ul li a {
     text-decoration: none;
     color: white;
-    font-size: 20px;
+    font-size: 1.5vw;
     padding: 10px;
 }
 
-@media (max-width: 700px) {
-    .nav-list a {
-        font-size: 10px;
-        transition: 1s;
-    }
+/*-------------------- Botón Bocadillo --------------------*/
+
+/* Botón flotante */
+.bubble-button {;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 10px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s;
+    background-color: transparent;
+}
+
+.bubble-button:hover {
+    transform: scale(1.1);
+}
+
+/* Menú desplegable */
+.menu {
+    position: absolute;
+    top: auto;
+    left: auto;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 160px;
+    display: none;
+    z-index: 10;
+}
+
+.menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    transition: background 0.3s;
+    z-index: 10;
+}
+
+.menu a:hover {
+    background-color: #e3e3e3;
+}
+
+/* Mostrar el menú cuando está activo */
+.menu.show {
+    display: block;
 }
