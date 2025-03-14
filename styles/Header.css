@@ -15,6 +15,13 @@ body {
     .nav-list {
         display: none;
     }
+
+    header {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        margin: auto;
+    }
 }
 
 /* Ocultar botón bocadillo en pantallas grandes */
@@ -98,16 +105,11 @@ nav ul li a {
 
 /*-------------------- Botón Bocadillo --------------------*/
 
-.menu-container {
-    position: fixed;
-    margin: 1em
-}
-
 /* Botón flotante */
 .bubble-button {;
     color: black;
     border: none;
-    border-radius: 50%;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 10px;
     width: 50px;
@@ -115,8 +117,8 @@ nav ul li a {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s;
+    background-color: transparent;
 }
 
 .bubble-button:hover {
