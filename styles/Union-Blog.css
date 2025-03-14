@@ -28,12 +28,15 @@ body {
 
 .principal {
     display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
     height: auto;
     margin: 2em 0;
 }
 
-.bloque{
-    width: 100%;
+.bloque {
+    flex-grow: 2;
+    min-width: 300px;
 }
 
 .hilos {
@@ -50,10 +53,12 @@ body {
     border-bottom: 1px solid #ccc;
 }
 
-.Caja{
+.Caja {
     width: 20%;
+    min-width: 200px;
     height: auto;
     margin: 0 2em;
+    flex-grow: 1;
 }
 
 .footer {
@@ -71,7 +76,7 @@ body {
     margin-top: 20px;
 }
 
-/* Estilo de los botones */
+
 .boton {
     padding: 10px 15px;
     border-radius: 5px;
@@ -90,7 +95,21 @@ body {
 
 }
 
+@media screen and (max-width: 768px) {
+    .principal {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
 
+    .Caja {
+        width: 90%;
+        margin: 1em 0;
+    }
+
+    .bloque {
+        width: 100%;
+    }
+}
 
 
 
