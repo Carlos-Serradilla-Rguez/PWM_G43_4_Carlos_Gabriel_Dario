@@ -9,15 +9,15 @@ function loadTemplate(templatePath, containerId) {
 }
 
 // Función para cargar dinámicamente elementos con el template Pelicula_Sinopsis.html
-async function cargarRecomendaciones(template, cantidad) {
+async function cargarRecomendaciones(template, nombre_contenedor, cantidad) {
     try {
         const response = await fetch(template);
         const templateHTML = await response.text();
 
-        const contenedor = document.getElementById('contenedor-recomendaciones');
+        const contenedor = document.getElementById(nombre_contenedor);
         for (let i = 0; i < cantidad; i++) {
             const nuevoElemento = document.createElement('div');
-            nuevoElemento.classList.add('elemento-recomendacion');
+            nuevoElemento.classList.add(nombre_contenedor);
             nuevoElemento.innerHTML = templateHTML;
 
             contenedor.appendChild(nuevoElemento);
