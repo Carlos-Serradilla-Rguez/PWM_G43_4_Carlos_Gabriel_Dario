@@ -15,9 +15,8 @@ main {
 #Usuario-Descripcion {
     display: flex;
     flex-wrap: nowrap; /* Evita que los elementos se apilen en pantallas pequeñas */
-    width: 100%;
+    width: auto;
     height: auto;
-    gap: 2em;
     margin: 2em auto;
     border: 1px solid black;
     align-items: center;
