@@ -35,25 +35,25 @@ async function cargarRecomendaciones(template, nombre_contenedor, nombre_clase, 
 
 // Función para cargar los templates comunes (header y footer)
 function loadDefaultTemplates() {
-    loadTemplate("../templates/Header.html", 'header-contenedor');
-    loadTemplate("../templates/Footer.html", 'footer-contenedor'); // Cargar las recomendaciones si es necesario// Cargar las recomendaciones si es necesario
+    loadTemplate("/templates/Header.html", 'header-contenedor');
+    loadTemplate("/templates/Footer.html", 'footer-contenedor'); // Cargar las recomendaciones si es necesario// Cargar las recomendaciones si es necesario
 
 }
 
 // Función para cargar el template del body para la página principal (index)
 function loadBodyTemplateIndex() {
-    loadTemplate("../templates/Buscador.html", 'buscador-contenedor');
-    cargarRecomendaciones('../templates/Pelicula_Sinopsis.html', "contenedor-recomendaciones", 'elemento-recomendacion', 3); // Cargar las recomendaciones si es necesario
-    cargarRecomendaciones('../templates/Pelicula_Sinopsis.html', "masvistos-contenedor", 'elemento-masvisto', 5); // Cargar las recomendaciones si es necesario
-    loadTemplate('../templates/Blog.html', "mainblog-contenedor"); // Cargar las recomendaciones si es necesario
+    loadTemplate("/templates/Buscador.html", 'buscador-contenedor');
+    cargarRecomendaciones('/templates/Pelicula_Sinopsis.html', "contenedor-recomendaciones", 'elemento-recomendacion', 3); // Cargar las recomendaciones si es necesario
+    cargarRecomendaciones('/templates/Pelicula_Sinopsis.html', "masvistos-contenedor", 'elemento-masvisto', 5); // Cargar las recomendaciones si es necesario
+    loadTemplate('/templates/Blog.html', "mainblog-contenedor"); // Cargar las recomendaciones si es necesario
 }
 
 function loadBodyTemplatePeliculas() {
-    loadTemplate("../templates/Buscador.html", 'buscador-contenedor');
-    cargarRecomendaciones('../templates/Pelicula_Sinopsis.html', "contenedor-peliculas", 'elementos_peliculas', 20); // Cargar las recomendaciones si es necesario
+    loadTemplate("/templates/Buscador.html", 'buscador-contenedor');
+    cargarRecomendaciones('/templates/Pelicula_Sinopsis.html', "contenedor-peliculas", 'elementos_peliculas', 20); // Cargar las recomendaciones si es necesario
     /*loadTemplate('../templates/Contenedor_filtro.html', 'template-ajustes');*/
-    cargarRecomendaciones('../templates/Contenedor_filtro.html', "template-ajustes", 'contenedor-filtro', 1); // Cargar las recomendaciones si es necesario
-    cargarRecomendaciones('../templates/Label.html', "contenedor-filtro-1", 'elemento-filtro', 5); // Cargar las recomendaciones si es necesario
+    cargarRecomendaciones('/templates/Contenedor_filtro.html', "template-ajustes", 'contenedor-filtro', 1); // Cargar las recomendaciones si es necesario
+    cargarRecomendaciones('/templates/Label.html', "contenedor-filtro-1", 'elemento-filtro', 5); // Cargar las recomendaciones si es necesario
 }
 
 function loadBodyTemplateBlog() {
@@ -61,9 +61,16 @@ function loadBodyTemplateBlog() {
     cargarRecomendaciones('../templates/Blog.html', 'hilos-contenedor', 'elemento_blog', 5);
     cargarRecomendaciones('../templates/Contenedor_filtro.html', "template-filtros", 'contenedor-filtro', 1); // Cargar las recomendaciones si es necesario
     cargarRecomendaciones('../templates/Label.html', "contenedor-filtro-1", 'elemento-filtro', 5); // Cargar las recomendaciones si es necesario
-    cargarRecomendaciones('../templates/Blog.html', "placeholder", 'CrearAdd', 1); // Cargar las recomendaciones si es necesario
-
+    cargarRecomendaciones('../templates/NuevoHilo.html', "placeholder", 'CrearAdd', 1); // Cargar las recomendaciones si es necesario
 }
+
+function loadBodyTemplateUsuario() {
+    loadTemplate('/templates/Imagen_Rotativa.html', 'Ruleta-Similares');
+    loadTemplate('/templates/Imagen_Rotativa.html', 'Ruleta-Recomendaciones');
+}
+
+
+
 
 // Inicialización de la página
 function initializePage() {
@@ -76,6 +83,14 @@ function initializePage() {
         loadBodyTemplatePeliculas();
     } else if (window.location.pathname.includes("Union-Blog.html")) {
         loadBodyTemplateBlog();
+    } else if (window.location.pathname.includes("Union-Descubrir.html")) {
+        //En este caso no tiene ninguna template que añadir salvo las del Default.
+    } else if (window.location.pathname.includes("Union-LogIn.html")) {
+        loadTemplate("/templates/Login.html", "Contenedor-Login");
+    } else if (window.location.pathname.includes("Union-Register.html")) {
+        loadTemplate("/templates/Register.html", "Contenedor-Login");
+    } else if (window.location.pathname.includes("Union-Usuario.html")) {
+        loadBodyTemplateUsuario();
     }
     // Agrega más condiciones aquí si tienes otras páginas
 }

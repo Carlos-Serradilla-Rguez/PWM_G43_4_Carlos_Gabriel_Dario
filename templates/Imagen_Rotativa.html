@@ -1,23 +1,10 @@
 <link rel="stylesheet" href="/PWM_G43_4_Carlos_Gabriel_Dario/styles/Imagen_Rotativa.css">
+<script src="/js/Carga-Templates.js"></script>
 <div class="bloque">
 <section class= "gallery-container">
-    <ul class="gallery">
-        <li><div class="elemento-recomendacion" id="imagen1-contenedor" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Pelicula_Sinopsis.html"></div></li>
-        <li><div class="elemento-recomendacion" id="imagen2-contenedor" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Pelicula_Sinopsis.html"></div></li>
-        <li><div class="elemento-recomendacion" id="imagen3-contenedor" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Pelicula_Sinopsis.html"></div></li>
-        <li><div class="elemento-recomendacion" id="imagen4-contenedor" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Pelicula_Sinopsis.html"></div></li>
-        <li><div class="elemento-recomendacion" id="imagen5-contenedor" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Pelicula_Sinopsis.html"></div></li>
-        <li><div class="elemento-recomendacion" id="imagen6-contenedor" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Pelicula_Sinopsis.html"></div></li>
-        <li><div class="elemento-recomendacion" id="imagen7-contenedor" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Pelicula_Sinopsis.html"></div></li>
-        <li><div class="elemento-recomendacion" id="imagen8-contenedor" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Pelicula_Sinopsis.html"></div></li>
-        <li><div class="elemento-recomendacion" id="imagen9-contenedor" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Pelicula_Sinopsis.html"></div></li>
-        <li><div class="elemento-recomendacion" id="imagen10-contenedor" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Pelicula_Sinopsis.html"></div></li>
-        <li><div class="elemento-recomendacion" id="imagen11-contenedor" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Pelicula_Sinopsis.html"></div></li>
-        <li><div class="elemento-recomendacion" id="imagen12-contenedor" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Pelicula_Sinopsis.html"></div></li>
-        <li><div class="elemento-recomendacion" id="imagen13-contenedor" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Pelicula_Sinopsis.html"></div></li>
-        <li><div class="elemento-recomendacion" id="imagen14-contenedor" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Pelicula_Sinopsis.html"></div></li>
-        <li><div class="elemento-recomendacion" id="imagen15-contenedor" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Pelicula_Sinopsis.html"></div></li>
-        <li><div class="elemento-recomendacion" id="imagen16-contenedor" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Pelicula_Sinopsis.html"></div></li>
-    </ul>
+    <ul class="gallery" id="gallery"></ul>
 </section>
 </div>
+<script>
+    cargarRecomendaciones('/templates/Pelicula_Sinopsis.html', 'gallery', 'imagen-contenedor', 20);
+</script>
