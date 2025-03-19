@@ -56,6 +56,15 @@ function loadBodyTemplatePeliculas() {
     cargarRecomendaciones('../templates/Label.html', "contenedor-filtro-1", 'elemento-filtro', 5); // Cargar las recomendaciones si es necesario
 }
 
+function loadBodyTemplateBlog() {
+    loadTemplate("../templates/Buscador.html", 'buscador-contenedor');
+    cargarRecomendaciones('../templates/Blog.html', 'hilos-contenedor', 'elemento_blog', 5);
+    cargarRecomendaciones('../templates/Contenedor_filtro.html', "template-filtros", 'contenedor-filtro', 1); // Cargar las recomendaciones si es necesario
+    cargarRecomendaciones('../templates/Label.html', "contenedor-filtro-1", 'elemento-filtro', 5); // Cargar las recomendaciones si es necesario
+    cargarRecomendaciones('../templates/Blog.html', "placeholder", 'CrearAdd', 1); // Cargar las recomendaciones si es necesario
+
+}
+
 // Inicialización de la página
 function initializePage() {
     loadDefaultTemplates(); // Siempre cargamos el header y footer
@@ -65,6 +74,8 @@ function initializePage() {
         loadBodyTemplateIndex(); // Para la página principal
     } else if (window.location.pathname.includes("Union-PeliculasSeries.html")) {
         loadBodyTemplatePeliculas();
+    } else if (window.location.pathname.includes("Union-Blog.html")) {
+        loadBodyTemplateBlog();
     }
     // Agrega más condiciones aquí si tienes otras páginas
 }
