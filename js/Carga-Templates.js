@@ -9,18 +9,24 @@ function loadTemplate(templatePath, containerId) {
 }
 
 // Función para cargar dinámicamente elementos con el template Pelicula_Sinopsis.html
-async function cargarRecomendaciones(template, nombre_contenedor, cantidad) {
+async function cargarRecomendaciones(template, nombre_contenedor, nombre_clase, cantidad) {
     try {
         const response = await fetch(template);
         const templateHTML = await response.text();
 
         const contenedor = document.getElementById(nombre_contenedor);
+        const elementoExistente = contenedor.lastElementChild;
         for (let i = 0; i < cantidad; i++) {
             const nuevoElemento = document.createElement('div');
-            nuevoElemento.classList.add(nombre_contenedor);
+            nuevoElemento.classList.add(nombre_contenedor, nombre_clase);
+            nuevoElemento.id =`${nombre_clase}-${i+1}`;
             nuevoElemento.innerHTML = templateHTML;
 
-            contenedor.appendChild(nuevoElemento);
+            if(elementoExistente) {
+                contenedor.insertBefore(nuevoElemento, elementoExistente);
+            } else {
+                contenedor.appendChild(nuevoElemento);
+            }
         }
     } catch (error) {
         console.error('Error al cargar el template de recomendaciones:', error);
@@ -37,13 +43,17 @@ function loadDefaultTemplates() {
 // Función para cargar el template del body para la página principal (index)
 function loadBodyTemplateIndex() {
     loadTemplate("../templates/Buscador.html", 'buscador-contenedor');
-    cargarRecomendaciones('../templates/Pelicula_Sinopsis.html', "contenedor-recomendaciones", 3); // Cargar las recomendaciones si es necesario
+    cargarRecomendaciones('../templates/Pelicula_Sinopsis.html', "contenedor-recomendaciones", 'elemento-recomendacion', 3); // Cargar las recomendaciones si es necesario
+    cargarRecomendaciones('../templates/Pelicula_Sinopsis.html', "masvistos-contenedor", 'elemento-masvisto', 5); // Cargar las recomendaciones si es necesario
+    loadTemplate('../templates/Blog.html', "mainblog-contenedor"); // Cargar las recomendaciones si es necesario
 }
 
 function loadBodyTemplatePeliculas() {
     loadTemplate("../templates/Buscador.html", 'buscador-contenedor');
-    cargarRecomendaciones('../templates/Pelicula_Sinopsis.html', "contenedor-peliculas", 20); // Cargar las recomendaciones si es necesario
-
+    cargarRecomendaciones('../templates/Pelicula_Sinopsis.html', "contenedor-peliculas", 'elementos_peliculas', 20); // Cargar las recomendaciones si es necesario
+    /*loadTemplate('../templates/Contenedor_filtro.html', 'template-ajustes');*/
+    cargarRecomendaciones('../templates/Contenedor_filtro.html', "template-ajustes", 'contenedor-filtro', 1); // Cargar las recomendaciones si es necesario
+    cargarRecomendaciones('../templates/Label.html', "contenedor-filtro-1", 'elemento-filtro', 5); // Cargar las recomendaciones si es necesario
 }
 
 // Inicialización de la página
