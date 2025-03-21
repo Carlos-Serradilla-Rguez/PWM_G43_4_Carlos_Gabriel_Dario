@@ -63,14 +63,34 @@ function loadBodyTemplateBlog() {
     cargarRecomendaciones('../templates/Label.html', "contenedor-filtro-1", 'elemento-filtro', 5); // Cargar las recomendaciones si es necesario
     cargarRecomendaciones('../templates/NuevoHilo.html', "placeholder", 'CrearAdd', 1); // Cargar las recomendaciones si es necesario
 }
-
 function loadBodyTemplateUsuario() {
     loadTemplate('/templates/Imagen_Rotativa.html', 'Ruleta-Similares');
     loadTemplate('/templates/Imagen_Rotativa.html', 'Ruleta-Recomendaciones');
+
+    const observer = new MutationObserver((mutations, obs) => {
+        const similaresContainer = document.querySelector("#Ruleta-Similares .gallery");
+        const recomendacionesContainer = document.querySelector("#Ruleta-Recomendaciones .gallery");
+
+        if (similaresContainer && !similaresContainer.id) {
+            similaresContainer.id = "gallery-similares";
+            console.log("📌 Se encontró Ruleta-Similares, asignando ID y cargando recomendaciones.");
+            cargarRecomendaciones('/templates/Pelicula_Sinopsis.html', 'gallery-similares', 'imagen-contenedor', 10);
+        }
+
+        if (recomendacionesContainer && !recomendacionesContainer.id) {
+            recomendacionesContainer.id = "gallery-recomendaciones";
+            console.log("📌 Se encontró Ruleta-Recomendaciones, asignando ID y cargando recomendaciones.");
+            cargarRecomendaciones('/templates/Pelicula_Sinopsis.html', 'gallery-recomendaciones', 'imagen-contenedor', 10);
+        }
+
+        if (similaresContainer && recomendacionesContainer) {
+            obs.disconnect(); // Se detiene la observación cuando ambas ruletas están listas
+            console.log("✅ Ambas ruletas se han cargado correctamente.");
+        }
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
 }
-
-
-
 
 // Inicialización de la página
 function initializePage() {
