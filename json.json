@@ -22,6 +22,7 @@
       "id": 101,
       "titulo": "Inception",
       "año": 2010,
+      "portada": "/img/Portada_Inception.png",
       "genero": ["Ciencia Ficción", "Thriller"],
       "sinopsis": "Un ladrón con la habilidad de entrar en los sueños de las personas recibe la misión de implantar una idea en la mente de un ejecutivo."
     },
@@ -29,6 +30,7 @@
       "id": 202,
       "titulo": "The Matrix",
       "año": 1999,
+      "portada": "/img/Portada_Matrix.png",
       "genero": ["Ciencia Ficción", "Acción"],
       "sinopsis": "Un hacker descubre la verdad sobre su realidad y lucha contra un sistema que controla la humanidad."
 
@@ -39,6 +41,7 @@
       "id": 303,
       "titulo": "Breaking Bad",
       "año": 2008,
+      "portada": "/img/Portada_BreakingBad.png",
       "genero": ["Drama", "Crimen"],
       "sinopsis": "Un profesor de química con cáncer terminal comienza a fabricar metanfetaminas para asegurar el futuro de su familia."
 
@@ -47,6 +50,7 @@
       "id": 404,
       "titulo": "Stranger Things",
       "año": 2016,
+      "portada": "/img/Portada_StrangerThings.png",
       "genero": ["Ciencia Ficción", "Misterio"],
       "sinopsis": "Un grupo de niños investiga la desaparición de su amigo y descubre un mundo sobrenatural oculto en su ciudad."
 
