@@ -9,39 +9,23 @@
     <link rel="shortcut icon" href="/PWM_G43_4_Carlos_Gabriel_Dario/img/Logo_ChatGPT.png" type="image/x-icon">
 
     <link rel="stylesheet" href="/PWM_G43_4_Carlos_Gabriel_Dario/styles/Union-PeliculasSeries.css">
-    <script src="/PWM_G43_4_Carlos_Gabriel_Dario/js/script.js"></script>
+    <script src="/PWM_G43_4_Carlos_Gabriel_Dario/js/Carga-Templates.js"></script>
     <script defer src="/PWM_G43_4_Carlos_Gabriel_Dario/js/menu.js"></script>
 </head>
 <body>
 <header>
-    <div id="header-contenedor" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/header.html"></div>
+    <div id="header-contenedor"></div>
 </header>
 
 <main>
     <h1 id="Titulo-Series-Peliculas-Series">Catalogo de Peliculas/Series</h1>
 
-    <div id="Buscador-Peliculas" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Buscador.html"></div>
+    <div id="buscador-contenedor"></div>
 
     <div class="Ajustes">
-        <div id="template-ajustes" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Contenedor_filtro.html"></div>
+        <div id="template-ajustes"></div>
         <div id="bloque">
-            <div class="imagen-ajustes-container">
-                <div class="imagen-ajustes" id="imagen4-contenedor" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Pelicula_Sinopsis.html"></div>
-                <div class="imagen-ajustes" id="imagen4-contenedor_1" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Pelicula_Sinopsis.html"></div>
-                <div class="imagen-ajustes" id="imagen4-contenedor_2" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Pelicula_Sinopsis.html"></div>
-                <div class="imagen-ajustes" id="imagen4-contenedor_3" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Pelicula_Sinopsis.html"></div>
-                <div class="imagen-ajustes" id="imagen4-contenedor_4" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Pelicula_Sinopsis.html"></div>
-                <div class="imagen-ajustes" id="imagen4-contenedor_5" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Pelicula_Sinopsis.html"></div>
-                <div class="imagen-ajustes" id="imagen4-contenedor_6" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Pelicula_Sinopsis.html"></div>
-                <div class="imagen-ajustes" id="imagen4-contenedor_7" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Pelicula_Sinopsis.html"></div>
-                <div class="imagen-ajustes" id="imagen4-contenedor_8" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Pelicula_Sinopsis.html"></div>
-                <div class="imagen-ajustes" id="imagen4-contenedor_9" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Pelicula_Sinopsis.html"></div>
-                <div class="imagen-ajustes" id="imagen4-contenedor_10" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Pelicula_Sinopsis.html"></div>
-                <div class="imagen-ajustes" id="imagen4-contenedor_11" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Pelicula_Sinopsis.html"></div>
-                <div class="imagen-ajustes" id="imagen4-contenedor_12" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Pelicula_Sinopsis.html"></div>
-                <div class="imagen-ajustes" id="imagen4-contenedor_13" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Pelicula_Sinopsis.html"></div>
-                <div class="imagen-ajustes" id="imagen4-contenedor_14" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Pelicula_Sinopsis.html"></div>
-            </div>
+            <div class="imagen-ajustes-container" id="contenedor-peliculas"></div>
 
             <div id="boton-pagina">
                 <a href="#" class="boton">&laquo; Anterior</a>
@@ -55,11 +39,8 @@
 </main>
 
 <footer>
-    <div id="footer-contendor" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/footer.html"></div>
+    <div id="footer-contendor"></div>
 </footer>
 </body>
 
-<script>
-    xLuIncludeFile();
-</script>
 </html>
