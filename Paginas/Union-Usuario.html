@@ -6,19 +6,20 @@
     <meta name="description" content="Red Social dedicada a los amantes del cine.">
 
     <title>CineMatch</title>
-    <link rel="shortcut icon" href="/PWM_G43_4_Carlos_Gabriel_Dario/img/Logo_ChatGPT.png" type="/image/x-icon">
+    <link rel="shortcut icon" href="/img/Logo_ChatGPT.png" type="/image/x-icon">
 
-    <link rel="stylesheet" href="/PWM_G43_4_Carlos_Gabriel_Dario/styles/Union-Usuario.css">
-    <script src="/PWM_G43_4_Carlos_Gabriel_Dario/js/script.js"></script>
+    <link rel="stylesheet" href="/styles/Union-Usuario.css">
+    <script src="/js/Carga-Templates.js"></script>
+    <script defer src="/js/menu.js"></script>
 </head>
 <body>
 <header>
-    <div id="header-contenedor" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/header.html"></div>
+    <div id="header-contenedor"></div>
 </header>
 
 <main>
     <div id="Usuario-Descripcion">
-        <img src="/PWM_G43_4_Carlos_Gabriel_Dario/img/Aspa.png" alt="" id="FotoPerfil">
+        <img src="/img/Aspa.png" alt="" id="FotoPerfil">
         <section id="Informacion-Usuario">
             <h1 id="Nombre-Usuario">Lorem ipsum dolor sit, amet.</h1>
             <p id="Descripcion">
@@ -29,12 +30,12 @@
 
     <section id="Mi Lista" class="ruleta">
         <h3 id="Titulo-Similares">Lorem ipsum dolor sit, amet.</h3>
-        <div id="Ruleta-Similares" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Imagen_Rotativa.html"></div>
+        <div id="Ruleta-Similares"></div>
     </section>
 
     <section id="Recomendaciones" class="ruleta">
         <h3 id="Titulo-Recomendaciones">Lorem ipsum dolor sit, amet.</h3>
-        <div id="Ruleta-Recomendaciones" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Imagen_Rotativa.html"></div>
+        <div id="Ruleta-Recomendaciones"></div>
     </section>
 
     <div>
@@ -43,11 +44,8 @@
 </main>
 
 <footer>
-    <div id="footer-contendor" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/footer.html"></div>
+    <div id="footer-contenedor"></div>
 </footer>
 </body>
 
-<script>
-    xLuIncludeFile();
-</script>
 </html>

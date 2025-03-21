@@ -19,7 +19,7 @@ Red social de cine. Incluye un foro con opiniones de los usuarios sobre películ
 - Index.html (Se recomienda abrirlo con Microsoft Edge)
 
 ## Nombre y ubicación de Mockups y StoryBoard
-- Mockups: ubicación en el directorio Mockups. En este directorio se encuentran los Mockups de las distintas páginas de la aplicación web y un pdf que contiene todos los mockups unidos.
+- Mockups: ubicación en el directorio Mockups. En este directorio se encuentran los Mockups de las distintas páginas de la aplicación web. Los Mockups clasificados en carpetas según si son para la versión Movil, Desktop o Tablet 
 - StoryBoard: ubicación en el directorio StoryBoard. StoryBoards contiene un link de google drive a un vídeo del Storyboard.
 
 ## Listado de páginas html del proyecto.
