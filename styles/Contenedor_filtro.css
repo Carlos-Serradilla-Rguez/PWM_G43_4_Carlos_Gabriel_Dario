@@ -1,16 +1,17 @@
 @import "Font.css";
 
-
 .rectangulo {
     display: flex;
     flex-direction: column;  /* Coloca los elementos en columna */
     border: 2px solid black; /* Borde para crear el rectángulo */
+    align-items: center;
+    gap: 10px;
     border-radius: 8px;
     padding: 10px;
     min-height: 8em;
     height: 100%;
     width: 100%;
-
+    position: relative; /* Asegura que los elementos internos se posicionen correctamente */
 }
 
 .btn-exterior {
@@ -22,4 +23,8 @@
     border-radius: 5px;
     cursor: pointer;
     width: 100%; /* Hace que el botón ocupe todo el ancho */
+    position: absolute;
+    bottom: 10px; /* Lo mantiene pegado abajo */
+    left: 50%;
+    transform: translateX(-50%);
 }
