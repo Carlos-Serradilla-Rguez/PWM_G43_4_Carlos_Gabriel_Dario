@@ -6,11 +6,12 @@
     <meta name="description" content="Red Social dedicada a los amantes del cine.">
 
     <title>CineMatch</title>
-    <link rel="shortcut icon" href="/img/Logo_ChatGPT.png" type="/image/x-icon">
+    <link rel="shortcut icon" href="/img/Logo_ChatGPT.png" type="image/x-icon">
 
     <link rel="stylesheet" href="/styles/Union-Usuario.css">
-    <script src="/js/Carga-Templates.js"></script>
+    <script defer src="/js/Carga-Templates.js"></script>
     <script defer src="/js/menu.js"></script>
+
 </head>
 <body>
 <header>
@@ -19,33 +20,39 @@
 
 <main>
     <div id="Usuario-Descripcion">
-        <img src="/img/Aspa.png" alt="" id="FotoPerfil">
+        <img src="/img/Aspa.png" alt="Foto de perfil" id="FotoPerfil">
         <section id="Informacion-Usuario">
-            <h1 id="Nombre-Usuario">Lorem ipsum dolor sit, amet.</h1>
+            <h1 id="Nombre-Usuario">Nombre del Usuario</h1>
             <p id="Descripcion">
-            Lorem ipsum dolor sit amet consectetur adipiscing elit aliquet faucibus tristique ultricies fringilla lacus, facilisi habitasse eget lacinia laoreet dapibus hac pellentesque habitant nec curabitur. Dis lectus ligula congue platea auctor lobortis taciti eros, vestibulum enim curae phasellus proin mollis vitae imperdiet, primis scelerisque venenatis mattis euismod fusce maecenas. Donec hendrerit praesent in suspendisse diam pharetra libero elementum, sapien pellentesque vel curabitur nascetur viverra aptent, dictumst magnis imperdiet nullam orci justo felis.
+                Descripción del usuario. Aquí se mostrará información sobre el usuario y sus intereses cinematográficos.
             </p>
         </section>
     </div>
 
-    <section id="Mi Lista" class="ruleta">
-        <h3 id="Titulo-Similares">Lorem ipsum dolor sit, amet.</h3>
+    <section id="Mi-Lista" class="ruleta">
+        <h3 id="Titulo-Similares">Mi lista</h3>
         <div id="Ruleta-Similares"></div>
     </section>
 
     <section id="Recomendaciones" class="ruleta">
-        <h3 id="Titulo-Recomendaciones">Lorem ipsum dolor sit, amet.</h3>
+        <h3 id="Titulo-Recomendaciones">Recomendaciones para ti</h3>
         <div id="Ruleta-Recomendaciones"></div>
     </section>
 
     <div>
-        <button ID="CerrarSesion">CERRAR SESIÓN</button>
+        <button id="CerrarSesion">CERRAR SESIÓN</button>
     </div>
 </main>
 
 <footer>
     <div id="footer-contenedor"></div>
 </footer>
-</body>
 
+<script>
+    window.onload = function() {
+        initializePage(); // Cargar header, footer y contenido dinámico
+    };
+</script>
+
+</body>
 </html>
