@@ -1,17 +1,8 @@
 <link rel="stylesheet" href="../styles/Contenedor_filtro.css">
 <script src="/PWM_G43_4_Carlos_Gabriel_Dario/js/script.js"></script>
 <div class="container">
-    <div class="rectangulo">
-        <div xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/label.html"></div>
+    <div class="rectangulo" id="contenedor_ajustes">
         <button class="btn-exterior">Lorem ipsum</button>
     </div>
 </div>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        if (typeof xLuIncludeFile === "function") {
-            xLuIncludeFile();
-        } else {
-            console.error("Error: La función xLuIncludeFile no está definida.");
-        }
-    });
-</script>
+<script src="/js/label.js"></script>
