@@ -1,10 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <title>CineMatch - Login</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Red Social dedicada a los amantes del cine.">
-
   <title>CineMatch</title>
   <link rel="shortcut icon" href="/PWM_G43_4_Carlos_Gabriel_Dario/img/Logo_ChatGPT.png" type="/image/x-icon">
 
@@ -17,12 +16,62 @@
   <div id="header-contenedor"></div>
 </header>
 
-<main>
-  <div id="Contenedor-Login"></div>
-</main>
 
+<main>
+  <div class="login-bar">
+    <form id="login-form">
+      <input type="text" id="usuario" placeholder="Correo electrónico" required>
+      <input type="password" id="clave" placeholder="Contraseña" required>
+      <button type="submit">Ingresar</button>
+      <a href="/PWM_G43_4_Carlos_Gabriel_Dario/Paginas/Union-Register.html" id="link-Registro">
+        <p id="TengoCuenta">¿Aún no estás registrado?<br>¡Registrate!</p>
+      </a>
+    </form>
+  </div>
+</main>
 <footer>
   <div id="footer-contenedor"></div>
 </footer>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('login-form');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const usuario = document.getElementById('usuario').value.trim();
+      const clave = document.getElementById('clave').value;
+
+      try {
+        // IMPORTANTE: Asegúrate que json.json esté disponible en esta ruta
+        const response = await fetch('/PWM_G43_4_Carlos_Gabriel_Dario/json.json');
+        const data = await response.json();
+
+        const usuarioEncontrado = data.usuarios.find(u =>
+                u.email === usuario && u.clave === clave
+        );
+
+        if (usuarioEncontrado) {
+          localStorage.setItem("usuario_logueado", "true");
+          localStorage.setItem("usuario_nombre", usuarioEncontrado.nombre);
+          localStorage.setItem("usuario_id", usuarioEncontrado.id);
+          localStorage.setItem("usuario_email", usuarioEncontrado.email);
+
+          window.location.href = "Union-Usuario.html";
+        } else {
+          alert("Correo o contraseña incorrectos.");
+        }
+
+      } catch (err) {
+        console.error("Error cargando json.json:", err);
+        alert("No se pudo acceder a la base de datos.");
+      }
+    });
+  });
+</script>
+
+
 </body>
 </html>
