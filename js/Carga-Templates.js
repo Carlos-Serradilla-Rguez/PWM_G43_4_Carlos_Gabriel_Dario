@@ -111,6 +111,8 @@ function initializePage() {
         loadTemplate("/templates/Register.html", "Contenedor-Login");
     } else if (window.location.pathname.includes("Union-Usuario.html")) {
         loadBodyTemplateUsuario();
+    } else if(window.location.pathname.includes("Union-DescriptorPeliculas.html")) {
+        loadBodyTemplateUsuario();
     }
     // Agrega más condiciones aquí si tienes otras páginas
 }

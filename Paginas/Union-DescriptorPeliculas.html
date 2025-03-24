@@ -9,12 +9,12 @@
   <link rel="shortcut icon" href="/PWM_G43_4_Carlos_Gabriel_Dario/img/Logo_ChatGPT.png" type="/image/x-icon">
 
   <link rel="stylesheet" href="/PWM_G43_4_Carlos_Gabriel_Dario/styles/Union-DescriptorPeliculas.css">
-  <script src="/PWM_G43_4_Carlos_Gabriel_Dario/js/script.js"></script>
-  <script defer src="/PWM_G43_4_Carlos_Gabriel_Dario/js/menu.js"></script>
+  <script defer src="/js/menu.js"></script>
+  <script defer src="/js/Carga-Templates.js"></script>
 </head>
 <body>
 <header>
-  <div id="header-contenedor" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/header.html"></div>
+  <div id="header-contenedor"></div>
 </header>
 
 <main>
@@ -29,23 +29,25 @@
     <button id="Añadir">Añadir a la lista</button>
   </div>
 
-  <section id="Similares" class="ruleta">
-    <h3 id="Titulo-Similares">Lorem ipsum dolor sit, amet.</h3>
-    <div id="Ruleta-Similares" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Imagen_Rotativa.html"></div>
+  <section id="Mi-Lista" class="ruleta">
+    <h3 id="Titulo-Similares">Actores</h3>
+    <div id="Ruleta-Similares"></div>
   </section>
 
   <section id="Recomendaciones" class="ruleta">
-    <h3 id="Titulo-Recomendaciones">Lorem ipsum dolor sit, amet.</h3>
-    <div id="Ruleta-Recomendaciones" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Imagen_Rotativa.html"></div>
+    <h3 id="Titulo-Recomendaciones">Recomendaciones</h3>
+    <div id="Ruleta-Recomendaciones"></div>
   </section>
 </main>
 
 <footer>
-  <div id="footer-contendor" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/footer.html"></div>
+  <div id="footer-contenedor"></div>
 </footer>
 </body>
-
 <script>
-  xLuIncludeFile();
+  window.onload = function() {
+    initializePage(); // Cargar header, footer y contenido dinámico
+  };
 </script>
+
 </html>
