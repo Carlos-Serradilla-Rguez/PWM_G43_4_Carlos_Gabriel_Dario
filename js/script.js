@@ -89,6 +89,7 @@ async function initializePage() {
         loadBodyTemplateBlog();
     } else if (window.location.pathname.includes("Union-Descubrir.html")) {
         //En este caso no tiene ninguna template que añadir salvo las del Default.
+        await cargarDescubrir('/json.json', 'card');
     } else if (window.location.pathname.includes("Union-LogIn.html")) {
         loadTemplate("/templates/Login.html", "Contenedor-Login");
     } else if (window.location.pathname.includes("Union-Register.html")) {
@@ -116,6 +117,7 @@ async function cargarPeliculas(jsonPath, containerBaseId, cantidad = 2) {
         // Recorremos la cantidad de contenedores que queremos actualizar
         for (let i = 1; i <= cantidad; i++) {
             const contenedor = document.getElementById(`${containerBaseId}-${i}`);
+
             if (contenedor) {
                 // Selección aleatoria de una película o serie
                 const itemAleatorio = contenido[Math.floor(Math.random() * contenido.length)];
@@ -138,6 +140,37 @@ async function cargarPeliculas(jsonPath, containerBaseId, cantidad = 2) {
         }
     } catch (error) {
         console.error('Error al cargar contenido aleatorio:', error);
+    }
+}
+
+async function cargarDescubrir(jsonPath, containerBaseId) {
+    try {
+        const response = await fetch(jsonPath);
+        const data = await response.json();
+        const contenido = [...data.peliculas, ...data.series];
+        const contenedor = document.getElementById(containerBaseId);
+        console.log(contenedor);
+        if (contenedor) {
+            const itemAleatorio = contenido[Math.floor(Math.random()*contenido.length)];
+            const imagen = contenedor.querySelector('img');
+            const sinopsis = contenedor.querySelector('.synopsis');
+            const titulo = contenedor.querySelector('.titulo');
+
+            if (imagen) {
+                imagen.src = itemAleatorio.portada;
+                imagen.alt = itemAleatorio.titulo;
+            }
+
+            if (sinopsis) {
+                sinopsis.textContent = itemAleatorio.sinopsis;
+            }
+
+            if (titulo) {
+                titulo.textContent = itemAleatorio.titulo;
+            }
+        }
+    } catch (e) {
+        console.error('Error al cargar titulo:', e);
     }
 }
 
@@ -164,10 +197,6 @@ async function cargarHilo(jsonPath, containerBaseId, cantidad) {
         console.error('Error al cargar contenido aleatorio: ', error);
     }
 }
-
-
-// Llamada a la función
-cargarPeliculas('/json.json', 'contenedor-peliculas', 3);
 
 
 
