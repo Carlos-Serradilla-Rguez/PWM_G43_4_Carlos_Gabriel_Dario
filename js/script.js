@@ -67,8 +67,31 @@ function loadBodyTemplateBlog() {
 function loadBodyTemplateUsuario() {
     loadTemplate('/templates/Imagen_Rotativa.html', 'Ruleta-Similares');
     loadTemplate('/templates/Imagen_Rotativa.html', 'Ruleta-Recomendaciones');
-}
 
+    const observer = new MutationObserver((mutations, obs) => {
+        const similaresContainer = document.querySelector("#Ruleta-Similares .gallery");
+        const recomendacionesContainer = document.querySelector("#Ruleta-Recomendaciones .gallery");
+
+        if (similaresContainer && !similaresContainer.id) {
+            similaresContainer.id = "gallery-similares";
+            console.log("📌 Se encontró Ruleta-Similares, asignando ID y cargando recomendaciones.");
+            cargarRecomendaciones('/templates/Pelicula_Sinopsis.html', 'gallery-similares', 'imagen-contenedor', 10);
+        }
+
+        if (recomendacionesContainer && !recomendacionesContainer.id) {
+            recomendacionesContainer.id = "gallery-recomendaciones";
+            console.log("📌 Se encontró Ruleta-Recomendaciones, asignando ID y cargando recomendaciones.");
+            cargarRecomendaciones('/templates/Pelicula_Sinopsis.html', 'gallery-recomendaciones', 'imagen-contenedor', 10);
+        }
+
+        if (similaresContainer && recomendacionesContainer) {
+            obs.disconnect(); // Se detiene la observación cuando ambas ruletas están listas
+            console.log("✅ Ambas ruletas se han cargado correctamente.");
+        }
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+}
 
 
 
@@ -95,6 +118,8 @@ async function initializePage() {
     } else if (window.location.pathname.includes("Union-Register.html")) {
         loadTemplate("/templates/Register.html", "Contenedor-Login");
     } else if (window.location.pathname.includes("Union-Usuario.html")) {
+        loadBodyTemplateUsuario();
+    } else if (window.location.pathname.includes("Union-DescriptorPeliculas.html")) {
         loadBodyTemplateUsuario();
     }
     // Agrega más condiciones aquí si tienes otras páginas
