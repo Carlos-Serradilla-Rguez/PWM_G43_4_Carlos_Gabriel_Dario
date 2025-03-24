@@ -1,9 +1,8 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Red Social dedicada a los amantes del cine.">
+    <title>Bienvenido</title>
 
     <title>CineMatch</title>
     <link rel="shortcut icon" href="/img/Logo_ChatGPT.png" type="image/x-icon">
@@ -11,9 +10,10 @@
     <link rel="stylesheet" href="/styles/Union-Usuario.css">
     <script defer src="/js/Carga-Templates.js"></script>
     <script defer src="/js/menu.js"></script>
-
 </head>
+
 <body>
+
 <header>
     <div id="header-contenedor"></div>
 </header>
@@ -22,7 +22,7 @@
     <div id="Usuario-Descripcion">
         <img src="/img/Aspa.png" alt="Foto de perfil" id="FotoPerfil">
         <section id="Informacion-Usuario">
-            <h1 id="Nombre-Usuario">Nombre del Usuario</h1>
+            <h1><span id="nombre"></span></h1>
             <p id="Descripcion">
                 Descripción del usuario. Aquí se mostrará información sobre el usuario y sus intereses cinematográficos.
             </p>
@@ -40,7 +40,7 @@
     </section>
 
     <div>
-        <button id="CerrarSesion">CERRAR SESIÓN</button>
+        <button id="cerrar">CERRAR SESIÓN</button>
     </div>
 </main>
 
@@ -49,10 +49,26 @@
 </footer>
 
 <script>
-    window.onload = function() {
-        initializePage(); // Cargar header, footer y contenido dinámico
-    };
+    if (localStorage.getItem("usuario_logueado") !== "true") {
+        window.location.href = "Union-LogIn.html";
+    }
+
+    // Mostrar nombre si existe el span
+    const nombreElemento = document.getElementById("nombre");
+    if (nombreElemento) {
+        nombreElemento.textContent = localStorage.getItem("usuario_nombre");
+    }
+
+    // Cerrar sesión
+    const btnCerrar = document.getElementById("cerrar");
+    if (btnCerrar) {
+        btnCerrar.addEventListener("click", () => {
+            localStorage.clear();
+            window.location.href = "Union-LogIn.html";
+        });
+    }
 </script>
+
 
 </body>
 </html>
