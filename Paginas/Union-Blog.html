@@ -6,23 +6,23 @@
   <meta name="description" content="Red Social dedicada a los amantes del cine.">
 
   <title>CineMatch</title>
-  <link rel="shortcut icon" href="/PWM_G43_4_Carlos_Gabriel_Dario/img/Logo_ChatGPT.png" type="/image/x-icon">
+  <link rel="shortcut icon" href="/img/Logo_ChatGPT.png" type="/image/x-icon">
 
-  <link rel="stylesheet" href="/PWM_G43_4_Carlos_Gabriel_Dario/styles/Union-Blog.css">
-  <script src="/js/Carga-Templates.js"></script>
-  <script defer src="/PWM_G43_4_Carlos_Gabriel_Dario/js/menu.js"></script>
+  <link rel="stylesheet" href="/styles/Union-Blog.css">
+  <script src="/js/script.js"></script>
+  <script defer src="/js/menu.js"></script>
 </head>
 
 <body>
 <header>
-  <div id="header-contenedor" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/header.html"></div>
+  <div id="header-contenedor" ></div>
 </header>
 
 <main>
 
   <h1 class="titulo">Reseñas de películas y series.</h1>
 
-  <div id="buscador-contenedor" xlu-include-file="/PWM_G43_4_Carlos_Gabriel_Dario/templates/Buscador.html"></div>
+  <div id="buscador-contenedor" ></div>
 
   <div class="principal">
     <div class="bloque">
@@ -57,5 +57,25 @@
   <footer>
     <div id="footer-contenedor"></div>
   </footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(() => {
+      const contenedorAjustes = document.getElementById("contenedor_ajustes");
+      const elementosFiltro = document.querySelectorAll(".contenedor-filtro-1");
+      const boton = document.querySelector(".btn-exterior");
+
+      if (contenedorAjustes && elementosFiltro.length > 0) {
+        elementosFiltro.forEach(elemento => {
+          contenedorAjustes.insertBefore(elemento, boton); // Inserta los filtros antes del botón
+        });
+        console.log("✅ Elementos movidos correctamente dentro de #contenedor_ajustes.");
+      } else {
+        console.error("❌ No se encontraron elementos para mover. Verifica que '.contenedor-filtro-1' existe.");
+      }
+    }, 500);
+  });
+
+</script>
 </body>
 </html>
