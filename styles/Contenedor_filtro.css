@@ -1,30 +1,27 @@
-@import "Font.css";
-
 .rectangulo {
     display: flex;
-    flex-direction: column;  /* Coloca los elementos en columna */
-    border: 2px solid black; /* Borde para crear el rectángulo */
+    flex-direction: column;
+    border: 2px solid black;
     align-items: center;
     gap: 10px;
     border-radius: 8px;
     padding: 10px;
     min-height: 8em;
-    height: 100%;
     width: 100%;
-    position: relative; /* Asegura que los elementos internos se posicionen correctamente */
+    position: relative;
+    height: auto; /* Permite que crezca dinámicamente según el contenido */
+    overflow: visible; /* Permite que los desplegables se expandan fuera del contenedor si es necesario */
 }
 
 .btn-exterior {
-    margin-top: auto;
     padding: 8px 15px;
     background-color: #ffffff;
     color: black;
     border: black solid 1px;
     border-radius: 5px;
     cursor: pointer;
-    width: 100%; /* Hace que el botón ocupe todo el ancho */
-    position: absolute;
-    bottom: 10px; /* Lo mantiene pegado abajo */
-    left: 50%;
-    transform: translateX(-50%);
+    width: 100%;
+    margin-top: 10px; /* Asegura espacio entre el último filtro y el botón */
+    align-self: stretch;
+    position: relative; /* Mantiene el flujo normal sin solaparse */
 }

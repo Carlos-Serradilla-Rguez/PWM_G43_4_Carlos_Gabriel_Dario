@@ -48,18 +48,19 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         setTimeout(() => {
-            const contenedorAjustes = document.getElementById("contenedor_ajustes"); // Seleccionamos el div .rectangulo
-            const elementosFiltro = document.querySelectorAll(".contenedor-filtro-1"); // Seleccionamos los filtros
+            const contenedorAjustes = document.getElementById("contenedor_ajustes");
+            const elementosFiltro = document.querySelectorAll(".contenedor-filtro-1");
+            const boton = document.querySelector(".btn-exterior");
 
-            if (contenedorAjustes && elementosFiltro.length > 0) { // Si ambos existen
+            if (contenedorAjustes && elementosFiltro.length > 0) {
                 elementosFiltro.forEach(elemento => {
-                        contenedorAjustes.appendChild(elemento); // Movemos cada filtro dentro de .rectangulo
+                    contenedorAjustes.insertBefore(elemento, boton); // Inserta los filtros antes del botón
                 });
                 console.log("✅ Elementos movidos correctamente dentro de #contenedor_ajustes.");
             } else {
                 console.error("❌ No se encontraron elementos para mover. Verifica que '.contenedor-filtro-1' existe.");
             }
-        }, 500); // Esperamos 500ms para asegurarnos de que los elementos cargan
+        }, 500);
     });
 
 
