@@ -1,5 +1,5 @@
 // Función para cargar un archivo HTML en un contenedor específico
-function loadTemplate(templatePath, containerId) {
+export function loadTemplate(templatePath, containerId) {
     fetch(templatePath)
         .then(response => response.text())
         .then(data => {
@@ -8,8 +8,16 @@ function loadTemplate(templatePath, containerId) {
         .catch(error => console.error('Error al cargar el template:', error));
 }
 
+// Función para cargar los templates comunes (header y footer)
+export function loadDefaultTemplates() {
+    loadTemplate("/templates/Header.html", 'header-contenedor');
+    loadTemplate("/templates/Footer.html", 'footer-contenedor'); // Cargar las recomendaciones si es necesario// Cargar las recomendaciones si es necesario
+
+}
+
+
 // Función para cargar dinámicamente elementos con el template Pelicula_Sinopsis.html
-async function cargarRecomendaciones(template, nombre_contenedor, nombre_clase, cantidad) {
+export async function cargarRecomendaciones(template, nombre_contenedor, nombre_clase, cantidad) {
     try {
         const response = await fetch(template);
         const templateHTML = await response.text();
@@ -33,12 +41,7 @@ async function cargarRecomendaciones(template, nombre_contenedor, nombre_clase, 
     }
 }
 
-// Función para cargar los templates comunes (header y footer)
-function loadDefaultTemplates() {
-    loadTemplate("/templates/Header.html", 'header-contenedor');
-    loadTemplate("/templates/Footer.html", 'footer-contenedor'); // Cargar las recomendaciones si es necesario// Cargar las recomendaciones si es necesario
 
-}
 
 // Función para cargar el template del body para la página principal (index)
 function loadBodyTemplateIndex() {
@@ -93,6 +96,10 @@ function loadBodyTemplateUsuario() {
     observer.observe(document.body, { childList: true, subtree: true });
 }
 
+async function cargarListaUsuario() {
+
+}
+
 
 
 // Inicialización de la página
@@ -102,9 +109,9 @@ async function initializePage() {
     // Cargamos un body distinto dependiendo de la página
     if (window.location.pathname.includes("index.html")) {
         loadBodyTemplateIndex(); // Para la página principal
-        await cargarPeliculas('/json.json', 'elemento-recomendacion', 3);
-        await cargarPeliculas('/json.json', 'elemento-masvisto', 5);
-        await cargarHilo('/json.json', 'mainblog-contenedor', 1);
+        await cargarPeliculas('elemento-recomendacion', 3);
+        await cargarPeliculas('elemento-masvisto', 5);
+        await cargarHilo('mainblog-contenedor', 1);
     } else if (window.location.pathname.includes("Union-PeliculasSeries.html")) {
         loadBodyTemplatePeliculas();
         await cargarPeliculas('/json.json', 'elementos_peliculas', 20);
@@ -113,6 +120,7 @@ async function initializePage() {
     } else if (window.location.pathname.includes("Union-Descubrir.html")) {
         //En este caso no tiene ninguna template que añadir salvo las del Default.
         await cargarDescubrir('/json.json', 'card');
+        await document.getElementById('like').addEventListener('click', cargarDescubrir('/json.json', 'card'));
     } else if (window.location.pathname.includes("Union-LogIn.html")) {
         loadTemplate("/templates/Login.html", "Contenedor-Login");
     } else if (window.location.pathname.includes("Union-Register.html")) {
@@ -131,13 +139,16 @@ Función para añadir elementos al html con el JSON.
 
 // Función para cargar los datos de las películas en la plantilla
 // Función para cargar películas o series aleatoriamente
-async function cargarPeliculas(jsonPath, containerBaseId, cantidad = 2) {
+export async function cargarPeliculasSeries(containerBaseId, cantidad = 2) {
     try {
-        const response = await fetch(jsonPath);
-        const data = await response.json();
+        let response = await fetch('/json/peliculas.json');
+        const peliculas = await response.json();
+        response = await fetch('json/series.json')
+        const series = await response.json();
+
 
         // Crear un array con las películas y las series combinadas
-        const contenido = [...data.peliculas, ...data.series];  // Unimos películas y series en un solo array
+        const contenido = [...peliculas, ...series];  // Unimos películas y series en un solo array
 
         // Recorremos la cantidad de contenedores que queremos actualizar
         for (let i = 1; i <= cantidad; i++) {
@@ -150,6 +161,8 @@ async function cargarPeliculas(jsonPath, containerBaseId, cantidad = 2) {
                 // Actualizamos el contenido del contenedor con los datos seleccionados
                 const imagen = contenedor.querySelector('img');
                 const sinopsis = contenedor.querySelector('.synopsis');
+
+                contenedor.setAttribute('data-id', itemAleatorio.id);
 
                 if (imagen) {
                     imagen.src = itemAleatorio.portada; // Cambia la imagen
@@ -168,40 +181,9 @@ async function cargarPeliculas(jsonPath, containerBaseId, cantidad = 2) {
     }
 }
 
-async function cargarDescubrir(jsonPath, containerBaseId) {
+export async function cargarHilo(containerBaseId, cantidad) {
     try {
-        const response = await fetch(jsonPath);
-        const data = await response.json();
-        const contenido = [...data.peliculas, ...data.series];
-        const contenedor = document.getElementById(containerBaseId);
-        console.log(contenedor);
-        if (contenedor) {
-            const itemAleatorio = contenido[Math.floor(Math.random()*contenido.length)];
-            const imagen = contenedor.querySelector('img');
-            const sinopsis = contenedor.querySelector('.synopsis');
-            const titulo = contenedor.querySelector('.titulo');
-
-            if (imagen) {
-                imagen.src = itemAleatorio.portada;
-                imagen.alt = itemAleatorio.titulo;
-            }
-
-            if (sinopsis) {
-                sinopsis.textContent = itemAleatorio.sinopsis;
-            }
-
-            if (titulo) {
-                titulo.textContent = itemAleatorio.titulo;
-            }
-        }
-    } catch (e) {
-        console.error('Error al cargar titulo:', e);
-    }
-}
-
-async function cargarHilo(jsonPath, containerBaseId, cantidad) {
-    try {
-        const response = await fetch(jsonPath);
+        const response = await fetch('/json/foro.json');
         const data = await response.json();
         if (cantidad > 1) {
             for (let i = 1; i <= cantidad; i++) {
@@ -209,7 +191,7 @@ async function cargarHilo(jsonPath, containerBaseId, cantidad) {
             }
         } else {
             let contenedor = document.getElementById(containerBaseId);
-            const respuestas = data.foro;
+            const respuestas = data;
             const itemAleatorio = respuestas[Math.floor(Math.random() * respuestas.length)];
             const title = contenedor.querySelector('#text-1');
             const contenido = contenedor.querySelector('#text-2');

@@ -1,0 +1,18 @@
+[
+  {
+    "id": 101,
+    "titulo": "Inception",
+    "año": 2010,
+    "portada": "/img/Portada_Inception.png",
+    "genero": ["Ciencia Ficción", "Thriller"],
+    "sinopsis": "Un ladrón con la habilidad de entrar en los sueños de las personas recibe la misión de implantar una idea en la mente de un ejecutivo."
+  },
+  {
+    "id": 202,
+    "titulo": "The Matrix",
+    "año": 1999,
+    "portada": "/img/Portada_Matrix.png",
+    "genero": ["Ciencia Ficción", "Acción"],
+    "sinopsis": "Un hacker descubre la verdad sobre su realidad y lucha contra un sistema que controla la humanidad."
+  }
+]

@@ -5,16 +5,14 @@
       "nombre": "Juan Pérez",
       "email": "juanperez@example.com",
       "clave": "1234",
-      "lista_vistas": [101, 202],
-      "lista_pendientes": [303, 404]
+      "lista_vistas": [101, 202]
     },
     {
       "id": 2,
       "nombre": "María López",
       "email": "marialopez@example.com",
       "clave": "abcd",
-      "lista_vistas": [202, 303],
-      "lista_pendientes": [101, 505]
+      "lista_vistas": [202, 303]
     }
   ],
   "peliculas": [

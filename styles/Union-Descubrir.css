@@ -67,6 +67,7 @@ body {
 }
 
 .actions {
+    margin-top: 20px;
     display: flex;
     justify-content: space-between;
     padding: 0 40px;
@@ -78,6 +79,7 @@ body {
 button {
     background-color: #fff;
     border: 2px solid #e0e0e0;
+    top: 20px;
     border-radius: 50%;
     font-size: 1.5em;
     cursor: pointer;

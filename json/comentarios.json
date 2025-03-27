@@ -1,0 +1,19 @@
+{
+  "Foro1": [
+    {
+      "id": 1,
+      "usuario_id": 1,
+      "mensaje": "Estoy buscando recomendaciones de películas de ciencia ficción, ¿alguna sugerencia?"
+    },
+    {
+      "id": 2,
+      "usuario_id": 2,
+      "contenido": "De las peliculas de ciencia ficción recomendaría sin duda Star Wars. ¡UN CLASICO!"
+    }
+    {
+      "id": 3,
+      "usaurio_id": 3,
+      "mensaje": "Sin duda Star Wars es muy buena pero esa ya la tengo vista."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "usuario_id": 1,
+    "titulo": "¿Cuál es la mejor película de ciencia ficción?",
+    "contenido": "Estoy buscando recomendaciones de películas de ciencia ficción, ¿alguna sugerencia?"
+  },
+  {
+    "id": 2,
+    "usuario_id": 2,
+    "titulo": "Opinión sobre Breaking Bad",
+    "contenido": "¿Creen que es la mejor serie de la historia? Me parece que tiene uno de los mejores desarrollos de personajes."
+  }
+]

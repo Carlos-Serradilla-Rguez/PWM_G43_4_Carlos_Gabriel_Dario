@@ -1,0 +1,18 @@
+[
+  {
+    "id": 303,
+    "titulo": "Breaking Bad",
+    "año": 2008,
+    "portada": "/img/Portada_BreakingBad.png",
+    "genero": ["Drama", "Crimen"],
+    "sinopsis": "Un profesor de química con cáncer terminal comienza a fabricar metanfetaminas para asegurar el futuro de su familia."
+  },
+  {
+    "id": 404,
+    "titulo": "Stranger Things",
+    "año": 2016,
+    "portada": "/img/Portada_StrangerThings.png",
+    "genero": ["Ciencia Ficción", "Misterio"],
+    "sinopsis": "Un grupo de niños investiga la desaparición de su amigo y descubre un mundo sobrenatural oculto en su ciudad."
+  }
+]
