@@ -183,11 +183,23 @@ export async function cargarPeliculasSeries(containerBaseId, cantidad = 2) {
 
 export async function cargarHilo(containerBaseId, cantidad) {
     try {
-        const response = await fetch('/json/foro.json');
+        const response = await fetch('../json/foro.json');
         const data = await response.json();
         if (cantidad > 1) {
+            let contenedor;
+            const respuestas = data;
+            let itemAleatorio;
+            let title;
+            let contenido;
             for (let i = 1; i <= cantidad; i++) {
-
+                contenedor = document.getElementById(`${containerBaseId}-${i}`);
+                itemAleatorio = respuestas[Math.floor(Math.random() * respuestas.length)];
+                title = contenedor.querySelector('#text-1');
+                contenido = contenedor.querySelector('#text-2');
+                if(contenido) {
+                    title.textContent = itemAleatorio.titulo;
+                    contenido.textContent = itemAleatorio.contenido;
+                }
             }
         } else {
             let contenedor = document.getElementById(containerBaseId);
