@@ -32,11 +32,20 @@
       "genero": ["Ciencia Ficción", "Acción"],
       "sinopsis": "Un hacker descubre la verdad sobre su realidad y lucha contra un sistema que controla la humanidad."
 
+    },
+    {
+      "id": 303,
+      "titulo": "Malefica",
+      "año": 2014,
+      "portada": "/img/malefica.png",
+      "genero": ["Fantasia"],
+      "sinopsis": "una joven que se convierte en una villana vengativa, pero que finalmente se convierte en la protectora de una princesa. "
+
     }
   ],
   "series": [
     {
-      "id": 303,
+      "id": 404,
       "titulo": "Breaking Bad",
       "año": 2008,
       "portada": "/img/Portada_BreakingBad.png",
@@ -45,7 +54,7 @@
 
     },
     {
-      "id": 404,
+      "id": 505,
       "titulo": "Stranger Things",
       "año": 2016,
       "portada": "/img/Portada_StrangerThings.png",
