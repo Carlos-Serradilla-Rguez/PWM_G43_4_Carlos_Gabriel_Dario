@@ -1,14 +1,34 @@
 [
   {
     "id": 1,
-    "usuario_id": 1,
-    "titulo": "¿Cuál es la mejor película de ciencia ficción?",
-    "contenido": "Estoy buscando recomendaciones de películas de ciencia ficción, ¿alguna sugerencia?"
+    "titulo": "¿Cómo aprender JavaScript?",
+    "contenido": "Este es un hilo donde discutimos sobre aprender JavaScript.",
+    "comentarios": [
+      {
+        "id_comentario": 101,
+        "usuario": "Juan Pérez",
+        "comentario": "Yo recomiendo empezar con tutoriales en línea.",
+        "fecha": "2025-03-28"
+      },
+      {
+        "id_comentario": 102,
+        "usuario": "María López",
+        "comentario": "También hay muchos libros recomendados.",
+        "fecha": "2025-03-29"
+      }
+    ]
   },
   {
     "id": 2,
-    "usuario_id": 2,
-    "titulo": "Opinión sobre Breaking Bad",
-    "contenido": "¿Creen que es la mejor serie de la historia? Me parece que tiene uno de los mejores desarrollos de personajes."
+    "titulo": "¿Qué opinan de React?",
+    "contenido": "Aquí discutimos sobre las ventajas y desventajas de React.",
+    "comentarios": [
+      {
+        "id_comentario": 201,
+        "usuario": "Carlos González",
+        "comentario": "Es una excelente librería para crear interfaces.",
+        "fecha": "2025-03-28"
+      }
+    ]
   }
 ]

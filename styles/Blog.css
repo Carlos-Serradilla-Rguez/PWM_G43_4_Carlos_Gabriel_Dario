@@ -8,7 +8,7 @@ body {
 .container {
     display: flex;
     align-items: center;
-    width:auto;
+    width:100%;
     height: auto;
     background: white;
     padding: 20px;

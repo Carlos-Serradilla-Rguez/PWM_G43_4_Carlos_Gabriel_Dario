@@ -220,6 +220,7 @@ export async function cargarHilo(containerBaseId, cantidad) {
                 itemAleatorio = respuestas[Math.floor(Math.random() * respuestas.length)];
                 title = contenedor.querySelector('#text-1');
                 contenido = contenedor.querySelector('#text-2');
+                contenedor.setAttribute('data-id', itemAleatorio.id);
                 if(contenido) {
                     title.textContent = itemAleatorio.titulo;
                     contenido.textContent = itemAleatorio.contenido;
@@ -229,6 +230,7 @@ export async function cargarHilo(containerBaseId, cantidad) {
             let contenedor = document.getElementById(containerBaseId);
             const respuestas = data;
             const itemAleatorio = respuestas[Math.floor(Math.random() * respuestas.length)];
+            contenedor.setAttribute('data-id', itemAleatorio.id);
             const title = contenedor.querySelector('#text-1');
             const contenido = contenedor.querySelector('#text-2');
             if (contenido) {

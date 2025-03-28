@@ -4,9 +4,9 @@ import {loadDefaultTemplates, loadTemplate, observarRuletas} from "./script.js";
 async function cargarImagen(idPelicula) {
     try {
         // Simular la carga de datos desde un archivo JSON
-        let response = await fetch('/json/peliculas.json');
+        let response = await fetch('../json/peliculas.json');
         const peliculas = await response.json();
-        response = await fetch('/json/series.json');
+        response = await fetch('../json/series.json');
         const series = await response.json();
 
         // Buscar la película con el id especificado
