@@ -104,7 +104,7 @@ export function observarRuletas() {
 }
 
 
-function moverElementosFiltro() {
+export function moverElementosFiltro() {
     setTimeout(() => {
         const contenedorAjustes = document.getElementById("contenedor_ajustes");
         const elementosFiltro = document.querySelectorAll(".contenedor-filtro-1");

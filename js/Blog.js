@@ -1,4 +1,4 @@
-import {cargarRecomendaciones, loadDefaultTemplates, loadTemplate, cargarHilo} from "./script.js";
+import {cargarRecomendaciones, loadDefaultTemplates, loadTemplate, cargarHilo, moverElementosFiltro} from "./script.js";
 
 function agregarEventListenerElementos(nombreContenedor, totalElementos) {
     for (let i = 1; i <= totalElementos; i++) {
@@ -66,6 +66,7 @@ async function initializePage() {
     await cargarRecomendaciones('../templates/Contenedor_filtro.html', "template-filtros", 'contenedor-filtro', 1);
     await cargarRecomendaciones('../templates/Label.html', "contenedor-filtro-1", 'elemento-filtro', 5);
     await cargarRecomendaciones('../templates/NuevoHilo.html', "placeholder", 'CrearAdd', 1);
+    moverElementosFiltro()
 
     const urlParams = new URLSearchParams(window.location.search);
     const idBlog = urlParams.get('idBlog'); // Cambiado 'idPelicula' a 'idBlog'
