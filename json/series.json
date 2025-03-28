@@ -23,7 +23,8 @@
     "año": 2016,
     "portada": "/img/Portada_Dexter.png",
     "genero": ["Suspense", "Crimen"],
-    "sinopsis": "Dexter Morgan es un forense que trabaja en el Departamento de Policía de Miami. De día es un analista de salpicaduras de sangre, pero de noche es un asesino en serie que mata a otros asesinos que han evadido la justicia."
+    "sinopsis": "Dexter Morgan es un forense que trabaja en el Departamento de Policía de Miami. De día es un analista de salpicaduras de sangre, pero de noche es un asesino en serie que mata a otros asesinos que han evadido la justicia.",
+    "actores": [19]
   },
   {
     "id": 4,
@@ -31,7 +32,8 @@
     "año": 2005,
     "portada": "/img/Portada_Avatar.png",
     "genero": ["Acción", "Fantasía"],
-    "sinopsis": "Hace un siglo, el joven Avatar Aang, temeroso de sus nuevas responsabilidades, huyó de su hogar y una tormenta lo obligó a huir al océano. "
+    "sinopsis": "Hace un siglo, el joven Avatar Aang, temeroso de sus nuevas responsabilidades, huyó de su hogar y una tormenta lo obligó a huir al océano. ",
+    "actores": [20]
   },
   {
     "id": 5,

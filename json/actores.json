@@ -58,5 +58,45 @@
     "id": 12,
     "nombre": "Carrie-Anne Moss",
     "foto": "../img/CarreiAnneMoss.png"
+  },
+  {
+    "id": 13,
+    "nombre": "Angelina Jolie",
+    "foto": "../img/AngelinaJolie.png"
+  },
+  {
+    "id": 14,
+    "nombre": "Vin Diesel",
+    "foto": "../img/Vin_Diesel.png"
+  },
+  {
+    "id": 15,
+    "nombre": "Ben Burtt",
+    "foto": "../img/Ben_Burtt.png"
+  },
+  {
+    "id": 16,
+    "nombre": "Leonardo DiCaprio",
+    "foto": "../img/Leonardo_DiCaprio.png"
+  },
+  {
+    "id": 17,
+    "nombre": "Ryan Reynolds",
+    "foto": "../img/RyanReynolds.png"
+  },
+  {
+    "id": 18,
+    "nombre": "Archie Madekwe",
+    "foto": "../img/ArchieMadekwe.png"
+  },
+  {
+    "id": 19,
+    "nombre": "Michael C.Hall",
+    "foto": "../img/MichaelCHall.png"
+  },
+  {
+    "id": 20,
+    "nombre": "Zach Tyler Eisen",
+    "foto": "../img/ZachTylerEisen.png"
   }
 ]
