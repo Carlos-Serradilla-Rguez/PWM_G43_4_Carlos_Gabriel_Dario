@@ -19,6 +19,24 @@ async function cargarDatos() {
     })
 }
 
+async function aplicarEstilosDesplazamiento() {
+    setTimeout(() => {
+        const containers = document.querySelectorAll(".gallery-container");
+        console.log("Containers encontrados:", containers);
+        containers.forEach(container => {
+            container.style.overflowX = "auto";
+            container.style.scrollSnapType = "x mandatory";
+            container.scrollLeft = 0; // Restablece el scroll a la posición inicial
+
+            // Forzar redibujado
+            container.style.display = "none";
+            void container.offsetWidth; // Hack para forzar el re-render
+            container.style.display = "flex";
+
+            console.log("✅ Se aplicaron estilos de desplazamiento.");
+        });
+    }, 100);
+}
 
 async function initializePage() {
     if (!localStorage.getItem("usuario_logueado")) {
@@ -41,29 +59,6 @@ async function initializePage() {
 
     observarRuletas();
     await cargarDatos();
-}
-
-
-
-
-
-async function aplicarEstilosDesplazamiento() {
-    setTimeout(() => {
-        const containers = document.querySelectorAll(".gallery-container");
-        console.log("Containers encontrados:", containers);
-        containers.forEach(container => {
-            container.style.overflowX = "auto";
-            container.style.scrollSnapType = "x mandatory";
-            container.scrollLeft = 0; // Restablece el scroll a la posición inicial
-
-            // Forzar redibujado
-            container.style.display = "none";
-            void container.offsetWidth; // Hack para forzar el re-render
-            container.style.display = "flex";
-
-            console.log("✅ Se aplicaron estilos de desplazamiento.");
-        });
-    }, 100);
 }
 
 
