@@ -2,7 +2,6 @@ import {
     cargarRecomendaciones,
     loadDefaultTemplates,
     loadTemplate,
-    cargarHilo,
     moverElementosFiltro
 } from "./script.js";
 
