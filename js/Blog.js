@@ -1,4 +1,4 @@
-import {cargarRecomendaciones, loadDefaultTemplates, loadTemplate, cargarHilo, moverElementosFiltro} from "./script.js";
+import {cargarRecomendaciones, loadDefaultTemplates, loadTemplate, cargarHilo} from "./script.js";
 
 function agregarEventListenerElementos(nombreContenedor, totalElementos) {
     for (let i = 1; i <= totalElementos; i++) {
@@ -60,13 +60,22 @@ async function cargarHiloConId(idBlog, containerBaseId) {
     }
 }
 
+function addEventListenerBotonesPagina() {
+    const botones = document.querySelectorAll('.boton');
+    botones.forEach(botones => {
+        botones.addEventListener('click', async e => {
+            location.reload();
+        })
+    })
+}
+
 async function initializePage() {
     loadDefaultTemplates();
     loadTemplate("../templates/Buscador.html", 'buscador-contenedor');
     await cargarRecomendaciones('../templates/Contenedor_filtro.html', "template-filtros", 'contenedor-filtro', 1);
     await cargarRecomendaciones('../templates/Label.html', "contenedor-filtro-1", 'elemento-filtro', 5);
     await cargarRecomendaciones('../templates/NuevoHilo.html', "placeholder", 'CrearAdd', 1);
-    moverElementosFiltro()
+    addEventListenerBotonesPagina();
 
     const urlParams = new URLSearchParams(window.location.search);
     const idBlog = urlParams.get('idBlog'); // Cambiado 'idPelicula' a 'idBlog'
