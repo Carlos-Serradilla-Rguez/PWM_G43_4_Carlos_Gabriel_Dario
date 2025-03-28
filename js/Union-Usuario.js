@@ -1,4 +1,4 @@
-import {loadDefaultTemplates, loadTemplate, observarRuletas} from "./script.js";
+import {loadDefaultTemplates, loadTemplate, observarRuletas, asignarIdsACarrusel} from "./script.js";
 
 
 async function cargarDatos() {
@@ -37,9 +37,13 @@ async function initializePage() {
     // Ahora aplicamos los estilos de desplazamiento
     aplicarEstilosDesplazamiento();
 
+    asignarIdsACarrusel();
+
     observarRuletas();
     await cargarDatos();
 }
+
+
 
 
 
