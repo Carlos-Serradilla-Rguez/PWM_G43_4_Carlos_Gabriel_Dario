@@ -9,6 +9,10 @@ function guardarSesion(usuarioEncontrado) {
     }));
 }
 
+function buscarUsuario(email, clave, lista) {
+    return lista.find(u => u.email.toLowerCase() === email.toLowerCase() && u.clave === clave);
+}
+
 async function chequeoCredenciales() {
     const form = document.getElementById('login-form');
 
@@ -20,29 +24,34 @@ async function chequeoCredenciales() {
     form.addEventListener('submit', async function (e) {
         e.preventDefault();
 
-        const usuario = document.getElementById('usuario').value.trim();
+        const email = document.getElementById('usuario').value.trim();
         const clave = document.getElementById('clave').value;
 
-        try {
-            const response = await fetch('/json/cuentas.json');
+        // 1. Buscar en localStorage
+        const cuentasGuardadas = localStorage.getItem('cuentas');
+        const cuentasLocal = cuentasGuardadas ? JSON.parse(cuentasGuardadas) : [];
+        let usuarioEncontrado = buscarUsuario(email, clave, cuentasLocal);
 
-            if (!response.ok) {
-                throw new Error(`Error al cargar JSON: ${response.status}`);
+        // 2. Si no está en localStorage, buscar en cuentas.json
+        if (!usuarioEncontrado) {
+            try {
+                const response = await fetch('/json/cuentas.json');
+                if (!response.ok) throw new Error(`Error al cargar JSON: ${response.status}`);
+                const cuentasJson = await response.json();
+                usuarioEncontrado = buscarUsuario(email, clave, cuentasJson);
+            } catch (err) {
+                console.error("Error cargando cuentas.json:", err);
+                alert("No se pudo acceder a la base de datos.");
+                return;
             }
+        }
 
-            const data = await response.json();
-            const usuarioEncontrado = data.find(u => u.email === usuario && u.clave === clave);
-
-            if (usuarioEncontrado) {
-                guardarSesion(usuarioEncontrado);
-                window.location.href = "../Paginas/Union-Usuario.html";
-            } else {
-                alert("Correo o contraseña incorrectos.");
-            }
-
-        } catch (err) {
-            console.error("Error cargando json.json:", err);
-            alert("No se pudo acceder a la base de datos.");
+        // 3. Si se encontró en alguna fuente
+        if (usuarioEncontrado) {
+            guardarSesion(usuarioEncontrado);
+            window.location.href = "../Paginas/Union-Usuario.html";
+        } else {
+            alert("Correo o contraseña incorrectos.");
         }
     });
 }
@@ -52,7 +61,7 @@ function chequeoLocalStorage() {
 }
 
 async function initializePage() {
-    if(!chequeoLocalStorage) {
+    if (chequeoLocalStorage()) {
         window.location.href = "../Paginas/Union-Usuario.html";
     } else {
         loadDefaultTemplates();

@@ -1,20 +1,49 @@
-body {
+* {
+    padding: 0;
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: "Leto", sans-serif;
 }
 
-.lorem {
-    background: #f8f8f8;
-    padding: 20px;
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+main {
+    flex: 1;
+    text-align: center;
+    object-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#Contenedor-Login {
+    width: 30%;
+    height: auto;
+    border: 1px solid black;
+    margin: 5em auto;
+}
+
+footer {
+    color: white;
     text-align: center;
 }
 
+
+/*formulario*/
 .login-bar {
     background: #ffffff;
     padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: auto;
+    border: 2px solid #e1e1e1;
+    width: auto;
+
 }
 
 .login-bar form {
@@ -36,11 +65,11 @@ body {
     padding: 8px 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    background: #fff;
+    background: #ffffff;
     cursor: pointer;
     width: 220px;
 }
 
-#link-Login {
+#link-Registro {
     padding: 10px;
 }

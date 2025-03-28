@@ -1,16 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <title>CineMatch - Register</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Red Social dedicada a los amantes del cine.">
-
   <title>CineMatch</title>
   <link rel="shortcut icon" href="/img/Logo_ChatGPT.png" type="/image/x-icon">
 
-  <link rel="stylesheet" href="/styles/Union-Login.css">
-  <script src="/js/Carga-Templates.js"></script>
+  <link rel="stylesheet" href="/styles/Register.css">
   <script defer src="/js/menu.js"></script>
+  <script type="module" src="../js/register.js"></script>
+
 </head>
 <body>
 <header>
@@ -18,12 +18,28 @@
 </header>
 
 <main>
-  <div id="Contenedor-Login"></div>
+  <div class="login-bar">
+  <form id="registro-form">
+    <label for="nombre">Nombre completo:</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="email">Correo electrónico:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="clave">Contraseña:</label>
+    <input type="password" id="clave" name="clave" required>
+
+    <button type="submit">Registrarse</button>
+  </form>
+  </div>
+  <p id="mensaje"></p>
 </main>
+
 
 <footer>
   <div id="footer-contenedor"></div>
 </footer>
-</body>
 
+
+</body>
 </html>
