@@ -1,4 +1,4 @@
-import {loadDefaultTemplates, loadTemplate, observarRuletas, asignarIdsACarrusel} from "./script.js";
+import {loadDefaultTemplates, loadTemplate, observarRuletas} from "./script.js";
 
 
 async function cargarDatos() {
