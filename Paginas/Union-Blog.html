@@ -58,24 +58,6 @@
     <div id="footer-contenedor"></div>
   </footer>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    setTimeout(() => {
-      const contenedorAjustes = document.getElementById("contenedor_ajustes");
-      const elementosFiltro = document.querySelectorAll(".contenedor-filtro-1");
-      const boton = document.querySelector(".btn-exterior");
 
-      if (contenedorAjustes && elementosFiltro.length > 0) {
-        elementosFiltro.forEach(elemento => {
-          contenedorAjustes.insertBefore(elemento, boton); // Inserta los filtros antes del botón
-        });
-        console.log("✅ Elementos movidos correctamente dentro de #contenedor_ajustes.");
-      } else {
-        console.error("❌ No se encontraron elementos para mover. Verifica que '.contenedor-filtro-1' existe.");
-      }
-    }, 500);
-  });
-
-</script>
 </body>
 </html>
