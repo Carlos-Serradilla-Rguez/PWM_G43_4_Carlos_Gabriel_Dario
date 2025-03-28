@@ -141,9 +141,9 @@ Función para añadir elementos al html con el JSON.
 // Función para cargar películas o series aleatoriamente
 export async function cargarPeliculasSeries(containerBaseId, cantidad = 2) {
     try {
-        let response = await fetch('/json/peliculas.json');
+        let response = await fetch('../json/peliculas.json');
         const peliculas = await response.json();
-        response = await fetch('json/series.json')
+        response = await fetch('../json/series.json')
         const series = await response.json();
 
 

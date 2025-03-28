@@ -24,6 +24,7 @@ async function initializePage() {
     await cargarPeliculasSeries('elemento-masvisto', 5);
     await cargarHilo('mainblog-contenedor', 1);
     agregarEventListenerElementos('elemento-recomendacion', 3);
+    agregarEventListenerElementos('elemento-masvisto', 5);
 }
 
 window.onload = async function() {
