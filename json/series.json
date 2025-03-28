@@ -41,7 +41,8 @@
     "año": 2005,
     "portada": "/img/Portada_BigBang.png",
     "genero": ["Comedia"],
-    "sinopsis": "The Big Bang Theory cuenta la vida de Leonard y Sheldon, dos físicos que comparten apartamento y trabajan en el Instituto de Tecnología de California (Caltech). "
+    "sinopsis": "The Big Bang Theory cuenta la vida de Leonard y Sheldon, dos físicos que comparten apartamento y trabajan en el Instituto de Tecnología de California (Caltech). ",
+    "actores": [21]
   },
   {
     "id": 6,
@@ -49,7 +50,8 @@
     "año": 1993,
     "portada": "/img/Portada_PowerRangers.png",
     "genero": ["Acción", "Ciencia Ficción"],
-    "sinopsis": "Los Power Rangers son un grupo de jóvenes que son elegidos por un mentor para transformarse en héroes."
+    "sinopsis": "Los Power Rangers son un grupo de jóvenes que son elegidos por un mentor para transformarse en héroes.",
+    "actores": [22]
   },
   {
     "id": 7,
@@ -57,7 +59,8 @@
     "año": 1998,
     "portada": "/img/Portada_Supernenas.png",
     "genero": ["Acción", "Aventura"],
-    "sinopsis": "El profesor Utonium es un ingeniero genético que siempre está experimentando. Una noche decide hacer realidad su sueño más anhelado: crear una niña perfecta. El resultado es espectacular: en vez de una niña ha creado a tres superheroínas."
+    "sinopsis": "El profesor Utonium es un ingeniero genético que siempre está experimentando. Una noche decide hacer realidad su sueño más anhelado: crear una niña perfecta. El resultado es espectacular: en vez de una niña ha creado a tres superheroínas.",
+    "actores": [23]
   },
   {
     "id": 8,
@@ -65,6 +68,7 @@
     "año": 1998,
     "portada": "/img/Portada_DR_House.png",
     "genero": ["Drama"],
-    "sinopsis": "Gregory House, el mejor médico del hospital, es un hombre antipático que está especializado en el diagnóstico de enfermedades. "
+    "sinopsis": "Gregory House, el mejor médico del hospital, es un hombre antipático que está especializado en el diagnóstico de enfermedades. ",
+    "actores": [24]
   }
 ]

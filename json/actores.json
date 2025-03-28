@@ -98,5 +98,25 @@
     "id": 20,
     "nombre": "Zach Tyler Eisen",
     "foto": "../img/ZachTylerEisen.png"
+  },
+  {
+    "id": 21,
+    "nombre": "Jim Parsons",
+    "foto": "../img/JimParson.png"
+  },
+  {
+    "id": 22,
+    "nombre": "Jason David Frank",
+    "foto": "../img/JasonDavidFrank.png"
+  },
+  {
+    "id": 23,
+    "nombre": "Tara Strong",
+    "foto": "../img/TaraStrong.png"
+  },
+  {
+    "id": 24,
+    "nombre": "Hugh Laurie",
+    "foto": "../img/HughLaurie.png"
   }
 ]
