@@ -1,4 +1,4 @@
-import {loadDefaultTemplates, loadTemplate, observarRuletas, asignarIdsACarrusel} from "./script.js";
+import {cargarPeliculasSeries, loadDefaultTemplates, loadTemplate, observarRuletas} from "./script.js";
 
 // Función para cargar la película desde un archivo JSON
 async function cargarImagen(idPelicula) {
@@ -35,7 +35,6 @@ async function initializePage() {
     loadDefaultTemplates();
     loadTemplate('/templates/Imagen_Rotativa.html', 'Ruleta-Similares');
     loadTemplate('/templates/Imagen_Rotativa.html', 'Ruleta-Recomendaciones');
-    asignarIdsACarrusel();
     observarRuletas();
 
     const urlParams = new URLSearchParams(window.location.search);
@@ -44,6 +43,9 @@ async function initializePage() {
     if (idPelicula) {
         console.log("ID de la película:", idPelicula);
         await cargarImagen(idPelicula); // Llamar a la función para cargar la película
+        await cargarPeliculasSeries('imagen-contenedor', 10);
+        await cargarPeliculasSeries('imagen-recomendacion', 10);
+
     } else {
         console.error("No se encontró el idPelicula en la URL");
     }

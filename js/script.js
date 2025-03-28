@@ -186,7 +186,6 @@ export async function cargarPeliculasSeries(containerBaseId, cantidad = 2) {
                 const sinopsis = contenedor.querySelector('.synopsis');
 
                 contenedor.setAttribute('data-id', itemAleatorio.id);
-
                 if (imagen) {
                     imagen.src = itemAleatorio.portada; // Cambia la imagen
                     imagen.alt = itemAleatorio.titulo;  // Cambia el alt con el título

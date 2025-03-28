@@ -1,12 +1,26 @@
 import {
     loadDefaultTemplates,
     loadTemplate,
-    asignarIdsACarrusel,
     observarRuletas,
-    cargarRecomendaciones,
     cargarPeliculasSeries
 } from "./script.js";
 
+function agregarEventListenerElementos(nombreContenedor, totalElementos) {
+    for (let i = 1; i<= totalElementos; i++) {
+        const elemento = document.getElementById(`${nombreContenedor}-${i}`);
+
+        if (elemento) {
+            console.log(elemento)
+            elemento.addEventListener('click', async e => {
+                e.preventDefault();
+                const idPelicula = elemento.getAttribute('data-id');
+                window.location.href = '../Paginas/Union-DescriptorPeliculas.html?idPelicula=' + idPelicula;
+            })
+        } else {
+            console.log(elemento, " no se ha podido encontrar", nombreContenedor);
+        }
+    }
+}
 
 async function cargarDatos() {
     const usuarioLogueado = JSON.parse(localStorage.getItem("usuario_logueado"));
@@ -105,12 +119,9 @@ async function initializePage() {
     setTimeout( async () => {
         await cargarLista();
         await cargarPeliculasSeries('imagen-recomendacion', 10);
+        await agregarEventListenerElementos('imagen-contenedor', 10);
+        await agregarEventListenerElementos('imagen-recomendacion', 10);
     })
 }
-
-
-
-
-
 
 window.onload = async () => initializePage();
