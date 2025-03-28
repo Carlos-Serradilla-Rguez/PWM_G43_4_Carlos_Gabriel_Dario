@@ -35,7 +35,7 @@ async function chequeoCredenciales() {
 
             if (usuarioEncontrado) {
                 guardarSesion(usuarioEncontrado);
-                window.location.href = "Union-Usuario.html";
+                window.location.href = "../Paginas/Union-Usuario.html";
             } else {
                 alert("Correo o contraseña incorrectos.");
             }
@@ -47,10 +47,18 @@ async function chequeoCredenciales() {
     });
 }
 
+function chequeoLocalStorage() {
+    return !!localStorage.getItem('usuario_logueado');
+}
+
 async function initializePage() {
-    loadDefaultTemplates();
-    await loadTemplate('/templates/Login.html', 'Contenedor-Login');
-    setTimeout(chequeoCredenciales, 500);
+    if(!chequeoLocalStorage) {
+        window.location.href = "../Paginas/Union-Usuario.html";
+    } else {
+        loadDefaultTemplates();
+        await loadTemplate('/templates/Login.html', 'Contenedor-Login');
+        setTimeout(chequeoCredenciales, 500);
+    }
 }
 
 window.onload = async () => initializePage();
