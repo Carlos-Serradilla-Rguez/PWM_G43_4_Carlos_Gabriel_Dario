@@ -67,10 +67,17 @@ function loadBodyTemplateBlog() {
     cargarRecomendaciones('../templates/NuevoHilo.html', "placeholder", 'CrearAdd', 1); // Cargar las recomendaciones si es necesario
 }
 
-function loadBodyTemplateUsuario() {
-    loadTemplate('/templates/Imagen_Rotativa.html', 'Ruleta-Similares');
-    loadTemplate('/templates/Imagen_Rotativa.html', 'Ruleta-Recomendaciones');
+async function loadBodyTemplateUsuario() {
+    await cargarRuletas(); // Cargar las ruletas antes de observar cambios
+    observarRuletas();  // Iniciar la observación después de que se cargaron
+}
 
+async function cargarRuletas() {
+    await loadTemplate('/templates/Imagen_Rotativa.html', 'Ruleta-Similares');
+    await loadTemplate('/templates/Imagen_Rotativa.html', 'Ruleta-Recomendaciones');
+}
+
+export function observarRuletas() {
     const observer = new MutationObserver((mutations, obs) => {
         const similaresContainer = document.querySelector("#Ruleta-Similares .gallery");
         const recomendacionesContainer = document.querySelector("#Ruleta-Recomendaciones .gallery");
@@ -96,10 +103,23 @@ function loadBodyTemplateUsuario() {
     observer.observe(document.body, { childList: true, subtree: true });
 }
 
-async function cargarListaUsuario() {
 
+function moverElementosFiltro() {
+    setTimeout(() => {
+        const contenedorAjustes = document.getElementById("contenedor_ajustes");
+        const elementosFiltro = document.querySelectorAll(".contenedor-filtro-1");
+        const boton = document.querySelector(".btn-exterior");
+
+        if (contenedorAjustes && elementosFiltro.length > 0) {
+            elementosFiltro.forEach(elemento => {
+                contenedorAjustes.insertBefore(elemento, boton); // Inserta los filtros antes del botón
+            });
+            console.log("✅ Elementos movidos correctamente dentro de #contenedor_ajustes.");
+        } else {
+            console.error("❌ No se encontraron elementos para mover. Verifica que '.contenedor-filtro-1' existe.");
+        }
+    }, 500);
 }
-
 
 
 // Inicialización de la página
@@ -114,9 +134,13 @@ async function initializePage() {
         await cargarHilo('mainblog-contenedor', 1);
     } else if (window.location.pathname.includes("Union-PeliculasSeries.html")) {
         loadBodyTemplatePeliculas();
+        moverElementosFiltro();  // 🔹 Llamamos a la función aquí
+
         await cargarPeliculas('/json.json', 'elementos_peliculas', 20);
     } else if (window.location.pathname.includes("Union-Blog.html")) {
         loadBodyTemplateBlog();
+        moverElementosFiltro();  // 🔹 Llamamos a la función aquí
+
     } else if (window.location.pathname.includes("Union-Descubrir.html")) {
         //En este caso no tiene ninguna template que añadir salvo las del Default.
         await cargarDescubrir('/json.json', 'card');

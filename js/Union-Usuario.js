@@ -1,4 +1,4 @@
-import {loadDefaultTemplates, loadTemplate} from "./script.js";
+import {loadDefaultTemplates, loadTemplate, observarRuletas} from "./script.js";
 
 
 async function cargarDatos() {
@@ -21,16 +21,50 @@ async function cargarDatos() {
 
 
 async function initializePage() {
-    if(localStorage.getItem("usuario_logueado")) {
-        console.log(localStorage.getItem("usuario_logueado"));
-    } else {
-        window.location.href = "../Paginas/Union-LogIn.html"
+    if (!localStorage.getItem("usuario_logueado")) {
+        window.location.href = "../Paginas/Union-LogIn.html";
+        return;
     }
+
+    console.log(localStorage.getItem("usuario_logueado"));
+
     loadDefaultTemplates();
-    loadTemplate('/templates/Imagen_Rotativa.html', 'Ruleta-Similares');
-    loadTemplate('/templates/Imagen_Rotativa.html', 'Ruleta-Recomendaciones');
+
+    // Esperar a que los templates se carguen antes de aplicar estilos
+    await loadTemplate('/templates/Imagen_Rotativa.html', 'Ruleta-Similares');
+    await loadTemplate('/templates/Imagen_Rotativa.html', 'Ruleta-Recomendaciones');
+
+    // Ahora aplicamos los estilos de desplazamiento
+    aplicarEstilosDesplazamiento();
+
+    observarRuletas();
     await cargarDatos();
 }
+
+
+
+async function aplicarEstilosDesplazamiento() {
+    setTimeout(() => {
+        const containers = document.querySelectorAll(".gallery-container");
+        console.log("Containers encontrados:", containers);
+        containers.forEach(container => {
+            container.style.overflowX = "auto";
+            container.style.scrollSnapType = "x mandatory";
+            container.scrollLeft = 0; // Restablece el scroll a la posición inicial
+
+            // Forzar redibujado
+            container.style.display = "none";
+            void container.offsetWidth; // Hack para forzar el re-render
+            container.style.display = "flex";
+
+            console.log("✅ Se aplicaron estilos de desplazamiento.");
+        });
+    }, 100);
+}
+
+
+
+
 
 
 window.onload = async () => initializePage();

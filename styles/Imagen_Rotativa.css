@@ -24,6 +24,7 @@ body {
     list-style: none;
     padding: 10px 10px 10px 0; /* Elimina padding izquierdo */
     width: max-content; /* El contenido ocupa solo el espacio necesario */
+    min-width: 150%;
 }
 
 .gallery li {

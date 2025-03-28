@@ -1,4 +1,4 @@
-import {loadDefaultTemplates, loadTemplate} from "./script.js";
+import {loadDefaultTemplates, loadTemplate, observarRuletas} from "./script.js";
 
 // Función para cargar la película desde un archivo JSON
 async function cargarImagen(idPelicula) {
@@ -35,6 +35,7 @@ async function initializePage() {
     loadDefaultTemplates();
     loadTemplate('/templates/Imagen_Rotativa.html', 'Ruleta-Similares');
     loadTemplate('/templates/Imagen_Rotativa.html', 'Ruleta-Recomendaciones');
+    observarRuletas();
 
     const urlParams = new URLSearchParams(window.location.search);
     const idPelicula = urlParams.get('idPelicula');
