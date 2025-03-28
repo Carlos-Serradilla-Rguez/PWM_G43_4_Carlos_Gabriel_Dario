@@ -53,9 +53,9 @@ async function initializePage() {
     await loadTemplate('/templates/Imagen_Rotativa.html', 'Ruleta-Recomendaciones');
 
     // Ahora aplicamos los estilos de desplazamiento
-    aplicarEstilosDesplazamiento();
+    await aplicarEstilosDesplazamiento();
 
-    asignarIdsACarrusel();
+    await asignarIdsACarrusel();
 
     observarRuletas();
     await cargarDatos();
