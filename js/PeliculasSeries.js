@@ -1,4 +1,4 @@
-import {cargarPeliculasSeries, cargarRecomendaciones, loadDefaultTemplates, loadTemplate} from "./script.js";
+import {cargarPeliculasSeries, cargarRecomendaciones, loadDefaultTemplates, loadTemplate, moverElementosFiltro} from "./script.js";
 
 
 async function initializePage() {
@@ -9,7 +9,9 @@ async function initializePage() {
     /*loadTemplate('../templates/Contenedor_filtro.html', 'template-ajustes');*/
     await cargarRecomendaciones('/templates/Contenedor_filtro.html', "template-ajustes", 'contenedor-filtro', 1); // Cargar las recomendaciones si es necesario
     await cargarRecomendaciones('/templates/Label.html', "contenedor-filtro", 'elemento-filtro', 5); // Cargar las recomendaciones si es necesario
+    moverElementosFiltro()
     await cargarPeliculasSeries('elementos_peliculas', 20);
+
 }
 
 
