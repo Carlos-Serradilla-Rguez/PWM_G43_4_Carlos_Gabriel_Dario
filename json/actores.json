@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "nombre": "Bryan Cranston",
+    "foto": "../img/BryanCranston.png"
+  },
+  {
+    "id": 2,
+    "nombre": "Aaron Paul",
+    "foto": "../img/AaronPaul.png"
+  },
+  {
+    "id": 3,
+    "nombre": "Anna Gunn",
+    "foto": "../img/AnnaGunn.png"
+  },
+  {
+    "id": 4,
+    "nombre": "Leonardo DiCaprio",
+    "foto": "../img/LeonardoDiCaprio.png"
+  },
+  {
+    "id": 5,
+    "nombre": "Joseph Gordon-Levitt",
+    "foto": "../img/JosephGordonLevitt.png"
+  },
+  {
+    "id": 6,
+    "nombre": "Tom Hardy",
+    "foto": "../img/TomHardy.png"
+  },
+  {
+    "id": 7,
+    "nombre": "Winona Ryder",
+    "foto": "../img/WinonaRyder.png"
+  },
+  {
+    "id": 8,
+    "nombre": "Millie Bobby Brown",
+    "foto": "../img/MillieBobbyBrown.png"
+  },
+  {
+    "id": 9,
+    "nombre": "David Harbour",
+    "foto": "../img/DavidHarbour.png"
+  },
+  {
+    "id": 10,
+    "nombre": "Keanu Reeves",
+    "foto": "../img/KeanyReeves.png"
+  },
+  {
+    "id": 11,
+    "nombre": "Laurence Fishburne",
+    "foto": "../img/LaurenceFishburne.png"
+  },
+  {
+    "id": 12,
+    "nombre": "Carrie-Anne Moss",
+    "foto": "../img/CarreiAnneMoss.png"
+  }
+]

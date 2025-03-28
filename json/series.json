@@ -5,7 +5,8 @@
     "año": 2008,
     "portada": "/img/Portada_BreakingBad.png",
     "genero": ["Drama", "Crimen"],
-    "sinopsis": "Un profesor de química con cáncer terminal comienza a fabricar metanfetaminas para asegurar el futuro de su familia."
+    "sinopsis": "Un profesor de química con cáncer terminal comienza a fabricar metanfetaminas para asegurar el futuro de su familia.",
+    "actores": [1, 2, 3]
   },
   {
     "id": 404,
@@ -13,6 +14,7 @@
     "año": 2016,
     "portada": "/img/Portada_StrangerThings.png",
     "genero": ["Ciencia Ficción", "Misterio"],
-    "sinopsis": "Un grupo de niños investiga la desaparición de su amigo y descubre un mundo sobrenatural oculto en su ciudad."
+    "sinopsis": "Un grupo de niños investiga la desaparición de su amigo y descubre un mundo sobrenatural oculto en su ciudad.",
+    "actores": [7, 8, 9]
   }
 ]
