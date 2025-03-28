@@ -91,7 +91,7 @@ export function observarRuletas() {
         if (recomendacionesContainer && !recomendacionesContainer.id) {
             recomendacionesContainer.id = "gallery-recomendaciones";
             console.log("📌 Se encontró Ruleta-Recomendaciones, asignando ID y cargando recomendaciones.");
-            cargarRecomendaciones('/templates/Pelicula_Sinopsis.html', 'gallery-recomendaciones', 'imagen-contenedor', 10);
+            cargarRecomendaciones('/templates/Pelicula_Sinopsis.html', 'gallery-recomendaciones', 'imagen-recomendacion', 10);
         }
 
         if (similaresContainer && recomendacionesContainer) {
@@ -120,25 +120,6 @@ export function moverElementosFiltro() {
         }
     }, 500);
 }
-
-export function asignarIdsACarrusel() {
-    // Seleccionamos todas las imágenes dentro de los carruseles
-    const imagenesSimilares = document.querySelectorAll('#Ruleta-Similares img');
-    const imagenesRecomendaciones = document.querySelectorAll('#Ruleta-Recomendaciones img');
-
-    // Asignamos un id único a cada imagen en Ruleta-Similares
-    imagenesSimilares.forEach((imagen, index) => {
-        imagen.id = `imagen-similar-${index + 1}`;
-    });
-
-    // Asignamos un id único a cada imagen en Ruleta-Recomendaciones
-    imagenesRecomendaciones.forEach((imagen, index) => {
-        imagen.id = `imagen-recomendacion-${index + 1}`;
-    });
-
-    console.log("IDs asignados a las imágenes.");
-}
-
 
 // Inicialización de la página
 async function initializePage() {
