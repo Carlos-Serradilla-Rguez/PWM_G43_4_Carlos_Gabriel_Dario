@@ -14,6 +14,18 @@ function agregarEventListenerElementos(nombreContenedor, totalElementos) {
     }
 }
 
+function agregarEventListenerBlog(nombreContenedor) {
+    const elemento = document.getElementById(nombreContenedor);
+
+    if (elemento) {
+        elemento.addEventListener('click', async e => {
+            e.preventDefault();
+            const idBlog = elemento.getAttribute('data-id');
+            window.location.href = './Paginas/Union-Blog.html?idBlog=' + idBlog;
+        })
+    }
+}
+
 async function initializePage() {
     loadDefaultTemplates();
     loadTemplate("/templates/Buscador.html", 'buscador-contenedor');
@@ -25,6 +37,7 @@ async function initializePage() {
     await cargarHilo('mainblog-contenedor', 1);
     agregarEventListenerElementos('elemento-recomendacion', 3);
     agregarEventListenerElementos('elemento-masvisto', 5);
+    agregarEventListenerBlog('mainblog-contenedor')
 }
 
 window.onload = async function() {
