@@ -95,6 +95,7 @@ function agregarEventListenerElementos(nombreContenedor, totalElementos) {
         }
     }
 }
+export { agregarEventListenerElementos };
 
 
 async function initializePage() {
