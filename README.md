@@ -29,6 +29,8 @@ Red social de cine. Incluye un foro con opiniones de los usuarios sobre películ
 - Union-Usuario.html: Implementa el Mockup "Usuario"
 - Union-Blog.html: Implementa el Mockup "Blog"
 - Union-Series.html: Implementa el Mockup "Películas y Series"
+- Union-DescriptorPeliculas.html "Página para los detalles de una película o serie"
+
 ## Listado de archivos templates
 Los templates se encuentran en el directorio de templates y en el directorio de style se encuentran los archivos css. Los archivos de estilo son homónimos a los archivos html a los que pertenece.
 - Página Index 
@@ -69,6 +71,55 @@ Los templates se encuentran en el directorio de templates y en el directorio de 
         - header.html
         - imagen_rotativa.html
         - footer.html
+
+##Listado de Archivos .js en el directorio /js
+- add_datos.js
+- blog.js
+- Carga-Templates.js
+- descriptorPeliculas.js
+- descubrir.js
+- index.js
+- label.js
+- login.js
+- menu.js
+- PeliculasSeries.js
+- register.ja
+- script.js
+- Union-Usuario.js
+
+##Listado de Archivos .json y su uso
+- actores.json
+    - archivo que contiene una actores, cada actor se guarda con
+        - un id unico
+        - nombre 
+        - foto     
+- foro.js
+   - archivo que contiene lista de hilos, cada hilo se guarda con
+        - un id unico para cada hilo
+        - titulo para identificar el tópico del hilo
+        - contenido, texto escrito por el usuario
+        - comentarios donde cada comentario se almacena con:
+          - id_comentario, identificador único para cada comentario
+          - usuario, nombre del usuario al que pertenece
+          - comentario, contenido del comentario
+          - fecha
+- cuentas.json
+   - archivo que contiene lista de usuarios, cada usuario se guarda con:
+        - un id unico para cada usuario
+        - nombre
+        - email
+        - clave
+        - lista_vistas, lista de películas que añade el usuario
+- peliculas.json y series.json
+    - archivo que contiene lista de películas, cada pelicula se guarda con:
+        - un id unico para cada pelicula
+        - titulo
+        - año de estreno
+        - portada, imagen de la oprtada
+        - genero
+        - sinopsis
+        - actores, lista con los ids de los actores que participan en la película
+  
 
 ## Enlaces a Figma y Trello
 - Figma: https://www.figma.com/design/bMKqhD6sfSjKfoi870g1Mo/PWM-CINEMATCH?node-id=0-1&t=xYLLmyg0bByeW2k0-1
