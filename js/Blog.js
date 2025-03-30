@@ -3,7 +3,7 @@ import {
     loadDefaultTemplates,
     loadTemplate,
     moverElementosFiltro
-} from "./script.js";
+} from "/PWM_G43_4_Carlos_Gabriel_Dario-Sprint2/js/script.js";
 
 // Agrega los listeners a los elementos de hilo para navegar a su vista de comentarios
 function agregarEventListenerElementos(nombreContenedor, totalElementos) {
@@ -14,7 +14,7 @@ function agregarEventListenerElementos(nombreContenedor, totalElementos) {
             elemento.addEventListener('click', async e => {
                 e.preventDefault();
                 const idBlog = elemento.getAttribute('data-id');
-                window.location.href = '../Paginas/Union-Blog.html?idBlog=' + idBlog;
+                window.location.href = '/PWM_G43_4_Carlos_Gabriel_Dario-Sprint2/Paginas/Union-Blog.html?idBlog=' + idBlog;
             });
         }
     }
@@ -23,7 +23,7 @@ function agregarEventListenerElementos(nombreContenedor, totalElementos) {
 // Cargar los comentarios de un hilo específico por ID
 async function cargarHiloConId(idBlog, containerBaseId) {
     try {
-        const response = await fetch('../json/foro.json');
+        const response = await fetch('/json/foro.json');
         let data = await response.json();
 
         const extra = JSON.parse(localStorage.getItem('foro_extra')) || [];
@@ -63,7 +63,7 @@ async function cargarHiloConId(idBlog, containerBaseId) {
 // Cargar todos los hilos (base + nuevos)
 export async function cargarHilo(containerBaseId, cantidad) {
     try {
-        const response = await fetch('../json/foro.json');
+        const response = await fetch('/json/foro.json');
         let base = await response.json();
 
         const extra = JSON.parse(localStorage.getItem('foro_extra')) || [];
@@ -139,7 +139,7 @@ function configurarFormularioComentario(idBlog) {
         }
 
         const extra = JSON.parse(localStorage.getItem('foro_extra')) || [];
-        const response = fetch('../json/foro.json');
+        const response = fetch('/json/foro.json');
         response.then(res => res.json()).then(base => {
             let data = base.concat(extra);
             const foro = data.find(f => f.id === parseInt(idBlog));
@@ -177,9 +177,9 @@ function addEventListenerBotonesPagina() {
 // Inicialización de la página
 async function initializePage() {
     loadDefaultTemplates();
-    loadTemplate("../templates/Buscador.html", 'buscador-contenedor');
-    await cargarRecomendaciones('../templates/Contenedor_filtro.html', "template-filtros", 'contenedor-filtro', 1);
-    await cargarRecomendaciones('../templates/Label.html', "contenedor-filtro-1", 'elemento-filtro', 5);
+    loadTemplate("/templates/Buscador.html", 'buscador-contenedor');
+    await cargarRecomendaciones('/templates/Contenedor_filtro.html', "template-filtros", 'contenedor-filtro', 1);
+    await cargarRecomendaciones('/templates/Label.html', "contenedor-filtro-1", 'elemento-filtro', 5);
     moverElementosFiltro();
     addEventListenerBotonesPagina();
 
@@ -187,13 +187,13 @@ async function initializePage() {
     const idBlog = urlParams.get('idBlog');
 
     if (idBlog) {
-        await cargarRecomendaciones('../templates/Comentario.html', "placeholder", 'CrearComentario', 1);
-        await cargarRecomendaciones('../templates/Blog.html', 'hilos-contenedor', 'elemento_blog', 5);
+        await cargarRecomendaciones('/templates/Comentario.html', "placeholder", 'CrearComentario', 1);
+        await cargarRecomendaciones('/templates/Blog.html', 'hilos-contenedor', 'elemento_blog', 5);
         await cargarHiloConId(idBlog, 'elemento_blog');
         setTimeout(() => configurarFormularioComentario(idBlog), 300);
     } else {
-        await cargarRecomendaciones('../templates/NuevoHilo.html', "placeholder", 'CrearAdd', 1);
-        await cargarRecomendaciones('../templates/Blog.html', 'hilos-contenedor', 'elemento_blog', 5);
+        await cargarRecomendaciones('/templates/NuevoHilo.html', "placeholder", 'CrearAdd', 1);
+        await cargarRecomendaciones('/templates/Blog.html', 'hilos-contenedor', 'elemento_blog', 5);
         await cargarHilo('elemento_blog', 5);
         setTimeout(configurarFormularioNuevoHilo, 300);
         agregarEventListenerElementos('elemento_blog', 5);
