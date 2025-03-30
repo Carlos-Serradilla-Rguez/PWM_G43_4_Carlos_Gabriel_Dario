@@ -72,7 +72,7 @@ Los templates se encuentran en el directorio de templates y en el directorio de 
         - imagen_rotativa.html
         - footer.html
 
-##Listado de Archivos .js en el directorio /js
+##Listado de Archivos .js
 - add_datos.js
 - blog.js
 - Carga-Templates.js
