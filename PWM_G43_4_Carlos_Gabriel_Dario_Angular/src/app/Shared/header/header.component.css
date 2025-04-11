@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  height: 900px;
+}
+
+/* Ocultar menú tradicional en móviles */
+@media (max-width: 765px) {
+  .nav-list {
+    display: none;
+  }
+
+  .menu-container {
+    position: absolute;
+    margin: 10px;
+  }
+}
+
+/* Ocultar botón bocadillo en pantallas grandes */
+@media (min-width: 765px) {
+  .menu-container {
+    display: none;
+  }
+}
+
+header {
+  text-align: center;
+  width: 100%;
+  background-color: #888888;
+  min-height: 100px;
+  height: 100px;
+  background-attachment: fixed;
+  align-items: center;
+}
+
+.header-logo {
+  max-width: 50%;
+  height: 50px;
+  display: block;
+  padding-top: 10px;
+  margin: 0 auto;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.header-logo:hover {
+  transform: scale(1.4);
+}
+
+.link-imagen {
+  pointer-events: none;
+}
+
+.link-imagen .header-logo {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+header nav {
+  width: 100%;
+  text-align: center;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+nav ul li {
+  flex: 1;
+  text-align: center;
+}
+
+header li {
+  justify-content: space-between;
+  max-width: 100%;
+  transition: 0.3s;
+  margin: 0 4%;
+  line-height: 0.5;
+}
+
+header li:hover {
+  transform: scale(1.4);
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5vw;
+  padding: 10px;
+}
+
+/*-------------------- Botón Bocadillo --------------------*/
+
+/* Botón flotante */
+.bubble-button {;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s;
+  background-color: transparent;
+}
+
+.bubble-button:hover {
+  transform: scale(1.2);
+}
+
+/* Menú desplegable */
+.menu {
+  position: absolute;
+  top: auto;
+  left: auto;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  width: 160px;
+  display: none;
+  z-index: 10;
+}
+
+.menu a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  transition: background 0.3s;
+  z-index: 10;
+}
+
+.menu a:hover {
+  background-color: #e3e3e3;
+}
+
+/* Mostrar el menú cuando está activo */
+.menu.show {
+  display: block;
+}

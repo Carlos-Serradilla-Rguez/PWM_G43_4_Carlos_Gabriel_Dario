@@ -1,0 +1,17 @@
+#texto-masvistos {
+  font-size: 5vw;
+}
+
+.masvistos-contenedor {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.elemento-masvisto {
+  margin: 0 5%;
+  border: 1px solid black;
+  height: 15em;
+}

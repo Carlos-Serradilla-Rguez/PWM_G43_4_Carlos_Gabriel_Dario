@@ -1,0 +1,41 @@
+.titulos {
+  font-size: 5vw;
+  display: flex;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: linear-gradient(45deg, #040000, #f4f4f4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.recomendaciones-contenedor {
+  width: 100%;
+  box-sizing: border-box;
+  flex-wrap: wrap; /* Asegura que los elementos se acomoden en filas si no hay suficiente espacio */
+  justify-content: space-between; /* Espacio entre los elementos */
+}
+
+.elemento-recomendacion {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  border: 1px solid black;
+  box-sizing: border-box; /* Evita que padding y borde aumenten el tamaño */
+}
+
+.elementos {
+  width: 25%;
+  height: auto;
+}
+
+.centrado {
+  height: 24%;
+}
+
+#boton-recomendaciones {
+  border: 1px solid black;
+  padding: 1%;
+  border-radius: 15px;
+  width: 50%;
+  cursor: pointer;
+}

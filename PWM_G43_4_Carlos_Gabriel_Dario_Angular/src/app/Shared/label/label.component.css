@@ -1,0 +1,61 @@
+body {
+  font-family: 'Lato', sans-serif;
+  padding: 0;
+  margin: 50px;
+}
+
+
+/* Estilo del contenedor desplegable */
+.dropdown {
+  background: white;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 8px;
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  width: auto;
+  text-align: center;
+}
+
+/* Estilo del título del desplegable */
+.dropdown summary {
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Ocultar el desplegable por defecto */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  width: 100%;
+  right: 0;
+  top: 0;
+  left: 100%;
+  background: white;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 8px;
+  list-style: none;
+}
+
+/* Mostrar opciones cuando se abre */
+.dropdown[open] .dropdown-menu {
+  display: block;
+}
+
+/* Estilo de cada opción */
+.dropdown-menu li {
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+  background-color: #ddd;
+}
+
+/* Estilo de los checkboxes */
+input[type="checkbox"] {
+  margin-right: 5px;
+}

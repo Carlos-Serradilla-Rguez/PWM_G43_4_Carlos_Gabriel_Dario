@@ -1,0 +1,12 @@
+#buscador {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2em;
+}
+
+#barra-busqueda {
+  width: 100%;              /* Ocupa todo el espacio disponible */
+  max-width: 600px;         /* Pero no más de 600px */
+  min-width: 300px;         /* Y no menos de 300px */
+}

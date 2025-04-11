@@ -1,0 +1,17 @@
+#texto-mainblog {
+  font-size: 5vw;
+  padding-top: 5%;
+}
+
+.mainblog-contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: auto;
+  padding-bottom: 5em;
+}
+
+#blog-contenedor {
+  width: 80%;
+}
