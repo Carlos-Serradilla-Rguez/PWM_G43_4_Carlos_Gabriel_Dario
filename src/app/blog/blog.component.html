@@ -1,0 +1,30 @@
+<h1 class="titulo">Reseñas de películas y series.</h1>
+
+<div id="buscador-contenedor"></div>
+
+<div class="principal">
+  <div class="bloque">
+    <div class="hilos" id="hilos-contenedor">
+      <!-- Los hilos se generan con *ngFor -->
+      <div *ngFor="let hilo of hilos; let i = index" class="elemento-Hilo" (click)="verComentarios(hilo.id)">
+        <div class="centrado">{{ hilo.titulo }}</div>
+        <div class="centrado">{{ hilo.contenido }}</div>
+        <div class="centrado">Ver comentarios</div>
+      </div>
+    </div>
+
+    <div id="boton-pagina">
+      <a href="#" class="boton" (click)="recargar()">Anterior</a>
+      <a href="#" class="boton">1</a>
+      <a href="#" class="boton">2</a>
+      <a href="#" class="boton">3</a>
+      <a href="#" class="boton" (click)="recargar()">Siguiente</a>
+    </div>
+  </div>
+
+  <div class="Caja" id="template-filtros">
+    <!-- Aquí se puede cargar otro componente o filtro -->
+  </div>
+</div>
+
+<section id="placeholder"></section>
