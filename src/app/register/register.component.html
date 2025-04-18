@@ -3,14 +3,15 @@
   <p>Register</p>
 </div>
 <div class="login-bar">
-  <form action="#" method="get">
-    <input type="email" name="correo" placeholder="Correo electrónico" required>
-    <input type="usuario" name="nombre" placeholder="Nombre de ususario" required>
-    <input type="password" name="clave" placeholder="Contraseña" required>
-    <input type="password" name="confirmar_clave" placeholder="Repite la contraseña" required>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <input type="email" formControlName="email" placeholder="Correo electrónico" required />
+    <input type="text" formControlName="username" placeholder="Nombre de usuario" required />
+    <input type="password" formControlName="password" placeholder="Contraseña" required />
+
     <button type="submit">Ingresar</button>
+
     <a routerLink="/login" id="link-Registro">
-      <p id="TengoCuenta">¿Ya estas registrado?<br>¡Inicia Sesión!</p>
+      <p id="TengoCuenta">¿Ya estás registrado?<br>¡Inicia sesión!</p>
     </a>
   </form>
 </div>
