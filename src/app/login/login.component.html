@@ -7,7 +7,9 @@
     <input type="text" name="usuario" placeholder="Usuario" required>
     <input type="password" name="clave" placeholder="Contraseña" required>
     <button type="submit">Ingresar</button>
-    <button type = "button" id="TengoCuenta" (click)="irARegistro()">¿Aún no estás registrado?<br>¡Registrate!</button>
+    <a routerLink="/register" id="link-Registro">
+      <p id="TengoCuenta">¿Aún no estás registrado?<br>¡Registrate!</p>
+    </a>
   </form>
 </div>
 </body>
