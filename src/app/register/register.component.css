@@ -10,6 +10,12 @@ html, body {
   flex-direction: column;
 }
 
+.lorem {
+  background: #f8f8f8;
+  padding: 20px;
+  text-align: center;
+}
+
 
 main {
   flex: 1;
