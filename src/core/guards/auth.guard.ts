@@ -1,15 +1,22 @@
 import { inject } from '@angular/core';
-import { CanActivateFn, Router } from '@angular/router';
-import { AuthService } from '../services/auth.service'; // Ajustá el path según tu estructura
+import { CanActivateFn } from '@angular/router';
+import { Router } from '@angular/router';
+import { Auth } from '@angular/fire/auth';
+import { authState } from '@angular/fire/auth';
+import { map } from 'rxjs/operators';
 
-export const authGuard: CanActivateFn = (route, state) => {
-  const authService = inject(AuthService);
+export const authGuard: CanActivateFn = () => {
+  const auth = inject(Auth);
   const router = inject(Router);
 
-  if (authService.isLoggedIn()) {
-    return true;
-  } else {
-    router.navigate(['/login']); // o /register
-    return false;
-  }
+  return authState(auth).pipe(
+    map(user => {
+      if (user) {
+        return true;
+      } else {
+        router.navigate(['/login']);
+        return false;
+      }
+    })
+  );
 };

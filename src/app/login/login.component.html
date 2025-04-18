@@ -3,14 +3,16 @@
   <p>Login</p>
 </div>
 <div class="login-bar">
-  <form action="#" method="post">
-    <input type="text" name="usuario" placeholder="Usuario" required>
-    <input type="password" name="clave" placeholder="Contraseña" required>
-    <button type="submit">Ingresar</button>
-    <a routerLink="/register" id="link-Registro">
-      <p id="TengoCuenta">¿Aún no estás registrado?<br>¡Registrate!</p>
-    </a>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <input type="email" formControlName="email" placeholder="Correo electrónico" required />
+    <input type="password" formControlName="password" placeholder="Contraseña" required />
+    <button type="submit">Iniciar sesión</button>
   </form>
+
+  <a routerLink="/register">
+    ¿No tienes cuenta? Regístrate aquí.
+  </a>
+
 </div>
 </body>
 

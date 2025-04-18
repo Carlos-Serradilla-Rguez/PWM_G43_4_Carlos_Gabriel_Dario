@@ -10,3 +10,4 @@ import {CarruselComponent} from '../Shared/carrusel/carrusel.component';
 export class MiperfilComponent {
 
 }
+

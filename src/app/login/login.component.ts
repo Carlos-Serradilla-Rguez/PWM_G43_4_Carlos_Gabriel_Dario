@@ -1,21 +1,38 @@
-import { Component } from '@angular/core';
-import {Router, RouterLink} from '@angular/router';
-
-
+import { Component, inject } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
-  imports: [
-    RouterLink
-  ],
+  standalone: true,
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrls: ['./login.component.css'],
+  imports: [RouterModule, ReactiveFormsModule],
 })
 export class LoginComponent {
-  constructor(private router: Router) {}
+  authService: AuthService = inject(AuthService);
+  form: FormGroup;
 
-  irARegistro() {
+  constructor(private router: Router, private fb: FormBuilder) {
+    this.form = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required],
+    });
+  }
+
+  irARegistro(): void {
     this.router.navigate(['../register']);
+  }
+
+  onSubmit(): void {
+    if (this.form.invalid) return;
+
+    const rawForm = this.form.getRawValue();
+    this.authService.login(rawForm.email, rawForm.password)
+      .subscribe({
+        next: () => this.router.navigateByUrl('/miperfil'),
+      });
   }
 
 }

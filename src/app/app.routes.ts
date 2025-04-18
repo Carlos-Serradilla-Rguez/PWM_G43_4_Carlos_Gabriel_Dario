@@ -18,7 +18,7 @@ export const routes: Routes = [
   {
     path: 'miperfil',
     component: MiperfilComponent,
-    canActivate: [authGuard]
+    canActivate: [authGuard],
   },
   {path: 'login', component: LoginComponent },
   {path: 'register', component: RegisterComponent },
