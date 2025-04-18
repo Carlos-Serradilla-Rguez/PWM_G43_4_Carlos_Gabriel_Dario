@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-
 main {
   text-align: center;
 }
@@ -20,72 +19,56 @@ main {
   -webkit-text-fill-color: transparent;
 }
 
-#Buscador-Peliculas {
-  margin: 20px;
-}
-
 /* ---- Contenedor principal ---- */
 .Ajustes {
   display: flex;
   gap: 1em;
-  justify-content: flex-start; /* Asegura que el label se quede a la izquierda */
+  justify-content: flex-start;
   align-items: flex-start;
   margin: 2em;
 }
 
-/* ---- Bloque izquierdo (Filtro) ---- */
+/* ---- Bloque izquierdo (filtros) ---- */
 #template-ajustes {
-  flex: 0 0 220px; /* Tamaño fijo */
+  flex: 0 0 220px;
   max-width: 250px;
   height: auto;
   display: flex;
-  justify-content: flex-start; /* Se mantiene alineado a la izquierda */
+  justify-content: flex-start;
 }
 
-/* ---- Bloque derecho (Imágenes) ---- */
+/* ---- Bloque derecho (galería) ---- */
 #bloque {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
+  min-height: 60vh; /* Asegura altura mínima si hay pocas tarjetas */
+  margin-bottom: 3em; /* Espacio con el footer */
 }
 
-/* ---- Galería de imágenes ---- */
+
+/* ---- Contenedor de tarjetas ---- */
 .imagen-ajustes-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 1em;
-  width: 100%;
+  width: auto;
   padding: 1em;
   max-width: 60vw;
 }
 
-/* ---- Estilo para cada imagen ---- */
-.imagen-ajustes {
-  background: #ddd;
-  width: 100%;
-  max-width: 250px;
-  aspect-ratio: 3/4;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: clamp(10px, 2vw, 18px);
-  font-weight: bold;
-  color: #333;
-  border-radius: 10px;
-}
+
 
 /* ---- Paginación ---- */
 #boton-pagina {
-  display: flex;
   justify-content: center;
   gap: 5px;
   margin-top: 20px;
   flex-wrap: wrap;
 }
 
-/* ---- Estilo de botones ---- */
 .boton {
   padding: 10px 15px;
   font-size: 12px;
@@ -93,38 +76,77 @@ main {
   transition: 0.3s;
   text-decoration: none;
   color: black;
-  border: 1px solid #aaa; /* Borde más delgado */
-
+  border: 1px solid #aaa;
 }
 
 .boton:hover {
   background-color: #595555;
 }
 
-/* ---- RESPONSIVE: Mantener el label a la izquierda y las imágenes a la derecha
- */
+/* ---- RESPONSIVE ---- */
 @media (max-width: 768px) {
   .Ajustes {
-    flex-direction: row; /* Mantiene el label a la izquierda y las imágenes a la derecha */
+    flex-direction: row;
     align-items: flex-start;
   }
 
   #template-ajustes {
-    flex: 0 0 120px; /* Reduce el tamaño del label en pantallas pequeñas */
+    flex: 0 0 120px;
     max-width: 180px;
   }
 
   .imagen-ajustes-container {
-    grid-template-columns: 1fr; /* Imágenes más compactas */
-    max-width: 50vw;
+    grid-template-columns: 1fr;
+    max-width: 80vw;
   }
 
-  .imagen-ajustes {
-    max-width: 50vw; /* Asegura que no sean más grandes que la pantalla */
-  }
 
   #boton-pagina a {
-    padding: 8px 9px; /* Aún más pequeño en móviles */
-    font-size: 10px; /* Letra más pequeña */
+    padding: 8px 9px;
+    font-size: 10px;
   }
+}
+
+/*---------------------------*/
+.contenedor-imagen {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 3; /* proporción típica de portada */
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.contenedor-imagen img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* asegura que la imagen se recorte sin deformarse */
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.hover-sinopsis {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  font-size: 0.85rem;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+.contenedor-imagen:hover .hover-sinopsis {
+  opacity: 1;
 }
