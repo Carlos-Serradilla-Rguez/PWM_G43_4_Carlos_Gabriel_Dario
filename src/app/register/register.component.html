@@ -1,6 +1,6 @@
 <body>
 <div class="lorem">
-  <p>REGISTRATE</p>
+  <p>Lorem ipsum.</p>
 </div>
 <div class="login-bar">
   <form action="#" method="get">
@@ -9,7 +9,9 @@
     <input type="password" name="clave" placeholder="Contraseña" required>
     <input type="password" name="confirmar_clave" placeholder="Repite la contraseña" required>
     <button type="submit">Ingresar</button>
-    <button type = "button" id="TengoCuenta" (click)="irALogin()">¿Ya estas registrado?<br>¡Inicia Sesion!</button>
+    <a routerLink="/login" id="link-Registro">
+      <p id="TengoCuenta">¿Ya estas registrado?<br>¡Inicia Sesión!</p>
+    </a>
   </form>
 </div>
 </body>
