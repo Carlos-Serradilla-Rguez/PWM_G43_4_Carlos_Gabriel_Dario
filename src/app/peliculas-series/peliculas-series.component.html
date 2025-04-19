@@ -20,10 +20,12 @@
       <div class="imagen-ajustes-container" id="contenedor-peliculas">
         <div *ngFor="let serie of series" class="imagen-ajustes">
           <div class="contenedor-imagen">
-            <img [src]="serie.portada" [alt]="serie.nombre" />
-            <div class="hover-sinopsis">
-              <p>{{ serie.sinopsis }}</p>
-            </div>
+            <a [routerLink]="['/descripcion-pelicula', serie.id]">
+              <img [src]="serie.portada" [alt]="serie.nombre" />
+              <div class="hover-sinopsis">
+                <p>{{ serie.sinopsis }}</p>
+              </div>
+            </a>
           </div>
         </div>
       </div>

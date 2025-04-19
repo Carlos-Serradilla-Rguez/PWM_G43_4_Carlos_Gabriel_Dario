@@ -7,6 +7,7 @@ import {MiperfilComponent} from './miperfil/miperfil.component';
 import {authGuard} from '../core/guards/auth.guard';
 import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
+import {DesciptorPeliculaComponent} from './desciptor-pelicula/desciptor-pelicula.component';
 
 
 export const routes: Routes = [
@@ -22,5 +23,5 @@ export const routes: Routes = [
   },
   {path: 'login', component: LoginComponent },
   {path: 'register', component: RegisterComponent },
-  {path: 'descripcion-pelicula', component: PeliculasSeriesComponent}
+  {path: 'descripcion-pelicula/:id', component: DesciptorPeliculaComponent}
 ];

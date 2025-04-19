@@ -1,10 +1,12 @@
 <main>
   <div id="Pelicula-Descripcion">
-    <img src="/img/Aspa.png" alt="" id="CarteleraPerfil">
+    <img [src]="pelicula?.portada" alt="{{ pelicula?.titulo }}" id="CarteleraPerfil">
     <section id="Informacion-Pelicula">
-      <h1 id="Nombre-Pelicula">Lorem ipsum dolor sit, amet.</h1>
+      <h1 id="Nombre-Pelicula">
+          {{ pelicula?.titulo }}
+      </h1>
       <p id="Descripcion">
-        Lorem ipsum dolor sit amet consectetur adipiscing elit aliquet faucibus tristique ultricies fringilla lacus, facilisi habitasse eget lacinia laoreet dapibus hac pellentesque habitant nec curabitur. Dis lectus ligula congue platea auctor lobortis taciti eros, vestibulum enim curae phasellus proin mollis vitae imperdiet, primis scelerisque venenatis mattis euismod fusce maecenas. Donec hendrerit praesent in suspendisse diam pharetra libero elementum, sapien pellentesque vel curabitur nascetur viverra aptent, dictumst magnis imperdiet nullam orci justo felis.
+        {{ pelicula?.sinopsis }}
       </p>
     </section>
     <button id="Añadir">Añadir a la lista</button>
