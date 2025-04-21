@@ -1,9 +1,16 @@
 <h1 class="titulo">Reseñas de películas y series.</h1>
 
-<div id="buscador-contenedor"></div>
+<div id="buscador-contenedor">
+<app-buscador id="barra-busqueda"/>
+</div>
 
 <div class="principal">
   <div class="bloque">
+    <app-bloque-blog/>
+    <app-bloque-blog/>
+    <app-bloque-blog/>
+    <app-bloque-blog/>
+    <app-bloque-blog/>
     <div class="hilos" id="hilos-contenedor">
       <!-- Los hilos se generan con *ngFor -->
       <div *ngFor="let hilo of hilos; let i = index" class="elemento-Hilo" (click)="verComentarios(hilo.id)">
@@ -23,6 +30,7 @@
   </div>
 
   <div class="Caja" id="template-filtros">
+    <app-label/>
     <!-- Aquí se puede cargar otro componente o filtro -->
   </div>
 </div>

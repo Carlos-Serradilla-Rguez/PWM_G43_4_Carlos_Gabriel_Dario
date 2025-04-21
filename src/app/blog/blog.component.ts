@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {BuscadorComponent} from '../Shared/buscador/buscador.component';
+import {BloqueBlogComponent} from '../Shared/bloque-blog/bloque-blog.component';
+import {LabelComponent} from '../Shared/label/label.component';
 
 interface Comentario {
   id_comentario: number;
@@ -16,7 +19,8 @@ interface Foro {
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
-  styleUrls: ['./blog.component.css']
+  styleUrls: ['./blog.component.css'],
+  imports: [BuscadorComponent, BloqueBlogComponent, LabelComponent],
 })
 export class BlogComponent implements OnInit {
   hilos: Foro[] = [];
