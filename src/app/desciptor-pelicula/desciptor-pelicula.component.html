@@ -9,7 +9,12 @@
         {{ pelicula?.sinopsis }}
       </p>
     </section>
-    <button id="Añadir">Añadir a la lista</button>
+    <button (click)="anadirOEliminarDeLaLista()">Añadir/Eliminar a la lista</button>
+
+    <div *ngIf="mensaje" class="mensaje-estado">
+      {{ mensaje }}
+    </div>
+
   </div>
 
   <section id="Mi-Lista" class="ruleta">

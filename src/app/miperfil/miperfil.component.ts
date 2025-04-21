@@ -1,7 +1,8 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import {CarruselComponent} from '../Shared/carrusel/carrusel.component';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-miperfil',
