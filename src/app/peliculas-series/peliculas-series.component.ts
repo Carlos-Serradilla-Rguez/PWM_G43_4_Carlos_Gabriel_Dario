@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { BuscadorComponent } from '../Shared/buscador/buscador.component';
 import { AjustesComponent } from '../Shared/ajustes/ajustes.component';
 import { PortadaComponent } from '../Shared/portada/portada.component';
-import { SeriesService } from '../../core/services/series.service';
+import { SeriesService } from '../core/services/series.service';
 import { OnInit } from '@angular/core';
 
 @Component({

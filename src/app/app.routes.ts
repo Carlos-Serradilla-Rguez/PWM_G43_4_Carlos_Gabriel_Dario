@@ -4,7 +4,7 @@ import {PeliculasSeriesComponent} from './peliculas-series/peliculas-series.comp
 import {DescubrirComponent} from './descubrir/descubrir.component';
 import {BlogComponent} from "./blog/blog.component";
 import {MiperfilComponent} from './miperfil/miperfil.component';
-import {authGuard} from '../core/guards/auth.guard';
+import {authGuard} from './core/guards/auth.guard';
 import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 import {DesciptorPeliculaComponent} from './desciptor-pelicula/desciptor-pelicula.component';
