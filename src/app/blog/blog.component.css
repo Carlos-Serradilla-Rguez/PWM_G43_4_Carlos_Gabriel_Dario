@@ -12,6 +12,18 @@ body {
   font-family: Arial, sans-serif;
 }
 
+#buscador-contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2em;
+}
+
+#barra-busqueda {
+  width: 100%;              /* Ocupa todo el espacio disponible */
+  max-width: 600px;         /* Pero no más de 600px */
+  min-width: 300px;         /* Y no menos de 300px */
+}
 
 .titulo {
   font-size: 20px;
@@ -26,7 +38,7 @@ body {
 
 .principal {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: space-between;
   height: auto;
   margin: 2em 0;
@@ -34,8 +46,8 @@ body {
 
 .bloque {
   flex-grow: 2;
-  min-width: 300px;
-  width: 100%;
+  width: 150px;
+
 }
 
 .hilos {
@@ -53,11 +65,9 @@ body {
 }
 
 .Caja {
-  width: 20%;
-  min-width: 200px;
+  width: 200px;
   height: auto;
-  margin: 0 2em;
-  flex-grow: 1;
+  margin: 0 2em 0 4em;
 }
 
 .footer {
@@ -101,7 +111,7 @@ body {
   }
 
   .Caja {
-    width: 90%;
+    width: 70%;
     margin: 1em 0;
   }
 
