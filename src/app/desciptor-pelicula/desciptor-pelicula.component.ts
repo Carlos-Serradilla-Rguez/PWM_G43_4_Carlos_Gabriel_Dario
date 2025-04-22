@@ -18,7 +18,7 @@ export class DesciptorPeliculaComponent implements OnInit {
 
   private auth: Auth = inject(Auth);
   private firestore: Firestore = inject(Firestore);
-  private actores: Actor | null = null;
+  actores: Actor[] | null = null;
 
   constructor(
     private route: ActivatedRoute,
@@ -29,12 +29,29 @@ export class DesciptorPeliculaComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
-      this.seriesService.getSerieById(id).then((data: any) => {
+      this.seriesService.getSerieById(id).then(async (data: any) => {
         this.pelicula = data;
-        this.pelicula.id = id; // Asegura tener el ID de la película
+        this.pelicula.id = id;
+
+        const actorIds: string[] = this.pelicula.actores || [];
+
+        if (actorIds.length > 0) {
+          this.actores = [];
+
+          for (const actorId of actorIds) {
+            const actorData = await this.actoresService.getActorById(actorId);
+            if (actorData) {
+              this.actores.push(actorData);
+            }
+          }
+        }
+
+        console.log(this.actores);
       });
     }
   }
+
+
 
   async anadirOEliminarDeLaLista() {
     const user = this.auth.currentUser;
