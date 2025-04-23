@@ -1,21 +1,10 @@
 <div class="bloque">
   <section class="gallery-container">
     <ul class="gallery">
-      <app-portada></app-portada>
-      <app-portada></app-portada>
-      <app-portada></app-portada>
-      <app-portada></app-portada>
-      <app-portada></app-portada>
-      <app-portada></app-portada>
-      <app-portada></app-portada>
-      <app-portada></app-portada>
-      <app-portada></app-portada>
-      <app-portada></app-portada>
-      <app-portada></app-portada>
-      <app-portada></app-portada>
-      <app-portada></app-portada>
-      <app-portada></app-portada>
-      <app-portada></app-portada>
+      <li *ngFor="let serie of series">
+        <app-portada [serie]="serie"></app-portada>
+      </li>
     </ul>
   </section>
 </div>
+

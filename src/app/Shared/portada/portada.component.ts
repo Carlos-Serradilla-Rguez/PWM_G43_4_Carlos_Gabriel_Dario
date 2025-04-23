@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input} from '@angular/core';
 import {NgOptimizedImage} from '@angular/common';
 import {RouterLink} from '@angular/router';
 
@@ -12,5 +12,5 @@ import {RouterLink} from '@angular/router';
   styleUrl: './portada.component.css'
 })
 export class PortadaComponent {
-
+  @Input() serie: any;
 }
