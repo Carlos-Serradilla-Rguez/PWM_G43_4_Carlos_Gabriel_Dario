@@ -5,10 +5,11 @@ import {Actor, ActoresService} from '../core/services/actores.service';
 import { CommonModule } from '@angular/common';
 import { Auth } from '@angular/fire/auth';
 import { Firestore, doc, setDoc, updateDoc, getDoc, arrayUnion,arrayRemove } from '@angular/fire/firestore';
+import {CarruselComponent} from '../Shared/carrusel/carrusel.component';
 
 @Component({
   selector: 'app-desciptor-pelicula',
-  imports: [CommonModule],
+  imports: [CommonModule, CarruselComponent],
   templateUrl: './desciptor-pelicula.component.html',
   styleUrl: './desciptor-pelicula.component.css'
 })
@@ -18,7 +19,7 @@ export class DesciptorPeliculaComponent implements OnInit {
 
   private auth: Auth = inject(Auth);
   private firestore: Firestore = inject(Firestore);
-  actores: Actor[] | null = null;
+  actores: Actor[] = [];
 
   constructor(
     private route: ActivatedRoute,
