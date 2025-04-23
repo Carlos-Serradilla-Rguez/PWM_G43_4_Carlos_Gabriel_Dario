@@ -1,6 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CarruselComponent } from '../Shared/carrusel/carrusel.component';
 import { AuthService } from '../auth.service';
+import { SeriesService } from '../core/services/series.service';
 import { Router } from '@angular/router';
 import { Firestore, doc, getDoc } from '@angular/fire/firestore';
 import { Auth } from '@angular/fire/auth';
@@ -38,6 +39,10 @@ export class MiperfilComponent implements OnInit {
         this.listaPeliculas = this.listaPeliculas.filter(p => p !== null);
       }
     });
+
+    this.seriesService.getRandomSeries(20).then((randomSeries) => {
+      this.peliculas = randomSeries;
+    })
   }
 
   cerrarSesion(): void {
