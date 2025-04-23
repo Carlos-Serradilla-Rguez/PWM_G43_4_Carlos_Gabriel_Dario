@@ -16,7 +16,7 @@ import {Actor} from '../../core/services/actores.service';
 })
 export class PortadaComponent {
   @Input() item: Serie | Actor | null = null;
-
+  @Input() serie: any;
   isSerie(item: Serie | Actor | null): item is Serie {
     return (item as Serie)?.portada !== undefined;
   }

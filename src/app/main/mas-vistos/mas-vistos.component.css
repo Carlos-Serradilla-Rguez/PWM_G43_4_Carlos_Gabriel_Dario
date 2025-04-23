@@ -10,8 +10,13 @@
   justify-content: space-between;
 }
 
+
 .elemento-masvisto {
-  margin: 0 5%;
+  width: 180px;  /* o el tamaño que quieras */
+  height: 270px;
+  margin: 10px;
+  box-sizing: border-box;
   border: 1px solid black;
-  height: 15em;
+  border-radius: 10px;
+  overflow: hidden; /* evita que la imagen sobresalga */
 }

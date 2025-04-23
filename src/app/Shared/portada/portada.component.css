@@ -1,17 +1,18 @@
-.portada {
-  width: 180px;
-  height: auto;
-  border-radius: 10px;
-  transition: transform 0.3s ease-in-out;
-  object-fit: cover;
-}
 
 .movie-container {
-  position: relative;
-  height: 100%;
   width: 100%;
+  aspect-ratio: 2 / 3; /* o puedes usar height fijo si prefieres */
+  position: relative;
+  overflow: hidden;
 }
 
+.movie-container img.portada {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Esto ajusta la imagen para rellenar el espacio sin deformarse */
+  display: block;
+  border-radius: 8px;
+}
 
 .overlay {
   position: absolute;

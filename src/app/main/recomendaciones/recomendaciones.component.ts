@@ -1,14 +1,20 @@
-import { Component } from '@angular/core';
-import {PortadaComponent } from '../../Shared/portada/portada.component';
-import {NgForOf} from '@angular/common';
+import { Component, OnInit, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { PortadaComponent } from '../../Shared/portada/portada.component';
+import { SeriesService } from '../../core/services/series.service';
 
 @Component({
   selector: 'app-recomendaciones',
-  imports: [PortadaComponent, NgForOf],
+  standalone: true,
+  imports: [CommonModule, PortadaComponent],
   templateUrl: './recomendaciones.component.html',
-  styleUrl: './recomendaciones.component.css'
+  styleUrls: ['./recomendaciones.component.css']
 })
-export class RecomendacionesComponent {
+export class RecomendacionesComponent implements OnInit {
+  series: any[] = [];
+  private seriesService = inject(SeriesService);
 
-  protected readonly PortadaComponent = PortadaComponent;
+  async ngOnInit() {
+    this.series = await this.seriesService.getRandomSeries(4);
+  }
 }
