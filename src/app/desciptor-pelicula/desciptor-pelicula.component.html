@@ -19,7 +19,16 @@
 
   <section id="Mi-Lista" class="ruleta">
     <h3 id="Titulo-Similares">Actores</h3>
-    <div id="Ruleta-Similares"></div>
+    <div id="Ruleta-Similares">
+      <div *ngFor="let actor of actores" class="imagen-ajustes">
+        <div class="contenedor-imagen">
+          <img [src]="actor.foto" [alt]="actor.nombre" />
+          <div class="hover-sinopsis">
+            <p>{{ actor.nombre }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section id="Recomendaciones" class="ruleta">

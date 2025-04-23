@@ -1,6 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { SeriesService } from '../../core/services/series.service';
+import { SeriesService } from '../core/services/series.service';
+import {Actor, ActoresService} from '../core/services/actores.service';
 import { CommonModule } from '@angular/common';
 import { Auth } from '@angular/fire/auth';
 import { Firestore, doc, setDoc, updateDoc, getDoc, arrayUnion,arrayRemove } from '@angular/fire/firestore';
@@ -17,21 +18,40 @@ export class DesciptorPeliculaComponent implements OnInit {
 
   private auth: Auth = inject(Auth);
   private firestore: Firestore = inject(Firestore);
+  actores: Actor[] | null = null;
 
   constructor(
     private route: ActivatedRoute,
-    private seriesService: SeriesService
+    private seriesService: SeriesService,
+    private actoresService: ActoresService
   ) {}
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
-      this.seriesService.getSerieById(id).then((data: any) => {
+      this.seriesService.getSerieById(id).then(async (data: any) => {
         this.pelicula = data;
-        this.pelicula.id = id; // Asegura tener el ID de la película
+        this.pelicula.id = id;
+
+        const actorIds: string[] = this.pelicula.actores || [];
+
+        if (actorIds.length > 0) {
+          this.actores = [];
+
+          for (const actorId of actorIds) {
+            const actorData = await this.actoresService.getActorById(actorId);
+            if (actorData) {
+              this.actores.push(actorData);
+            }
+          }
+        }
+
+        console.log(this.actores);
       });
     }
   }
+
+
 
   async anadirOEliminarDeLaLista() {
     const user = this.auth.currentUser;
@@ -70,5 +90,15 @@ export class DesciptorPeliculaComponent implements OnInit {
     setTimeout(() => {
       this.mensaje = '';
     }, 3000);
+  }
+
+  async busquedaDeActores() {
+    if (this.pelicula?.actores?.length > 0) {
+      const actorPromise = this.pelicula.actores.map((actorId: string)=>
+        this.actoresService.getActorById(actorId)
+      );
+
+      this.actores = await Promise.all(actorPromise)
+    }
   }
 }
