@@ -32,12 +32,6 @@ body {
   scroll-snap-align: start;
 }
 
-.gallery img {
-  width: 150px;
-  height: 200px;
-  border-radius: 8px;
-}
-
 .gallery-container::-webkit-scrollbar {
   height: 8px; /* Hace que la barra sea visible */
 }

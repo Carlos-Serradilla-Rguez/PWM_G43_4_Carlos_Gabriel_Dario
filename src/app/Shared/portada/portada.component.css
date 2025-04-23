@@ -1,3 +1,11 @@
+.portada {
+  width: 180px;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+  object-fit: cover;
+}
+
 .movie-container {
   position: relative;
   height: 100%;
