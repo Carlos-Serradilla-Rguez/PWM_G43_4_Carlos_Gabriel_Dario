@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CarruselComponent } from '../Shared/carrusel/carrusel.component';
 import { AuthService } from '../auth.service';
-import { SeriesService } from '../core/services/series.service';
+import {Serie, SeriesService} from '../core/services/series.service';
 import { Router } from '@angular/router';
 import { Firestore, doc, getDoc } from '@angular/fire/firestore';
 import { Auth } from '@angular/fire/auth';
@@ -19,6 +19,9 @@ export class MiperfilComponent implements OnInit {
   private db = inject(Firestore);
   private authService = inject(AuthService);
   private router = inject(Router);
+  peliculas: Serie[] = [];
+
+  constructor(private seriesService: SeriesService) {}
 
 
   listaPeliculas: any[] = [];
@@ -26,6 +29,10 @@ export class MiperfilComponent implements OnInit {
   ngOnInit(): void {
     const user = this.auth.currentUser;
     if (!user) return;
+
+    this.seriesService.getRandomSeries(20).then((randomSeries) => {
+      this.peliculas = randomSeries;
+    })
 
     const userDocRef = doc(this.db, 'usuarios', user.uid);
     getDoc(userDocRef).then(async (docSnap) => {
@@ -39,10 +46,6 @@ export class MiperfilComponent implements OnInit {
         this.listaPeliculas = this.listaPeliculas.filter(p => p !== null);
       }
     });
-
-    this.seriesService.getRandomSeries(20).then((randomSeries) => {
-      this.peliculas = randomSeries;
-    })
   }
 
   cerrarSesion(): void {
