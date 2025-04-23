@@ -1,17 +1,15 @@
-.portada {
-  width: 180px;
-  height: auto;
-  border-radius: 10px;
-  transition: transform 0.3s ease-in-out;
-  object-fit: cover;
-}
-
 .movie-container {
   position: relative;
   height: 100%;
   width: 100%;
 }
 
+.movie-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
 
 .overlay {
   position: absolute;
@@ -36,13 +34,13 @@
   padding: 20px;
   text-align: center;
   font-size: 1em;
-  line-height: 1.5em;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-height: calc(1.5em * 3);
+  line-height: 1.5em; /* Controla la separación entre líneas */
+  display: -webkit-box; /* Habilita el uso de line-clamp */
+  -webkit-box-orient: vertical; /* Orientación vertical del texto */
+  -webkit-line-clamp: 3; /* Limita el texto a 3 líneas */
+  overflow: hidden; /* Oculta el texto desbordado */
+  text-overflow: ellipsis; /* Agrega "..." si hay más texto del que cabe */
+  max-height: calc(1.5em * 3); /* Limita la altura a 3 líneas */
 }
 
 

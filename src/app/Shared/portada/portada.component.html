@@ -1,8 +1,21 @@
-<div class="movie-container">
-  <a [routerLink]="['/descripcion-pelicula', serie?.id]">
-    <img [src]="serie?.portada" alt="{{ serie?.nombre }}" class="portada" />
-    <div class="overlay">
-      <p class="synopsis">{{ serie?.sinopsis }}</p>
-    </div>
-  </a>
+<div *ngIf="item">
+  <!-- Si item tiene una propiedad 'portada' (probablemente de tipo Serie) -->
+  <div *ngIf="isSerie(item)" class="movie-container">
+    <a [routerLink]="['/descripcion-pelicula', item.id]">
+      <img ngSrc="{{ item.portada }}" alt="Imagen de la pelicula {{ item.nombre }}" height="20" width="20">
+      <div class="overlay">
+        <p class="synopsis">{{ item.sinopsis }}</p>
+      </div>
+    </a>
+  </div>
+
+  <!-- Si item tiene una propiedad 'foto' (probablemente de tipo Actor) -->
+  <div *ngIf="isActor(item)" class="movie-container">
+    <a routerLink="/descripcion-pelicula">
+      <img ngSrc="{{ item.foto }}" alt="Imagen de {{ item.nombre }}" height="20" width="20">
+      <div class="overlay">
+        <p class="synopsis">{{ item.nombre }}</p>
+      </div>
+    </a>
+  </div>
 </div>
