@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { SeriesService } from '../core/services/series.service';
+import {Serie, SeriesService} from '../core/services/series.service';
 import {Actor, ActoresService} from '../core/services/actores.service';
 import { CommonModule } from '@angular/common';
 import { Auth } from '@angular/fire/auth';
@@ -20,6 +20,7 @@ export class DesciptorPeliculaComponent implements OnInit {
   private auth: Auth = inject(Auth);
   private firestore: Firestore = inject(Firestore);
   actores: Actor[] = [];
+  peliculasAleatorias: Serie[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -50,6 +51,10 @@ export class DesciptorPeliculaComponent implements OnInit {
         console.log(this.actores);
       });
     }
+
+    this.seriesService.getRandomSeries(20).then((randomSeries) => {
+      this.peliculasAleatorias = randomSeries;
+    })
   }
 
 
