@@ -2,7 +2,7 @@
   <!-- Si item tiene una propiedad 'portada' (probablemente de tipo Serie) -->
   <div *ngIf="isSerie(item)" class="movie-container">
     <a [routerLink]="['/descripcion-pelicula', item.id]">
-      <img src="{{ item.portada }}" alt="Imagen de la pelicula {{ item.nombre }}" class="portada">
+      <img [src]="item.portada" alt="Imagen de la pelicula {{ item.nombre }}" class="portada">
       <div class="overlay">
         <p class="synopsis">{{ item.sinopsis }}</p>
       </div>
