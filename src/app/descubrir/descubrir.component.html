@@ -1,14 +1,14 @@
 <main>
   <div class="container">
-    <div class="card" id="card">
-      <img class="profile-img" id="profile-img" src="/images/Aspa.png" alt="Perfil">
-      <h2 class="titulo">Lorem ipsum dolor sit, amet.</h2>
+    <div class="card" id="card" id="{{ peliculaAleatoria?.id }}">
+      <img class="profile-img" id="profile-img" src="{{ peliculaAleatoria?.portada }}" alt="Perfil">
+      <h2 class="titulo">{{ peliculaAleatoria?.titulo }}</h2>
       <div class="bio">
-        <p class="synopsis">Lorem ipsum dolor sit amet consectetur adipiscing, elit habitant est rhoncus mattis nunc sociis, dapibus aliquam enim diam potenti. Quis commodo feugiat cursus nascetur inceptos sagittis scelerisque nullam, blandit potenti conubia aptent eu ultricies egestas, proin netus mi justo dis sed magnis. Curabitur vitae lacus purus aliquet tempor ante leo platea pellentesque, nulla risus scelerisque mus interdum ultricies mattis mi posuere sed, tempus magnis vivamus primis id viverra blandit parturient.</p>
+        <p class="synopsis">{{ peliculaAleatoria?.sinopsis }}</p>
       </div>
       <div class="actions">
-        <button class="dislike">👎</button>
-        <button class="like" id="like">👍</button>
+        <button class="dislike" (click)="EliminarDeLaLista()">👎</button>
+        <button class="like" id="like" (click)="anadirALaLista()">👍</button>
       </div>
     </div>
   </div>

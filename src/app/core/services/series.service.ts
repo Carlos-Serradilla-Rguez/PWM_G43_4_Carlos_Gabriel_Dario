@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 export interface Serie {
   id?: string;
-  nombre: string;
+  titulo: string;
   sinopsis: string;
   portada: string;
   actores: string[];
