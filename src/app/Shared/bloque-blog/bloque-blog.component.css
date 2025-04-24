@@ -1,32 +1,166 @@
-body {
-  font-family: 'Lato', sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
+/* Contenedor general */
 .container {
-  display: flex;
-  align-items: center;
-  width:100%;
-  height: auto;
-  background: white;
+  width: 90%;
+  max-width: 4000px;
+  margin: 2em auto;
   padding: 20px;
+  background: #fff;
   border: 2px solid black;
-  border-radius: 8px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
 }
 
-.text {
+.comentarios{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
-  font-size: 18px;
+}
+
+/* Título de comentarios */
+.comentarios h4 {
+  font-size: 20px;
+  margin-bottom: 1.5em;
+  text-align: center;
   color: #333;
-  line-height: 1.5;
 }
 
-.text_1 {
-  border-right: #000000 solid 2px;
-  margin-right: 2em;
+/* Lista de comentarios */
+.comentarios ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 2em;
 }
 
-a {
-  text-decoration: none;
+.comentarios li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Formulario */
+.form-comentario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Campos de texto */
+.form-comentario input[type="text"],
+.form-comentario textarea {
+  width: 100%;
+  max-width: 1000px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+  font-family: inherit;
+}
+
+/* Área de texto */
+.form-comentario textarea {
+  height: 100px;
+  resize: none;
+}
+
+/* Botón de comentar */
+.form-comentario button {
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.form-comentario button:hover {
+  background-color: #444;
+}
+
+.bloque{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/* Botones de acciones (Editar, Eliminar) dentro del comentario */
+.acciones {
+  margin-top: 8px;
+}
+
+.acciones button {
+  margin-right: 8px;
+  padding: 6px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+/* Botón Editar */
+.btn-editar {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+.btn-editar:hover {
+  background-color: #084298;
+}
+
+/* Botón Eliminar */
+.btn-eliminar {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.btn-eliminar:hover {
+  background-color: #a71d2a;
+}
+
+/* Botones del formulario (Comentar, Actualizar, Cancelar) */
+.botones-formulario {
+  display: flex;
+  gap: 10px;
+}
+
+.botones-formulario button {
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+/* Colores específicos para cada acción */
+.botones-formulario button:nth-child(1) {
+  background-color: #198754; /* Comentar */
+  color: white;
+}
+
+.botones-formulario button:nth-child(1):hover {
+  background-color: #146c43;
+}
+
+.botones-formulario button:nth-child(2) {
+  background-color: #0d6efd; /* Actualizar */
+  color: white;
+}
+
+.botones-formulario button:nth-child(2):hover {
+  background-color: #084298;
+}
+
+.botones-formulario button:nth-child(3) {
+  background-color: #6c757d; /* Cancelar */
+  color: white;
+}
+
+.botones-formulario button:nth-child(3):hover {
+  background-color: #495057;
 }

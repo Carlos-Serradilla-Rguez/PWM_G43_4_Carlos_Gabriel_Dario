@@ -1,9 +1,32 @@
 <div class="container">
-  <p class="text_1" id="text-1">
-    Lorem ipsum dolor
-  </p>
-  <p class="text" id="text-2">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel mauris ac risus
-    tempor tristique. Nullam id lorem id est malesuada gravida. Suspendisse potenti.
-  </p>
+  <!-- Comentarios -->
+  <div class="comentarios">
+    <h4>Comentarios:</h4>
+
+    <ul>
+      <li *ngFor="let comentario of comentarios">
+        <strong>{{ comentario.autor }}:</strong> {{ comentario.texto }}
+
+        <div class="acciones">
+          <button class="btn-editar" (click)="editarComentario(comentario)">Editar</button>
+          <button class="btn-eliminar" (click)="eliminarComentario(comentario.id)">Eliminar</button>
+        </div>
+      </li>
+    </ul>
+
+    <!-- Formulario para nuevo comentario o edición -->
+    <div class="form-comentario" [ngClass]="{ 'editando': editando }">
+      <h4 *ngIf="editando">Editando comentario</h4>
+
+      <input type="text" [(ngModel)]="nuevoComentario.autor" placeholder="Tu nombre">
+      <textarea [(ngModel)]="nuevoComentario.texto" placeholder="Escribe un comentario..."></textarea>
+
+      <!-- Botones -->
+      <div class="botones-formulario">
+        <button *ngIf="!editando" (click)="agregarComentario()">Comentar</button>
+        <button *ngIf="editando" (click)="actualizarComentario()">Actualizar</button>
+        <button *ngIf="editando" (click)="limpiarFormulario()">Cancelar</button>
+      </div>
+    </div>
+  </div>
 </div>
