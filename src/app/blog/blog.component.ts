@@ -7,12 +7,13 @@ import {arrayRemove, arrayUnion, doc, Firestore, getDoc, setDoc, updateDoc} from
 import {AuthService} from '../auth.service';
 import {Blog, BlogService} from '../core/services/blog.service';
 import {NgForOf} from '@angular/common';
+import {CrearHiloComponent} from "./crear-hilo/crear-hilo.component";
 
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.css'],
-  imports: [BuscadorComponent, BloqueBlogComponent, LabelComponent, NgForOf],
+  imports: [BuscadorComponent, BloqueBlogComponent, LabelComponent, NgForOf, CrearHiloComponent],
 })
 
 export class BlogComponent implements OnInit {
