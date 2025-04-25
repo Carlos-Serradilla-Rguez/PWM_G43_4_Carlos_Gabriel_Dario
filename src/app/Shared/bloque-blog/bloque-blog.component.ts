@@ -7,8 +7,7 @@ import {Router, RouterLink} from "@angular/router";
 @Component({
   selector: 'app-bloque-blog',
   imports: [
-    NgIf,
-    RouterLink
+    NgIf
   ],
   templateUrl: './bloque-blog.component.html',
   styleUrl: './bloque-blog.component.css'

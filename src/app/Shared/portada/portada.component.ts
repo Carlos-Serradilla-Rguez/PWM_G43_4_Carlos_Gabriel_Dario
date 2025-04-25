@@ -7,7 +7,6 @@ import {Actor} from '../../core/services/actores.service';
 @Component({
   selector: 'app-portada',
   imports: [
-    NgOptimizedImage,
     RouterLink,
     NgIf
   ],

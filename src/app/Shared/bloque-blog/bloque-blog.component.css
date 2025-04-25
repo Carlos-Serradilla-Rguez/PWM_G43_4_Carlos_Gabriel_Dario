@@ -27,10 +27,4 @@ body {
   margin-right: 2em;
 }
 
-a {
-  text-decoration: none; /* Elimina el subrayado */
-  display: inline; /* Asegura que no se comporte como un bloque */
-  margin: 0; /* Elimina márgenes */
-  padding: 0; /* Elimina relleno */
-}
 

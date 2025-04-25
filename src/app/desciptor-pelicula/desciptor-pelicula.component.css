@@ -48,17 +48,6 @@ main {
     margin: 4em;
 }
 
-#CerrarSesion {
-    margin-bottom: 3em;
-    height: 3em;
-    width: 10em;
-    font-size: 1em;
-}
-
-#Añadir {
-    margin-right: 15%;
-}
-
 @media (max-width: 1000px) {
     #CarteleraPerfil {
         height: 20vw;
@@ -75,10 +64,6 @@ main {
         margin: 2em;
     }
 
-    #Añadir {
-        margin-right: 10px;
-        font-size: 2.2vw;
-    }
 }
 
 /*---------------------------*/
