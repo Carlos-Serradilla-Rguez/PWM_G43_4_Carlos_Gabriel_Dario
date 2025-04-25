@@ -18,8 +18,7 @@ export class BloqueBlogComponent {
   @Input() tipo: 'comentario' | 'blog'  = 'blog';
   @Output() hijoSeleccionado = new EventEmitter<string | void>();
 
-  constructor(private router: Router) {
-  }
+  constructor(private router: Router) {}
 
   get esBlog(): boolean {
     return this.tipo === 'blog';

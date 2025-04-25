@@ -98,13 +98,28 @@ export class DesciptorPeliculaComponent implements OnInit {
     }, 3000);
   }
 
-  async busquedaDeActores() {
-    if (this.pelicula?.actores?.length > 0) {
-      const actorPromise = this.pelicula.actores.map((actorId: string)=>
-        this.actoresService.getActorById(actorId)
-      );
+  onIdSelected(id: string | void): void {
+    // Al recibir el id desde el hijo, cargamos los comentarios para ese id
+    console.log("Id", id);
+    if(id != null) {
+      this.seriesService.getSerieById(id).then(async (data: any) => {
+        this.pelicula = data;
+        this.pelicula.id = id;
 
-      this.actores = await Promise.all(actorPromise)
+        const actorIds: string[] = this.pelicula.actores || [];
+
+        if (actorIds.length > 0) {
+          this.actores = [];
+
+          for (const actorId of actorIds) {
+            const actorData = await this.actoresService.getActorById(actorId);
+            if (actorData) {
+              this.actores.push(actorData);
+            }
+          }
+        }
+        console.log(this.actores);
+      });
     }
   }
 }

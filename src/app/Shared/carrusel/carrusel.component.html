@@ -2,7 +2,7 @@
   <section class="gallery-container">
     <ul class="gallery">
       <li *ngFor="let serie of series">
-        <app-portada [item]="serie"></app-portada>
+        <app-portada [item]="serie" (hijoSeleccionado)="reenviarId($event)"></app-portada>
       </li>
     </ul>
   </section>

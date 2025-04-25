@@ -1,5 +1,5 @@
 import {PortadaComponent} from '../portada/portada.component';
-import { Component, Input } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import { CommonModule } from '@angular/common'; // IMPORTANTE
 
 @Component({
@@ -10,4 +10,9 @@ import { CommonModule } from '@angular/common'; // IMPORTANTE
 })
 export class CarruselComponent {
   @Input() series: any[] = [];
+  @Output() seleccionarId = new EventEmitter<string>();
+
+  reenviarId(id: string | void) {
+    this.seleccionarId.emit(id ?? "1");
+  }
 }

@@ -26,6 +26,6 @@
 
   <section id="Recomendaciones" class="ruleta">
     <h3 id="Titulo-Recomendaciones">Recomendaciones</h3>
-    <app-carrusel [series]="peliculasAleatorias" />
+    <app-carrusel [series]="peliculasAleatorias" (seleccionarId)="onIdSelected($event)"/>
   </section>
 </main>
