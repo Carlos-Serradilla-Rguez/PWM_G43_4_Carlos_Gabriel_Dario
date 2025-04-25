@@ -8,7 +8,7 @@ import {AuthService} from '../auth.service';
 import {Blog, BlogService} from '../core/services/blog.service';
 import {NgForOf, NgIf} from '@angular/common';
 import {CrearHiloComponent} from "./crear-hilo/crear-hilo.component";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, RouterLink} from "@angular/router";
 import {Comentarios, ComentariosService} from "../core/services/comentarios.service";
 import {AddMensajeComponent} from "./add-mensaje/add-mensaje.component";
 
@@ -16,7 +16,7 @@ import {AddMensajeComponent} from "./add-mensaje/add-mensaje.component";
   selector: 'app-blog',
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.css'],
-  imports: [BuscadorComponent, BloqueBlogComponent, LabelComponent, NgForOf, CrearHiloComponent, AddMensajeComponent, NgIf],
+  imports: [BuscadorComponent, BloqueBlogComponent, LabelComponent, NgForOf, CrearHiloComponent, AddMensajeComponent, NgIf, RouterLink],
 })
 
 export class BlogComponent implements OnInit {
