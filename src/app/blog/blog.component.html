@@ -26,10 +26,11 @@
     <app-label/>
     <!-- Aquí se puede cargar otro componente o filtro -->
   </div>
+    {{ mostrarCrearHilo }}
 </div>
 
 <section id="placeholder">
     <!-- Cambiar entre los componentes -->
+    <app-add-mensaje *ngIf="!mostrarCrearHilo"/>
     <app-crear-hilo *ngIf="mostrarCrearHilo" />
-    <app-add-mensaje *ngIf="!mostrarCrearHilo" />
 </section>

@@ -6,16 +6,17 @@ import {Auth} from '@angular/fire/auth';
 import {arrayRemove, arrayUnion, doc, Firestore, getDoc, setDoc, updateDoc} from '@angular/fire/firestore';
 import {AuthService} from '../auth.service';
 import {Blog, BlogService} from '../core/services/blog.service';
-import {NgForOf} from '@angular/common';
+import {NgForOf, NgIf} from '@angular/common';
 import {CrearHiloComponent} from "./crear-hilo/crear-hilo.component";
 import {ActivatedRoute} from "@angular/router";
 import {Comentarios, ComentariosService} from "../core/services/comentarios.service";
+import {AddMensajeComponent} from "./add-mensaje/add-mensaje.component";
 
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.css'],
-  imports: [BuscadorComponent, BloqueBlogComponent, LabelComponent, NgForOf, CrearHiloComponent],
+  imports: [BuscadorComponent, BloqueBlogComponent, LabelComponent, NgForOf, CrearHiloComponent, AddMensajeComponent, NgIf],
 })
 
 export class BlogComponent implements OnInit {
@@ -25,6 +26,7 @@ export class BlogComponent implements OnInit {
   hilosAMostrar: Blog[] | Comentarios[] = [];
   tipo: 'comentario' | 'blog' = 'blog';
   id: string | null = null;
+  mostrarCrearHilo: boolean = true;  // Control para cambiar entre los componentes
 
   constructor(
       private blogService: BlogService,
@@ -46,6 +48,7 @@ export class BlogComponent implements OnInit {
       } else {
         console.log("Hay id")
         this.tipo = 'comentario';
+        this.mostrarCrearHilo = false;  // Cambia el componente que se debe mostrar
         this.comentarioService.getComentario(this.id).subscribe(data => {
           this.hilosAMostrar = data;
         });
@@ -57,7 +60,9 @@ export class BlogComponent implements OnInit {
     // Al recibir el id desde el hijo, cargamos los comentarios para ese id
     console.log("Id", id);
     if(id != null) {
+      console.log(this.mostrarCrearHilo);
       this.tipo = 'comentario';
+      console.log(this.mostrarCrearHilo);
       this.comentarioService.getComentario(id).subscribe((data) => {
         this.hilosAMostrar = data;
       })

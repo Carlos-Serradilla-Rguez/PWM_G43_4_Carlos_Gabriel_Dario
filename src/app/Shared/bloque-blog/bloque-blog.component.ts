@@ -34,7 +34,9 @@ export class BloqueBlogComponent {
   }
 
   onClick(id: string | void): void{
+    console.log("Si que entra id:", id);
     this.hijoSeleccionado.emit(id);
+    this.router.navigate(['/blog', id])
   }
 
 }

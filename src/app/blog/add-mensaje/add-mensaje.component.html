@@ -1,1 +1,17 @@
-<p>add-mensaje works!</p>
+<div class="contenedor">
+    <div class="subcontenedor">
+        <form (ngSubmit)="addComentario()">
+            <section class="Elemento">
+                <h2>
+                    ¡Comenta!
+                </h2>
+                <label for="Comentario-hilo"></label>
+                <textarea id="Comentario-hilo" name="Comentario" placeholder="¿Qué quieres comentar?" [(ngModel)]="newComentario.contenido"></textarea>
+            </section>
+
+            <section id="Confirmacion">
+                <button type="submit">Añadir Comentario</button>
+            </section>
+        </form>
+    </div>
+</div>
