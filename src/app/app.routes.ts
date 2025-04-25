@@ -23,5 +23,6 @@ export const routes: Routes = [
   },
   {path: 'login', component: LoginComponent },
   {path: 'register', component: RegisterComponent },
-  {path: 'descripcion-pelicula/:id', component: DesciptorPeliculaComponent}
+  {path: 'descripcion-pelicula/:id', component: DesciptorPeliculaComponent},
+  {path: 'blog/:id', component: BlogComponent}
 ];

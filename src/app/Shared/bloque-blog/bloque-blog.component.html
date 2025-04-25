@@ -1,11 +1,13 @@
 <div class="container">
     <ng-container *ngIf="esBlog; else esComentario">
-        <p class="text_1">
-            {{ blog?.titulo }}
-        </p>
-        <p class="text">
-            {{ blog?.contenido }}
-        </p>
+        <div class="container" (click)="onClick(blog?.id)">
+            <p class="text_1">
+                {{ blog?.titulo }}
+            </p>
+            <p class="text">
+                {{ blog?.contenido }}
+            </p>
+        </div>
     </ng-container>
 
     <ng-template #esComentario>

@@ -2,11 +2,13 @@ import {Component, Input} from '@angular/core';
 import {Blog} from '../../core/services/blog.service';
 import {NgIf} from "@angular/common";
 import {Comentarios} from "../../core/services/comentarios.service";
+import {Router, RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-bloque-blog',
   imports: [
-    NgIf
+    NgIf,
+    RouterLink
   ],
   templateUrl: './bloque-blog.component.html',
   styleUrl: './bloque-blog.component.css'
@@ -14,6 +16,9 @@ import {Comentarios} from "../../core/services/comentarios.service";
 export class BloqueBlogComponent {
   @Input() hilo: Blog | Comentarios | null = null;
   @Input() tipo: 'comentario' | 'blog'  = 'blog';
+
+  constructor(private router: Router) {
+  }
 
   get esBlog(): boolean {
     return this.tipo === 'blog';
@@ -25,6 +30,11 @@ export class BloqueBlogComponent {
 
   get comentario(): Comentarios | null {
     return !this.esBlog ? this.hilo as Comentarios : null;
+  }
+
+  onClick(id: string | void): void {
+    // Redirige a la ruta '/blog' con un parámetro de consulta 'id'
+    this.router.navigate(['/blog'], { queryParams: { id } });
   }
 
 }

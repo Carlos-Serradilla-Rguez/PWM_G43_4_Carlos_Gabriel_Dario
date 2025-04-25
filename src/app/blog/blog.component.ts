@@ -23,6 +23,7 @@ export class BlogComponent implements OnInit {
   private db = inject(Firestore);
   private authService = inject(AuthService);
   hilosAMostrar: Blog[] | Comentarios[] = [];
+  tipo: 'comentario' | 'blog' = 'blog';
   id: string | null = null;
 
   constructor(
@@ -37,10 +38,14 @@ export class BlogComponent implements OnInit {
 
       // Solo ejecutamos la suscripción si no hay 'id'
       if (!this.id) {
+        console.log("No hay ningún id");
+        this.tipo = 'blog';
         this.blogService.getThreads().subscribe(data => {
           this.hilosAMostrar = data;
         });
       } else {
+        console.log("Hay id")
+        this.tipo = 'comentario';
         this.comentarioService.getComentario(this.id).subscribe(data => {
           this.hilosAMostrar = data;
         });
