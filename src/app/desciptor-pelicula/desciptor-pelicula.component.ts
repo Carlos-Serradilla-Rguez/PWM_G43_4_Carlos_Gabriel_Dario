@@ -120,6 +120,10 @@ export class DesciptorPeliculaComponent implements OnInit {
         }
         console.log(this.actores);
       });
+
+      this.seriesService.getRandomSeries(20).then((randomSeries) => {
+        this.peliculasAleatorias = randomSeries;
+      })
     }
   }
 }
