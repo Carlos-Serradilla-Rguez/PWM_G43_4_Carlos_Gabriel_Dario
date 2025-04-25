@@ -52,4 +52,15 @@ export class BlogComponent implements OnInit {
       }
     });
   }
+
+  onIdSelected(id: string | void): void {
+    // Al recibir el id desde el hijo, cargamos los comentarios para ese id
+    console.log("Id", id);
+    if(id != null) {
+      this.tipo = 'comentario';
+      this.comentarioService.getComentario(id).subscribe((data) => {
+        this.hilosAMostrar = data;
+      })
+    }
+  }
 }

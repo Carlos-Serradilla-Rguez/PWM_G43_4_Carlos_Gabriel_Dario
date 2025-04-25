@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Blog} from '../../core/services/blog.service';
 import {NgIf} from "@angular/common";
 import {Comentarios} from "../../core/services/comentarios.service";
@@ -16,6 +16,7 @@ import {Router, RouterLink} from "@angular/router";
 export class BloqueBlogComponent {
   @Input() hilo: Blog | Comentarios | null = null;
   @Input() tipo: 'comentario' | 'blog'  = 'blog';
+  @Output() hijoSeleccionado = new EventEmitter<string | void>();
 
   constructor(private router: Router) {
   }
@@ -32,9 +33,8 @@ export class BloqueBlogComponent {
     return !this.esBlog ? this.hilo as Comentarios : null;
   }
 
-  onClick(id: string | void): void {
-    // Redirige a la ruta '/blog' con un parámetro de consulta 'id'
-    this.router.navigate(['/blog'], { queryParams: { id } });
+  onClick(id: string | void): void{
+    this.hijoSeleccionado.emit(id);
   }
 
 }

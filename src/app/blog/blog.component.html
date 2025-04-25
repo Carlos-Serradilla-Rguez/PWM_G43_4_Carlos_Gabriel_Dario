@@ -9,7 +9,7 @@
     <div class="hilos" id="hilos-contenedor">
       <!-- Los hilos se generan con *ngFor -->
       <div *ngFor="let hilo of hilosAMostrar">
-        <app-bloque-blog [hilo]="hilo" [tipo]="tipo" />
+          <app-bloque-blog [hilo]="hilo" [tipo]="tipo" (hijoSeleccionado)="onIdSelected($event)" />
       </div>
     </div>
 
@@ -29,5 +29,7 @@
 </div>
 
 <section id="placeholder">
-    <app-crear-hilo />
+    <!-- Cambiar entre los componentes -->
+    <app-crear-hilo *ngIf="mostrarCrearHilo" />
+    <app-add-mensaje *ngIf="!mostrarCrearHilo" />
 </section>
