@@ -17,12 +17,12 @@ export class BlogService {
   constructor(private firestore: Firestore) {}
 
   getThreads(): Observable<Blog[]> {
-    const threadsRef = collection(this.firestore, 'blog');
+    const threadsRef = collection(this.firestore, 'hilos');
     return collectionData(threadsRef, { idField: 'id' }) as Observable<Blog[]>;
   }
 
   async addThread(thread: Blog) {
-    const threadsRef = collection(this.firestore, 'blog');
+    const threadsRef = collection(this.firestore, 'hilos');
     return addDoc(threadsRef, thread);
   }
 }

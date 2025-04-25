@@ -1,8 +1,20 @@
 <div class="container">
-  <p class="text_1" id="text-1">
-    {{ hilo?.titulo }}
-  </p>
-  <p class="text" id="text-2">
-    {{ hilo?.contenido }}
-  </p>
+    <ng-container *ngIf="esBlog; else esComentario">
+        <p class="text_1">
+            {{ blog?.titulo }}
+        </p>
+        <p class="text">
+            {{ blog?.contenido }}
+        </p>
+    </ng-container>
+
+    <ng-template #esComentario>
+        <p class="text_1">
+            {{ comentario?.usuario }}
+        </p>
+        <p class="text">
+            {{ comentario?.contenido }}
+        </p>
+    </ng-template>
 </div>
+

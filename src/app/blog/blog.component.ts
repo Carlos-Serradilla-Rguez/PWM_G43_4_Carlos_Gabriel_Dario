@@ -8,6 +8,8 @@ import {AuthService} from '../auth.service';
 import {Blog, BlogService} from '../core/services/blog.service';
 import {NgForOf} from '@angular/common';
 import {CrearHiloComponent} from "./crear-hilo/crear-hilo.component";
+import {ActivatedRoute} from "@angular/router";
+import {Comentarios, ComentariosService} from "../core/services/comentarios.service";
 
 @Component({
   selector: 'app-blog',
@@ -20,13 +22,29 @@ export class BlogComponent implements OnInit {
   private auth = inject(Auth);
   private db = inject(Firestore);
   private authService = inject(AuthService);
-  hilosAMostrar: Blog[] = [];
+  hilosAMostrar: Blog[] | Comentarios[] = [];
+  id: string | null = null;
 
-  constructor(private blogService: BlogService) {}
+  constructor(
+      private blogService: BlogService,
+      private comentarioService: ComentariosService,
+      private route: ActivatedRoute // Inyectamos ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    this.blogService.getThreads().subscribe(data => {
-      this.hilosAMostrar = data;
-    })
+    this.route.paramMap.subscribe(params => {
+      this.id = params.get('id'); // Obtenemos el 'id' de la URL
+
+      // Solo ejecutamos la suscripción si no hay 'id'
+      if (!this.id) {
+        this.blogService.getThreads().subscribe(data => {
+          this.hilosAMostrar = data;
+        });
+      } else {
+        this.comentarioService.getComentario(this.id).subscribe(data => {
+          this.hilosAMostrar = data;
+        });
+      }
+    });
   }
 }

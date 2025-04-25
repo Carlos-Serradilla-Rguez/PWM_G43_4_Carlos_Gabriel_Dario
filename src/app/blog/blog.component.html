@@ -9,7 +9,7 @@
     <div class="hilos" id="hilos-contenedor">
       <!-- Los hilos se generan con *ngFor -->
       <div *ngFor="let hilo of hilosAMostrar">
-        <app-bloque-blog [hilo]="hilo" />
+        <app-bloque-blog [hilo]="hilo" [tipo]="'comentario'" />
       </div>
     </div>
 
