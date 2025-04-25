@@ -3,6 +3,7 @@ import {Blog, BlogService} from '../../core/services/blog.service';
 import {FormsModule} from '@angular/forms';
 import {Comentarios, ComentariosService} from '../../core/services/comentarios.service';
 import {ActivatedRoute} from '@angular/router';
+import {AuthService} from '../../auth.service';
 
 @Component({
   selector: 'app-add-mensaje',
@@ -21,7 +22,8 @@ export class AddMensajeComponent implements OnInit {
 
   constructor(
     private comentarioService: ComentariosService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private authService: AuthService,
   ) {}
 
   ngOnInit() {
@@ -32,7 +34,7 @@ export class AddMensajeComponent implements OnInit {
   }
 
   addComentario() {
-    this.newComentario.usuario = "Carlos"; // Puedes asignar el usuario de manera fija o dinámica
+    this.newComentario.usuario = this.authService.getUsername();
     console.log(this.newComentario);
 
     if (this.newComentario.contenido && this.newComentario.usuario && this.hiloId) {

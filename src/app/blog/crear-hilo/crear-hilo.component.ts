@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {Blog, BlogService} from '../../core/services/blog.service';
 import {FormsModule} from '@angular/forms';
+import {AuthService} from '../../auth.service';
 
 @Component({
   selector: 'app-crear-hilo',
@@ -17,10 +18,13 @@ export class CrearHiloComponent {
     usuario: ''
   };
 
-  constructor(private blogService: BlogService) {}
+  constructor(
+    private blogService: BlogService,
+    private authService: AuthService
+  ) {}
 
   crearHilo() {
-    this.newThread.usuario = "Carlos";
+    this.newThread.usuario = this.authService.getUsername();
     console.log(this.newThread);
     if (this.newThread.titulo && this.newThread.contenido && this.newThread.usuario) {
       this.blogService.addThread(this.newThread)

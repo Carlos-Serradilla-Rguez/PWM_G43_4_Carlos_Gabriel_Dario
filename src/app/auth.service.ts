@@ -1,6 +1,6 @@
 import {inject, Inject, Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
-import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, signOut } from '@angular/fire/auth';
+import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, signOut, User } from '@angular/fire/auth';
 import { from } from 'rxjs';
 
 @Injectable({
@@ -33,5 +33,15 @@ export class AuthService {
     const promise = signOut(this.firebaseAuth);
     return from(promise);
   }
+
+  getUsername(): string {
+    const user: User | null = this.firebaseAuth.currentUser;
+    if (user === null) {
+      return "anonimo";
+    } else {
+      return user.displayName ?? "anonimo"; // si displayName es null, devuelve "anonimo"
+    }
+  }
+
 
 }
