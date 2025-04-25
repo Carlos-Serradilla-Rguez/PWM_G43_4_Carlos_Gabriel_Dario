@@ -7,7 +7,6 @@ import {Router, RouterLink, RouterLinkActive, RouterModule, RouterOutlet} from '
   imports: [
     NgOptimizedImage,
     RouterLink,
-    RouterLinkActive,
     RouterModule,
   ],
   templateUrl: './header.component.html',

@@ -4,10 +4,6 @@
   padding: 0;
 }
 
-main{
-  text-align: center;
-}
-
 body {
   font-family: Arial, sans-serif;
 }
@@ -58,24 +54,9 @@ body {
   margin: 0 0 0 20px;
 }
 
-.elemento-Hilo {
-  width: 100%;
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
-}
-
 .Caja {
   width: 200px;
-  height: auto;
   margin: 0 2em 0 4em;
-}
-
-.footer {
-  bottom: 0;
-  width: 100%;
-  background: #ccc;
-  text-align: center;
-  padding: 10px;
 }
 
 #boton-pagina {

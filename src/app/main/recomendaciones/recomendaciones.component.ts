@@ -15,6 +15,6 @@ export class RecomendacionesComponent implements OnInit {
   private seriesService = inject(SeriesService);
 
   async ngOnInit() {
-    this.series = await this.seriesService.getRandomSeries(4);
+    this.series = await this.seriesService.getRandomSeries(3);
   }
 }
