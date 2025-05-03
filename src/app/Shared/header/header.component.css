@@ -11,7 +11,7 @@ body {
 /* Ocultar menú tradicional en móviles */
 @media (max-width: 765px) {
   .nav-list {
-    display: none;
+    display: none !important;
   }
 
   .menu-container {

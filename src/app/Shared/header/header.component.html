@@ -1,20 +1,19 @@
 <header class="header">
 
   <div class="menu-container">
-    <button class="bubble-button">☰</button>
-    <div class="menu" id="menu">
+    <button class="bubble-button" (click)="toggleMenu()">☰</button>
+    <div class="menu" #menu id="menu">
       <a routerLink="/">Inicio</a>
-      <a routerLink="/peliclas-series">Películas/Series</a>
-      <a routerLink="/blog" >Blog</a>
-      <a routerLink="/descubrir" >Descubrir</a>
-      <a routerLink="/mi-perfil" >Mi Perfil</a>
+      <a routerLink="/peliculas-series">Películas/Series</a>
+      <a routerLink="/blog">Blog</a>
+      <a routerLink="/descubrir">Descubrir</a>
+      <a routerLink="/miperfil">Mi Perfil</a>
     </div>
   </div>
 
-  <a href="" class="logo">
+  <a href="/" class="logo">
     <img ngSrc="images/Logo_ChatGPT.svg" alt="Logo MovieMatch" class="header-logo" height="64" width="64">
   </a>
-
 
   <nav class="nav">
     <ul class="nav-list">
@@ -26,4 +25,3 @@
     </ul>
   </nav>
 </header>
-
