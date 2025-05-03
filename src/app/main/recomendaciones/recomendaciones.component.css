@@ -1,41 +1,44 @@
 .titulos {
   font-size: 5vw;
-  display: flex;
   font-weight: bold;
   text-transform: uppercase;
   background: linear-gradient(45deg, #040000, #f4f4f4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin-bottom: 1em;
 }
 
 .recomendaciones-contenedor {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1em;
   width: 100%;
   box-sizing: border-box;
-  flex-wrap: wrap; /* Asegura que los elementos se acomoden en filas si no hay suficiente espacio */
-  justify-content: space-between; /* Espacio entre los elementos */
+  padding: 1em;
 }
 
 .elemento-recomendacion {
-  display: flex;
-  width: 100%;
-  text-align: center;
   border: 1px solid black;
-  box-sizing: border-box; /* Evita que padding y borde aumenten el tamaño */
-}
-
-.elementos {
-  width: 25%;
-  height: auto;
-}
-
-.centrado {
-  height: 24%;
+  text-align: center;
+  padding: 1em;
 }
 
 #boton-recomendaciones {
-  border: 1px solid black;
-  padding: 1%;
+  width: 100%;
+  padding: 1em;
+  font-size: 1rem;
   border-radius: 15px;
-  width: 50%;
   cursor: pointer;
+}
+
+/* --- Responsive 2x2 fijo para móviles --- */
+@media (max-width: 768px) {
+  .recomendaciones-contenedor {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .titulos {
+    font-size: 6vw;
+  }
 }

@@ -1,18 +1,13 @@
 <h1 class="titulos">RECOMENDACIONES</h1>
+
 <div class="recomendaciones-contenedor" id="contenedor-recomendaciones">
+  <!-- Muestra solo 3 series -->
+  <div class="elemento-recomendacion" *ngFor="let serie of series.slice(0, 3)">
+    <app-portada [item]="serie"></app-portada>
+  </div>
+
+  <!-- El botón como cuarto elemento del grid -->
   <div class="elemento-recomendacion">
-    <div class="elemento-recomendacion" *ngFor="let serie of series">
-      <app-portada [item]="serie"></app-portada>
-    </div>
-      <div class="elementos">
-      <div class="centrado"></div>
-      <div class="centrado"></div>
-      <div class="centrado">
-        <a href ="">
-          <button id="boton-recomendaciones">¡VER MAS!</button>
-        </a>
-      </div>
-    </div>
-    <div class="centrado"></div>
+    <button id="boton-recomendaciones">¡VER MÁS!</button>
   </div>
 </div>
