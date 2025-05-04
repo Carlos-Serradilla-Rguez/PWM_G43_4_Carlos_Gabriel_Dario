@@ -57,10 +57,6 @@ La aplicación implementa una interfaz moderna y dinámica basada en Angular 19.
     - contenido: string
     - usuario: string
 
-- blog:
-  - contenido: string
-  - titulo: string
-  - usuario: string
 
 ## Enlaces a Figma y Trello
 - Figma: https://www.figma.com/design/bMKqhD6sfSjKfoi870g1Mo/PWM-CINEMATCH?node-id=0-1&t=xYLLmyg0bByeW2k0-1
