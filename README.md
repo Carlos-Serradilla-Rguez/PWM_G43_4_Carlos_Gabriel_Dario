@@ -5,121 +5,36 @@ Red social de cine. Incluye un foro con opiniones de los usuarios sobre películ
 <img src="/img/Logo_ChatGPT.png" width="300">
 
 ## Tecnologías usadas
-- HTML5, CSS, JavaScript, Git
-- GitHub, WebStorm
-- Figma, Trello 
+- Angular 19, TypeScript, HTML5, CSS
+- FireBase
+- Git & GitHub
+- WebStorm
+- Figma, Trello
+
+## Descripción
+La aplicación implementa una interfaz moderna y dinámica basada en Angular 19. Incluye componentes reutilizables y estructura modular, lo que facilita la escalabilidad y el mantenimiento del código. Se han utilizado las buenas prácticas de desarrollo frontend y se ha seguido una arquitectura limpia basada en componentes.
+
 
 ## Funcionalidades
-- Descubrir películas y series: El usuario podrá descubrir películas y series nuevas de una manera interactiva. Se le irán mostrando imágenes de diferentes títulos y el usuario podrá añadirla a su lista de "ver más tarde" desplazándolo a la derecha y podrá saltar a la siguiente desplazando a la izquierda.
-- Foro de reseñas: En la página de Blog el usuario podrá escribir reseñas y leer las de otros usuarios.
-- Descripciones de películas: El usuario será capaz de leer una sinopsis de cada película o serie arrastrando el cursor por encima de la imagen de la misma.
-- Creación de Listas: El usuario será capaz de crear dos tipos de listas, una donde aparezcan aquellos títulos que ha visto para que a la hora de descubrir un nuevo título no se le recomiende, y otra donde se almacenarán aquellos títulos que se le han recomendado y aún están por ver.
+- Navegación entre diferentes vistas mediante el enrutamiento de Angular.
+- Interfaz responsive adaptada a distintos dispositivos.
+- Lógica implementada en TypeScript para separación clara de estructura (HTML), estilos (CSS) y comportamiento (TS).
+- Gestión de datos y estados a través de servicios.
 
 ## Página de inicio de la aplicación web
 - Index.html (Se recomienda abrirlo con Microsoft Edge)
 
-## Nombre y ubicación de Mockups y StoryBoard
-- Mockups: ubicación en el directorio Mockups. En este directorio se encuentran los Mockups de las distintas páginas de la aplicación web. Los Mockups clasificados en carpetas según si son para la versión Movil, Desktop o Tablet 
-- StoryBoard: ubicación en el directorio StoryBoard. StoryBoards contiene un link de google drive a un vídeo del Storyboard.
+## Listado de páginas del proyecto.
+### Páginas HTML integradas (convertidas a componentes Angular):
+- `main` – Página principal de inicio
+- `Login` / `Register` – Autenticación de usuarios
+- `miperfil` – Perfil del usuario
+- `Blog` – Foro de reseñas
+- `Películas-Series` – Catálogo principal
+- `Descripto-rPeliculas` – Página de detalles
+- `Descubrir` – Explorador 
+- `Shared` – Templates compartidas entre componentes
 
-## Listado de páginas html del proyecto.
-- Index.html: Implementa el Mockup "Inicio"
-- Union-Login.html: Implementa el Mockup "LogIn"
-- Union-Register.html: Implementa el Mockup "Register"
-- Union-Usuario.html: Implementa el Mockup "Usuario"
-- Union-Blog.html: Implementa el Mockup "Blog"
-- Union-Series.html: Implementa el Mockup "Películas y Series"
-- Union-DescriptorPeliculas.html "Página para los detalles de una película o serie"
-
-## Listado de archivos templates
-Los templates se encuentran en el directorio de templates y en el directorio de style se encuentran los archivos css. Los archivos de estilo son homónimos a los archivos html a los que pertenece.
-- Página Index 
-  - Templates usados
-    - header.html
-    - buscador.html
-    - peliculas_sinopsis.html
-    - blog.html
-    - footer.html
-- Página Union-Blog
-    - Templates usados
-        - header.html
-        - Label.html
-        - Contenedor_filtro.html
-        - blog.html
-        - footer.html
-- Página Union-Descriptorpeliculas.html
-    - Templates usados
-        - header.html
-        - imagen_rotativa.html
-        - footer.html
-- Página Union-Descubrir.html
-    - Templates usados
-        - header.html
-        - footer.html
-- Página Union-LogIn.html
-    - Templates usados
-        - header.html
-        - login.html
-        - footer.html
-- Página Union-Register.html
-    - Templates usados
-        - header.html
-        - register.html
-        - footer.html
-- Página Union-Usuario.html
-    - Templates usados
-        - header.html
-        - imagen_rotativa.html
-        - footer.html
-
-##Listado de Archivos .js
-- add_datos.js
-- blog.js
-- Carga-Templates.js
-- descriptorPeliculas.js
-- descubrir.js
-- index.js
-- label.js
-- login.js
-- menu.js
-- PeliculasSeries.js
-- register.ja
-- script.js
-- Union-Usuario.js
-
-##Listado de Archivos .json y su uso
-- actores.json
-    - archivo que contiene una actores, cada actor se guarda con
-        - un id unico
-        - nombre 
-        - foto     
-- foro.js
-   - archivo que contiene lista de hilos, cada hilo se guarda con
-        - un id unico para cada hilo
-        - titulo para identificar el tópico del hilo
-        - contenido, texto escrito por el usuario
-        - comentarios donde cada comentario se almacena con:
-          - id_comentario, identificador único para cada comentario
-          - usuario, nombre del usuario al que pertenece
-          - comentario, contenido del comentario
-          - fecha
-- cuentas.json
-   - archivo que contiene lista de usuarios, cada usuario se guarda con:
-        - un id unico para cada usuario
-        - nombre
-        - email
-        - clave
-        - lista_vistas, lista de películas que añade el usuario
-- peliculas.json y series.json
-    - archivo que contiene lista de películas, cada pelicula se guarda con:
-        - un id unico para cada pelicula
-        - titulo
-        - año de estreno
-        - portada, imagen de la oprtada
-        - genero
-        - sinopsis
-        - actores, lista con los ids de los actores que participan en la película
-  
 
 ## Enlaces a Figma y Trello
 - Figma: https://www.figma.com/design/bMKqhD6sfSjKfoi870g1Mo/PWM-CINEMATCH?node-id=0-1&t=xYLLmyg0bByeW2k0-1
