@@ -35,6 +35,32 @@ La aplicación implementa una interfaz moderna y dinámica basada en Angular 19.
 - `Descubrir` – Explorador 
 - `Shared` – Templates compartidas entre componentes
 
+## Estructura de los Datos de firebase
+- Actores:
+  - foto: string
+  - nombre: stirng
+
+- SeriesyPeliculas:
+  - actores: array[num] 
+  - portada: string
+  - sinopsis: stirng
+  - título: stirng
+
+- Usuarios:
+  - lsita_de_peliculas: array[num]
+
+- hilos:
+  - contenido: string
+  - usuario: stirng
+  - título: stirng
+  - comentarios: colección
+    - contenido: string
+    - usuario: string
+
+- blog:
+  - contenido: string
+  - titulo: string
+  - usuario: string
 
 ## Enlaces a Figma y Trello
 - Figma: https://www.figma.com/design/bMKqhD6sfSjKfoi870g1Mo/PWM-CINEMATCH?node-id=0-1&t=xYLLmyg0bByeW2k0-1
