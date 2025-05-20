@@ -1,0 +1,38 @@
+<!-- favoritos.page.html -->
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Mis Favoritos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      <ion-label>
+        <h2>{{ item.nombre }}</h2>
+        <p>{{ item.descripcion }}</p>
+      </ion-label>
+
+      <ion-buttons slot="end">
+        <ion-button
+          fill="clear"
+          color="danger"
+          (click)="toggleFavorito(item.id)">
+          <ion-icon
+            [name]="isFavorito(item.id) ? 'heart' : 'heart-outline'"
+            slot="icon-only">
+          </ion-icon>
+        </ion-button>
+        <ion-button
+          fill="clear"
+          color="medium"
+          (click)="goDetalle(item.id)">
+          <ion-icon name="eye" slot="icon-only"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

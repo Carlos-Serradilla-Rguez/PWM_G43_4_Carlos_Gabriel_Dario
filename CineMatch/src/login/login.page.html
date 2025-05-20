@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <div class="lorem">
+    <ion-text color="primary">
+      <h2>Login</h2>
+    </ion-text>
+  </div>
+
+  <div class="login-bar">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+      <ion-item>
+        <ion-input
+          type="email"
+          formControlName="email"
+          placeholder="Correo electrónico"
+          required
+          fill="outline">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          type="password"
+          formControlName="password"
+          placeholder="Contraseña"
+          required
+          fill="outline">
+        </ion-input>
+      </ion-item>
+
+      <ion-button expand="block" type="submit" [disabled]="form.invalid">
+        Iniciar sesión
+      </ion-button>
+
+      <div class="registro-link">
+        <a routerLink="/register">
+          ¿No tienes cuenta? Regístrate aquí.
+        </a>
+      </div>
+
+    </form>
+  </div>
+
+</ion-content>
