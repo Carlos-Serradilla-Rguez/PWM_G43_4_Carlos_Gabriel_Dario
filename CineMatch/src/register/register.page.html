@@ -57,9 +57,14 @@
         class="custom-input">
       </ion-input>
 
-      <ion-button expand="block" type="submit" [disabled]="form.invalid">
-        Ingresar
-      </ion-button>
+      <!-- Input para seleccionar imagen -->
+      <ion-item>
+        <ion-label>Foto de perfil</ion-label>
+        <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+      </ion-item>
+
+      <ion-button>Ingresar</ion-button>
+
 
       <div class="registro-link">
         <a routerLink="/login" id="link-Registro">

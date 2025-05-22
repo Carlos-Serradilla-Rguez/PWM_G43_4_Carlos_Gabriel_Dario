@@ -14,6 +14,7 @@ import { IonicModule } from '@ionic/angular';
 export class RegisterPage {
   authService: AuthService = inject(AuthService);
   form: FormGroup;
+  selectedFile?: File;
 
   constructor(private router: Router, private fb: FormBuilder) {
     this.form = this.fb.group({
@@ -25,19 +26,32 @@ export class RegisterPage {
     });
   }
 
-  irALogin(): void {
-    this.router.navigate(['../login']);
+  onFileSelected(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length) {
+      this.selectedFile = input.files[0];
+    }
   }
 
   onSubmit(): void {
     if (this.form.invalid) return;
 
     const rawForm = this.form.getRawValue();
-    const displayName = `${rawForm.nombre} ${rawForm.apellidos}`.trim();
 
-    this.authService.register(rawForm.email, rawForm.password, displayName)
-      .subscribe(() => {
+    this.authService.register(
+      rawForm.email,
+      rawForm.password,
+      rawForm.nombre,
+      rawForm.apellidos,
+      rawForm.username,
+      this.selectedFile
+    ).subscribe({
+      next: () => {
         this.router.navigateByUrl('/miperfil');
-      });
+      },
+      error: err => {
+        console.error('Error al registrar:', err);
+      }
+    });
   }
 }
