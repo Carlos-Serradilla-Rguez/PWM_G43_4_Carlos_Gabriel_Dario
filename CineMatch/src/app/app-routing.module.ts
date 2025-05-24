@@ -23,6 +23,10 @@ const routes: Routes = [
     path: '**',
     redirectTo: 'login',
   },
+  {
+    path: 'miperfil',
+    loadChildren: () => import('../miperfil/miperfil.module').then(m => m.MiperfilPageModule)
+  },
 ];
 
 @NgModule({

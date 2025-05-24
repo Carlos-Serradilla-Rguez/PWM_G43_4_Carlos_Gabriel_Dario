@@ -59,4 +59,10 @@ export class AuthService {
   logout(): Observable<void> {
     return from(this.afAuth.signOut());
   }
+
+  async getUsername(): Promise<string> {
+    const user = await this.afAuth.currentUser;
+    return user?.displayName ?? 'anonimo';
+  }
+
 }

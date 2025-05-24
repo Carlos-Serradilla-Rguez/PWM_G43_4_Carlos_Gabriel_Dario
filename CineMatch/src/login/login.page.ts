@@ -33,6 +33,11 @@ export class LoginPage {
     this.authService.login(rawForm.email, rawForm.password)
       .subscribe({
         next: () => this.router.navigateByUrl('/miperfil'),
+        error: (error) => {
+          console.error('Error en login:', error);
+          // Aquí muestra un mensaje al usuario, ej:
+          alert('Usuario o contraseña incorrectos');
+        }
       });
   }
 }
